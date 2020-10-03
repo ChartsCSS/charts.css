@@ -1,0 +1,43 @@
+{
+  "name": "charts.css",
+  "version": "0.1.0",
+  "description": "Open source data visualization framework using pure CSS.",
+  "author": "Rami Yushuvaev",
+  "homepage": "https://ChartsCSS.com/",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "html",
+    "css-framework",
+    "charts",
+    "chart",
+    "scss",
+    "ui-component"
+  ],
+  "main": "dist/charts.css",
+  "files": [
+    "dist/charts.css",
+    "dist/charts.css.map",
+    "dist/charts.min.css"
+  ],
+  "scripts": {
+    "build": "npm-run-all css-compile css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/ -o dist/",
+    "css-minify": "uglifycss dist/charts.css > dist/charts.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChartsCSS/charts.css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChartsCSS/charts.css/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "uglifycss": "0.0.29"
+  }
+}

@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "charts.css",
+	"sources": [
+		"../src/charts.scss"
+	],
+	"sourcesContent": [
+		"/*!\r\n * charts.css v0.1.0 (https://ChartsCSS.com/)\r\n * Copyright 2020 Rami Yushuvaev\r\n * Licensed under MIT\r\n */\r\n"
+	],
+	"names": [],
+	"mappings": "AAAA;;;;GAIG"
+}
