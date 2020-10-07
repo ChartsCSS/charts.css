@@ -1,0 +1,212 @@
+.charts-css {
+  &.bar {
+    // Reset
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    // Shape
+    display: block;
+    width: 100%;
+
+    caption,
+    colgroup,
+    thead,
+    tfoot {
+      display: none;
+    }
+
+    // Layout
+    tbody {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+      width: 100%;
+      height: 100%;
+
+      tr {
+        position: relative;
+
+        // Even column size
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+
+        // Display cells in a column
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
+        padding: 0;
+        margin: 0;
+
+        td {
+          // Even cell size
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+
+          width: 100%;
+          height: 100%;
+
+          padding: 0;
+          margin: 0;
+        }
+
+        th {
+          display: flex;
+          justify-content: center;
+          align-items: space-between;
+          padding: 0;
+          margin: 0;
+
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        }
+
+      }
+    }
+
+    // Labels Position
+    &:not(.end-labels) {
+      tbody {
+        tr {
+          align-items: flex-start;
+          flex-basis: var( --bar-labels-size );
+          margin-inline-start: var( --bar-labels-size );
+
+          th {
+            left: calc( -1 * var( --bar-labels-size ) );
+          }
+
+          td {
+            text-align: end;
+            // line-height: 1.5;
+          }
+        }
+      }
+    }
+    &.end-labels {
+      tbody {
+        tr {
+          align-items: flex-end;
+          flex-basis: var( --bar-labels-size );
+          margin-inline-end: var( --bar-labels-size );
+
+          th {
+            right: calc( -1 * var( --bar-labels-size ) );
+          }
+
+          td {
+            text-align: start;
+            // line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    // Colors
+    &:not(.multiple) {
+      @for $i from 1 through $max-items {
+        tbody tr:nth-of-type( #{ $i } ) td,
+        tbody tr:nth-of-type( #{ $i + 10 } ) td,
+        tbody tr:nth-of-type( #{ $i + 20 } ) td,
+        tbody tr:nth-of-type( #{ $i + 30 } ) td,
+        tbody tr:nth-of-type( #{ $i + 40 } ) td,
+        tbody tr:nth-of-type( #{ $i + 50 } ) td {
+          background-color: var( --color, var( --color-#{ $i }));
+        }
+      }
+    }
+    &.multiple {
+      @for $i from 1 through $max-items {
+        tbody tr td:nth-of-type( #{ $i } ),
+        tbody tr td:nth-of-type( #{ $i + 10 } ),
+        tbody tr td:nth-of-type( #{ $i + 20 } ),
+        tbody tr td:nth-of-type( #{ $i + 30 } ),
+        tbody tr td:nth-of-type( #{ $i + 40 } ),
+        tbody tr td:nth-of-type( #{ $i + 50 } ) {
+          background-color: var( --color, var( --color-#{ $i }));
+        }
+      }
+    }
+
+    // Reverse Order
+    &:not(.reverse) {
+      tbody {
+        flex-direction: column;
+      }
+    }
+    &.reverse {
+      tbody {
+        flex-direction: column-reverse;
+      }
+    }
+
+    // Row Spacing
+    @for $i from 1 through 10 {
+      &.row-spacing {
+        tbody tr {
+          padding-block-start: 4px;
+          padding-block-end: 4px;
+        }
+      }
+    }
+
+    // Axes
+    &:not(.hide-main-axis) {
+      &:not(.end-labels) {
+        tbody tr {
+          border-inline-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+        }
+      }
+      &.end-labels {
+        tbody tr {
+          border-inline-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+        }
+      }
+    }
+    &.show-x-axes {
+      tbody tr {
+        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
+      }
+      &:not(.reverse) {
+        tbody tr:first-of-type {
+          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+      &.reverse {
+        tbody tr:last-of-type {
+          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+    }
+    @for $i from 1 through $max-items {
+      &.show-#{$i}-y-axes {
+        tbody {
+          tr {
+            background-size: ( 100% / $i ) 100%;
+            background-image: linear-gradient(
+              90deg,
+              var( --axis-color ) var( --axis-width ),
+              transparent var( --axis-width )
+            );
+          }
+        }
+      }
+    }
+
+    // Hover
+    &.hover {
+      tr:hover {
+        background-color: var( --tr-hover-color, rgba(0, 0, 0, 0.05) );
+      }
+      td:hover {
+        opacity: .75;
+      }
+    }
+
+  }
+}

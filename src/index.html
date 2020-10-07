@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChartsCSS.com</title>
+  <link rel="stylesheet" href="../dist/charts.min.css">
+
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .examples {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 5rem;
+      text-align: center;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      text-align: center;
+      text-decoration: underline;
+    }
+    p {
+      text-align: center;
+    }
+    code {
+      background-color: #ffecef;
+      padding: 5px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>ChartsCSS.com</h1>
+
+    <h2>Chart Legend</h2>
+
+    <div class="examples legends">
+
+      <div>
+        <h3>Empty</h3>
+        <p><code>.legend</code></p>
+        <ul class="charts-css legend">
+        </ul>
+      </div>
+
+      <div>
+        <h3>Block Align</h3>
+        <p><code>.legend</code></p>
+        <ul class="charts-css legend">
+          <li>CSS</li>
+          <li>HTML</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Inline Align</h3>
+        <p><code>.legend.legend-inline</code></p>
+        <ul class="charts-css legend legend-inline">
+          <li>CSS</li>
+          <li>HTML</li>
+          <li>JS</li>
+          <li>SQL</li>
+          <li>PHP</li>
+          <li>JAVA</li>
+          <li>PYTHON</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Circle</h3>
+        <p><code>.legend.legend-circle</code></p>
+        <ul class="charts-css legend legend-circle">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Grey</li>
+          <li>Brown</li>
+          <li>Brown</li>
+          <li>Dark</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Square</h3>
+        <p><code>.legend.legend-square</code></p>
+        <ul class="charts-css legend legend-square">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Grey</li>
+          <li>Brown</li>
+          <li>Brown</li>
+          <li>Dark</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Rhombus</h3>
+        <p><code>.legend.legend-rhombus</code></p>
+        <ul class="charts-css legend legend-rhombus">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Grey</li>
+          <li>Brown</li>
+          <li>Brown</li>
+          <li>Dark</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Rectangle</h3>
+        <p><code>.legend.legend-rectangle</code></p>
+        <ul class="charts-css legend legend-rectangle">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Grey</li>
+          <li>Brown</li>
+          <li>Brown</li>
+          <li>Dark</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Line</h3>
+        <p><code>.legend.legend-line</code></p>
+        <ul class="charts-css legend legend-line">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Grey</li>
+          <li>Brown</li>
+          <li>Brown</li>
+          <li>Dark</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Line</h3>
+        <p><code>.legend.legend-???</code></p>
+        <ul class="charts-css legend legend-???">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Grey</li>
+          <li>Brown</li>
+          <li>Brown</li>
+          <li>Dark</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h2>Bar Chart</h2>
+
+    <div class="examples bar">
+
+      <div>
+        <h3>Single data set</h3>
+        <table class="charts-css bar hover 1hide-main-axis show-x-axes 1show-10-y-axes row-spacing">
+          <caption>Months Compare</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Month</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">January</th>
+              <td style="width: 35%;">35</td>
+            </tr>
+            <tr>
+              <th scope="row">February</th>
+              <td style="width: 80%;">80</td>
+            </tr>
+            <tr>
+              <th scope="row">March</th>
+              <td style="width: 50%;">50</td>
+            </tr>
+            <tr>
+              <th scope="row">April</th>
+              <td style="width: 100%;">100</td>
+            </tr>
+            <tr>
+              <th scope="row">May</th>
+              <td style="width: 0%;">0</td>
+            </tr>
+            <tr>
+              <th scope="row">June</th>
+              <td style="width: 45%;">45</td>
+            </tr>
+            <tr>
+              <th scope="row">July</th>
+              <td style="width: 82%;">82</td>
+            </tr>
+            <tr>
+              <th scope="row">August</th>
+              <td style="width: 70%;">70</td>
+            </tr>
+            <tr>
+              <th scope="row">September</th>
+              <td style="width: 5%;">5</td>
+            </tr>
+            <tr>
+              <th scope="row">October</th>
+              <td style="width: 20%;">20</td>
+            </tr>
+            <tr>
+              <th scope="row">November</th>
+              <td style="width: 50%;">50</td>
+            </tr>
+            <tr>
+              <th scope="row">December</th>
+              <td style="width: 40%;">40</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Multiple reverse</h3>
+        <table class="charts-css bar hover 1hide-main-axis 1show-x-axes multiple reverse row-spacing">
+          <caption>Countries Compare</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Land Mass (million km^2)</th>
+              <th>Population (billion)</th>
+              <th>GDP (nominal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="width: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
+              <td style="width: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
+              <td style="width: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+            </tr>
+            <tr>
+              <th scope="row">China</th>
+              <td style="width: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
+              <td style="width: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
+              <td style="width: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+            </tr>
+            <tr>
+              <th scope="row">India</th>
+              <td style="width: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
+              <td style="width: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
+              <td style="width: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+            </tr>
+            <tr>
+              <th scope="row">Russia</th>
+              <td style="width: calc( 10% * ( 17.1 / 17.1 ) );">17.1</td>
+              <td style="width: calc( 10% * (  0.1 /  1.4 ) );">0.1</td>
+              <td style="width: calc( 10% * (  1.6 / 21.4 ) );">1.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Multiple end-labels</h3>
+        <table class="charts-css bar hover 1hide-main-axis 1show-x-axes 1show-2-y-axes multiple end-labels row-spacing">
+          <caption>Countries Compare</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Land Mass (million km^2)</th>
+              <th>Population (billion)</th>
+              <th>GDP (nominal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="width: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
+              <td style="width: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
+              <td style="width: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+            </tr>
+            <tr>
+              <th scope="row">China</th>
+              <td style="width: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
+              <td style="width: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
+              <td style="width: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+            </tr>
+            <tr>
+              <th scope="row">India</th>
+              <td style="width: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
+              <td style="width: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
+              <td style="width: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+            </tr>
+            <tr>
+              <th scope="row">Russia</th>
+              <td style="width: calc( 100% * ( 17.1 / 17.1 ) );">17.1</td>
+              <td style="width: calc( 100% * (  0.1 /  1.4 ) );">0.1</td>
+              <td style="width: calc( 100% * (  1.6 / 21.4 ) );">1.6</td>
+            </tr>
+            <tr>
+              <th scope="row">X</th>
+              <td style="width: 0%;">.</td>
+              <td style="width: 0%;">.</td>
+              <td style="width: 0%;">.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <h2>Column Chart</h2>
+
+    <div class="examples column">
+
+      <div>
+        <h3>Single data set</h3>
+        <table class="charts-css column hover 1hide-main-axis show-y-axes 1show-10-x-axes row-spacing" style="height: 300px;">
+          <caption>Months Compare</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Month</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">January</th>
+              <td style="height: 35%; --color: red;">35</td>
+            </tr>
+            <tr>
+              <th scope="row">February</th>
+              <td style="height: 80%;">80</td>
+            </tr>
+            <tr>
+              <th scope="row">March</th>
+              <td style="height: 50%;">50</td>
+            </tr>
+            <tr>
+              <th scope="row">April</th>
+              <td style="height: 100%;">100</td>
+            </tr>
+            <tr>
+              <th scope="row">May</th>
+              <td style="height: 0%;">0</td>
+            </tr>
+            <tr>
+              <th scope="row">June</th>
+              <td style="height: 45%;">45</td>
+            </tr>
+            <tr>
+              <th scope="row">July</th>
+              <td style="height: 82%;">82</td>
+            </tr>
+            <tr>
+              <th scope="row">August</th>
+              <td style="height: 70%;">70</td>
+            </tr>
+            <tr>
+              <th scope="row">September</th>
+              <td style="height: 5%;">5</td>
+            </tr>
+            <tr>
+              <th scope="row">October</th>
+              <td style="height: 20%;">20</td>
+            </tr>
+            <tr>
+              <th scope="row">November</th>
+              <td style="height: 50%;">50</td>
+            </tr>
+            <tr>
+              <th scope="row">December</th>
+              <td style="height: 40%;">40</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Multiple reverse</h3>
+        <table class="charts-css column hover 1hide-main-axis 1show-y-axes multiple reverse" style="height: 300px;">
+          <caption>Countries Compare</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Land Mass (million km^2)</th>
+              <th>Population (billion)</th>
+              <th>GDP (nominal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="height: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
+              <td style="height: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
+              <td style="height: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+            </tr>
+            <tr>
+              <th scope="row">China</th>
+              <td style="height: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
+              <td style="height: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
+              <td style="height: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+            </tr>
+            <tr>
+              <th scope="row">India</th>
+              <td style="height: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
+              <td style="height: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
+              <td style="height: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+            </tr>
+            <tr>
+              <th scope="row">Russia</th>
+              <td style="height: calc( 10% * ( 17.1 / 17.1 ) );">17.1</td>
+              <td style="height: calc( 10% * (  0.1 /  1.4 ) );">0.1</td>
+              <td style="height: calc( 10% * (  1.6 / 21.4 ) );">1.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Multiple top-labels</h3>
+        <table class="charts-css column hover 1hide-main-axis 1show-y-axes 1show-2-x-axes multiple top-labels" style="height: 300px;">
+          <caption>Countries Compare</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Land Mass (million km^2)</th>
+              <th>Population (billion)</th>
+              <th>GDP (nominal)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="height: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
+              <td style="height: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
+              <td style="height: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+            </tr>
+            <tr>
+              <th scope="row">China</th>
+              <td style="height: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
+              <td style="height: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
+              <td style="height: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+            </tr>
+            <tr>
+              <th scope="row">India</th>
+              <td style="height: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
+              <td style="height: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
+              <td style="height: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+            </tr>
+            <tr>
+              <th scope="row">Russia</th>
+              <td style="height: calc( 10% * ( 17.1 / 17.1 ) );">17.1</td>
+              <td style="height: calc( 10% * (  0.1 /  1.4 ) );">0.1</td>
+              <td style="height: calc( 10% * (  1.6 / 21.4 ) );">1.6</td>
+            </tr>
+            <tr>
+              <th scope="row">X</th>
+              <td style="height: 0%;">.</td>
+              <td style="height: 0%;">.</td>
+              <td style="height: 0%;">.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <h2>Pie Chart</h2>
+
+    <div class="examples pie">
+
+      <div>
+        <h3>Empty element</h3>
+        <div class="charts-css pie"></div>
+      </div>
+
+      <div>
+        <h3>With data, no styling</h3>
+        <ul class="charts-css pie">
+          <li>Cats</li>
+          <li>Dogs</li>
+          <li>Parrots</li>
+          <li>Hamsters</li>
+          <li>Fish</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>With data and styling</h3>
+        <style>
+        .pie-style {
+          --percent-1: 10%;
+          --percent-2: 12.5%;
+          --percent-3: 10%;
+          --percent-4: 12.5%;
+          --percent-5: 10%;
+          --percent-6: 12.5%;
+          --percent-7: 10%;
+          --percent-8: 12.5%;
+          --percent-9: 10%;
+        }
+        </style>
+        <ul class="charts-css pie pie-style">
+          <li>Cats: 80</li>
+          <li>Dogs: 60</li>
+          <li>Parrots: 40</li>
+          <li>Hamsters: 80</li>
+          <li>Fish: 16</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h2>Donut Chart</h2>
+
+    <div class="examples donut">
+
+      <div>
+        <h3>Empty element</h3>
+        <div class="charts-css donut"></div>
+      </div>
+
+      <div>
+        <h3>With data, no styling</h3>
+        <ul class="charts-css donut">
+          <li>Cats</li>
+          <li>Dogs</li>
+          <li>Parrots</li>
+          <li>Hamsters</li>
+          <li>Fish</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>With data and styling</h3>
+        <style>
+        .donut-style {
+          --percent-1: 10%;
+          --percent-2: 12.5%;
+          --percent-3: 10%;
+          --percent-4: 12.5%;
+          --percent-5: 10%;
+          --percent-6: 12.5%;
+          --percent-7: 10%;
+          --percent-8: 12.5%;
+          --percent-9: 10%;
+        }
+        </style>
+        <ul class="charts-css donut donut-style">
+          <li>Cats: 22</li>
+          <li>Dogs: 11</li>
+          <li>Parrots: 33</li>
+          <li>Hamsters: 22</li>
+          <li>Fish: 22</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h2>Polar Chart</h2>
+
+    <div class="examples polar">
+
+      <div>
+        <h3>Empty element</h3>
+        <div class="charts-css polar"></div>
+      </div>
+
+      <div>
+        <h3>With data, no styling</h3>
+        <ul class="charts-css polar">
+          <li>Cats</li>
+          <li>Dogs</li>
+          <li>Parrots</li>
+          <li>Hamsters</li>
+          <li>Fish</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>With data and styling</h3>
+        <style>
+        .polar-style {
+          --percent-1: 10%;
+          --percent-2: 12.5%;
+          --percent-3: 10%;
+          --percent-4: 12.5%;
+          --percent-5: 10%;
+          --percent-6: 12.5%;
+          --percent-7: 10%;
+          --percent-8: 12.5%;
+          --percent-9: 10%;
+        }
+        </style>
+        <ul class="charts-css polar polar-style">
+          <li>Cats: 22</li>
+          <li>Dogs: 11</li>
+          <li>Parrots: 33</li>
+          <li>Hamsters: 22</li>
+          <li>Fish: 22</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</body>
+</html>

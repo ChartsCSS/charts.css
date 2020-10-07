@@ -1,5 +1,28 @@
 /*!
- * charts.css v0.1.0 (https://ChartsCSS.com/)
+ * charts.css v0.2.0 (https://ChartsCSS.com/)
  * Copyright 2020 Rami Yushuvaev
  * Licensed under MIT
  */
+
+// Configuration
+// General
+@import "general/variables";
+@import "general/mixins";
+@import "general/functions";
+@import "general/utilities";
+
+// Components
+@import "components/wrapper";
+@import "components/legend";
+
+// Charts
+@import "charts/bar";
+@import "charts/column";
+@import "charts/line";
+@import "charts/bubble";
+
+@import "charts/pie";
+@import "charts/donut";
+@import "charts/radar";
+@import "charts/polar";
+@import "charts/gauge"; // with a dial

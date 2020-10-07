@@ -1,7 +1,1066 @@
 /*!
- * charts.css v0.1.0 (https://ChartsCSS.com/)
+ * charts.css v0.2.0 (https://ChartsCSS.com/)
  * Copyright 2020 Rami Yushuvaev
  * Licensed under MIT
  */
+.charts-css {
+  --color-1: rgba(240, 100, 100, 1);
+  --color-2: rgba(255, 200, 100, 1);
+  --color-3: rgba(255, 230, 130, 1);
+  --color-4: rgba(140, 220, 120, 1);
+  --color-5: rgba(130, 190, 255, 1);
+  --color-6: rgba(190, 130, 255, 1);
+  --color-7: rgba(200, 200, 200, 1);
+  --color-8: rgba(150, 150, 150, 1);
+  --color-9: rgba(190, 180, 150, 1);
+  --color-10: rgba(160, 100, 80, 1);
+  --chart-bg-color: #f5f5f5;
+  --main-axis-color: rgba(0, 0, 0, 1);
+  --main-axis-style: solid;
+  --main-axis-width: 1px;
+  --axis-color: rgba(0, 0, 0, 0.15);
+  --axis-style: solid;
+  --axis-width: 1px;
+  --legend-border-color: lightgrey;
+  --bar-labels-size: 30%;
+  --column-labels-size: 1.5rem;
+  --donut-inner-color: white;
+  --donut-inner-size: 50%;
+}
+
+.charts-css {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.charts-css,
+.charts-css * {
+  box-sizing: border-box;
+}
+
+ul.charts-css,
+ol.charts-css {
+  list-style-type: none;
+}
+
+.charts-css.legend {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--legend-border-color);
+  list-style: none;
+  font-size: 1rem;
+}
+
+.charts-css.legend li {
+  line-height: 2;
+  display: flex;
+  align-items: center;
+}
+
+.charts-css.legend li::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline-end: .5rem;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.charts-css.legend li:nth-child(1)::before {
+  background-color: var(--color-1, transparent);
+  border-color: var(--border-color-1, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(2)::before {
+  background-color: var(--color-2, transparent);
+  border-color: var(--border-color-2, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(3)::before {
+  background-color: var(--color-3, transparent);
+  border-color: var(--border-color-3, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(4)::before {
+  background-color: var(--color-4, transparent);
+  border-color: var(--border-color-4, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(5)::before {
+  background-color: var(--color-5, transparent);
+  border-color: var(--border-color-5, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(6)::before {
+  background-color: var(--color-6, transparent);
+  border-color: var(--border-color-6, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(7)::before {
+  background-color: var(--color-7, transparent);
+  border-color: var(--border-color-7, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(8)::before {
+  background-color: var(--color-8, transparent);
+  border-color: var(--border-color-8, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(9)::before {
+  background-color: var(--color-9, transparent);
+  border-color: var(--border-color-9, var(--border-color, #000));
+}
+
+.charts-css.legend li:nth-child(10)::before {
+  background-color: var(--color-10, transparent);
+  border-color: var(--border-color-10, var(--border-color, #000));
+}
+
+.charts-css:not(.legend-inline) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.charts-css.legend-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.charts-css.legend-inline li {
+  margin-inline-end: 1rem;
+}
+
+.charts-css.legend-circle li::before {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.charts-css.legend-square li::before {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+}
+
+.charts-css.legend-rhombus li::before {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+  transform: rotate(45deg) scale(0.85);
+}
+
+.charts-css.legend-rectangle li::before {
+  width: 2rem;
+  height: 1rem;
+  border-radius: 3px;
+}
+
+.charts-css.legend-line li::before {
+  width: 2rem;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.charts-css.bar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+}
+
+.charts-css.bar caption,
+.charts-css.bar colgroup,
+.charts-css.bar thead,
+.charts-css.bar tfoot {
+  display: none;
+}
+
+.charts-css.bar tbody {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.charts-css.bar tbody tr {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.charts-css.bar tbody tr td {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.charts-css.bar tbody tr th {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.charts-css.bar:not(.end-labels) tbody tr {
+  align-items: flex-start;
+  flex-basis: var(--bar-labels-size);
+  margin-inline-start: var(--bar-labels-size);
+}
+
+.charts-css.bar:not(.end-labels) tbody tr th {
+  left: calc( -1 * var( --bar-labels-size ));
+}
+
+.charts-css.bar:not(.end-labels) tbody tr td {
+  text-align: end;
+}
+
+.charts-css.bar.end-labels tbody tr {
+  align-items: flex-end;
+  flex-basis: var(--bar-labels-size);
+  margin-inline-end: var(--bar-labels-size);
+}
+
+.charts-css.bar.end-labels tbody tr th {
+  right: calc( -1 * var( --bar-labels-size ));
+}
+
+.charts-css.bar.end-labels tbody tr td {
+  text-align: start;
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(1) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(11) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(21) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(31) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(41) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(51) td {
+  background-color: var(--color, var(--color-1));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(2) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(12) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(22) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(32) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(42) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(52) td {
+  background-color: var(--color, var(--color-2));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(3) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(13) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(23) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(33) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(43) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(53) td {
+  background-color: var(--color, var(--color-3));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(4) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(14) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(24) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(34) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(44) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(54) td {
+  background-color: var(--color, var(--color-4));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(5) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(15) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(25) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(35) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(45) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(55) td {
+  background-color: var(--color, var(--color-5));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(6) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(16) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(26) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(36) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(46) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(56) td {
+  background-color: var(--color, var(--color-6));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(7) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(17) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(27) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(37) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(47) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(57) td {
+  background-color: var(--color, var(--color-7));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(8) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(18) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(28) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(38) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(48) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(58) td {
+  background-color: var(--color, var(--color-8));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(9) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(19) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(29) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(39) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(49) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(59) td {
+  background-color: var(--color, var(--color-9));
+}
+
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(10) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(20) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(30) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(40) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(50) td,
+.charts-css.bar:not(.multiple) tbody tr:nth-of-type(60) td {
+  background-color: var(--color, var(--color-10));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(1),
+.charts-css.bar.multiple tbody tr td:nth-of-type(11),
+.charts-css.bar.multiple tbody tr td:nth-of-type(21),
+.charts-css.bar.multiple tbody tr td:nth-of-type(31),
+.charts-css.bar.multiple tbody tr td:nth-of-type(41),
+.charts-css.bar.multiple tbody tr td:nth-of-type(51) {
+  background-color: var(--color, var(--color-1));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(2),
+.charts-css.bar.multiple tbody tr td:nth-of-type(12),
+.charts-css.bar.multiple tbody tr td:nth-of-type(22),
+.charts-css.bar.multiple tbody tr td:nth-of-type(32),
+.charts-css.bar.multiple tbody tr td:nth-of-type(42),
+.charts-css.bar.multiple tbody tr td:nth-of-type(52) {
+  background-color: var(--color, var(--color-2));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(3),
+.charts-css.bar.multiple tbody tr td:nth-of-type(13),
+.charts-css.bar.multiple tbody tr td:nth-of-type(23),
+.charts-css.bar.multiple tbody tr td:nth-of-type(33),
+.charts-css.bar.multiple tbody tr td:nth-of-type(43),
+.charts-css.bar.multiple tbody tr td:nth-of-type(53) {
+  background-color: var(--color, var(--color-3));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(4),
+.charts-css.bar.multiple tbody tr td:nth-of-type(14),
+.charts-css.bar.multiple tbody tr td:nth-of-type(24),
+.charts-css.bar.multiple tbody tr td:nth-of-type(34),
+.charts-css.bar.multiple tbody tr td:nth-of-type(44),
+.charts-css.bar.multiple tbody tr td:nth-of-type(54) {
+  background-color: var(--color, var(--color-4));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(5),
+.charts-css.bar.multiple tbody tr td:nth-of-type(15),
+.charts-css.bar.multiple tbody tr td:nth-of-type(25),
+.charts-css.bar.multiple tbody tr td:nth-of-type(35),
+.charts-css.bar.multiple tbody tr td:nth-of-type(45),
+.charts-css.bar.multiple tbody tr td:nth-of-type(55) {
+  background-color: var(--color, var(--color-5));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(6),
+.charts-css.bar.multiple tbody tr td:nth-of-type(16),
+.charts-css.bar.multiple tbody tr td:nth-of-type(26),
+.charts-css.bar.multiple tbody tr td:nth-of-type(36),
+.charts-css.bar.multiple tbody tr td:nth-of-type(46),
+.charts-css.bar.multiple tbody tr td:nth-of-type(56) {
+  background-color: var(--color, var(--color-6));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(7),
+.charts-css.bar.multiple tbody tr td:nth-of-type(17),
+.charts-css.bar.multiple tbody tr td:nth-of-type(27),
+.charts-css.bar.multiple tbody tr td:nth-of-type(37),
+.charts-css.bar.multiple tbody tr td:nth-of-type(47),
+.charts-css.bar.multiple tbody tr td:nth-of-type(57) {
+  background-color: var(--color, var(--color-7));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(8),
+.charts-css.bar.multiple tbody tr td:nth-of-type(18),
+.charts-css.bar.multiple tbody tr td:nth-of-type(28),
+.charts-css.bar.multiple tbody tr td:nth-of-type(38),
+.charts-css.bar.multiple tbody tr td:nth-of-type(48),
+.charts-css.bar.multiple tbody tr td:nth-of-type(58) {
+  background-color: var(--color, var(--color-8));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(9),
+.charts-css.bar.multiple tbody tr td:nth-of-type(19),
+.charts-css.bar.multiple tbody tr td:nth-of-type(29),
+.charts-css.bar.multiple tbody tr td:nth-of-type(39),
+.charts-css.bar.multiple tbody tr td:nth-of-type(49),
+.charts-css.bar.multiple tbody tr td:nth-of-type(59) {
+  background-color: var(--color, var(--color-9));
+}
+
+.charts-css.bar.multiple tbody tr td:nth-of-type(10),
+.charts-css.bar.multiple tbody tr td:nth-of-type(20),
+.charts-css.bar.multiple tbody tr td:nth-of-type(30),
+.charts-css.bar.multiple tbody tr td:nth-of-type(40),
+.charts-css.bar.multiple tbody tr td:nth-of-type(50),
+.charts-css.bar.multiple tbody tr td:nth-of-type(60) {
+  background-color: var(--color, var(--color-10));
+}
+
+.charts-css.bar:not(.reverse) tbody {
+  flex-direction: column;
+}
+
+.charts-css.bar.reverse tbody {
+  flex-direction: column-reverse;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar.row-spacing tbody tr {
+  padding-block-start: 4px;
+  padding-block-end: 4px;
+}
+
+.charts-css.bar:not(.hide-main-axis):not(.end-labels) tbody tr {
+  border-inline-start: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
+}
+
+.charts-css.bar:not(.hide-main-axis).end-labels tbody tr {
+  border-inline-end: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
+}
+
+.charts-css.bar.show-x-axes tbody tr {
+  border-block-end: var(--axis-width) var(--axis-style) var(--axis-color);
+}
+
+.charts-css.bar.show-x-axes:not(.reverse) tbody tr:first-of-type {
+  border-block-start: var(--axis-width) var(--axis-style) var(--axis-color);
+}
+
+.charts-css.bar.show-x-axes.reverse tbody tr:last-of-type {
+  border-block-start: var(--axis-width) var(--axis-style) var(--axis-color);
+}
+
+.charts-css.bar.show-1-y-axes tbody tr {
+  background-size: 100% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-2-y-axes tbody tr {
+  background-size: 50% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-3-y-axes tbody tr {
+  background-size: 33.333333% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-4-y-axes tbody tr {
+  background-size: 25% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-5-y-axes tbody tr {
+  background-size: 20% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-6-y-axes tbody tr {
+  background-size: 16.666667% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-7-y-axes tbody tr {
+  background-size: 14.285714% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-8-y-axes tbody tr {
+  background-size: 12.5% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-9-y-axes tbody tr {
+  background-size: 11.111111% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-10-y-axes tbody tr {
+  background-size: 10% 100%;
+  background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.hover tr:hover {
+  background-color: var(--tr-hover-color, rgba(0, 0, 0, 0.05));
+}
+
+.charts-css.bar.hover td:hover {
+  opacity: .75;
+}
+
+.charts-css.column {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.charts-css.column caption,
+.charts-css.column colgroup,
+.charts-css.column thead,
+.charts-css.column tfoot {
+  display: none;
+}
+
+.charts-css.column tbody {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.charts-css.column tbody tr {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.charts-css.column tbody tr td {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.charts-css.column tbody tr th {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.charts-css.column:not(.top-labels) tbody tr {
+  align-items: flex-end;
+  flex-basis: var(--column-labels-size);
+  margin-block-end: var(--column-labels-size);
+}
+
+.charts-css.column:not(.top-labels) tbody tr th {
+  bottom: calc( -1 * var( --column-labels-size ));
+}
+
+.charts-css.column.top-labels tbody tr {
+  align-items: flex-start;
+  flex-basis: var(--column-labels-size);
+  margin-block-start: var(--column-labels-size);
+}
+
+.charts-css.column.top-labels tbody tr th {
+  top: calc( -1 * var( --column-labels-size ));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(1) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(11) td {
+  background-color: var(--color, var(--color-1));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(2) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(12) td {
+  background-color: var(--color, var(--color-2));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(3) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(13) td {
+  background-color: var(--color, var(--color-3));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(4) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(14) td {
+  background-color: var(--color, var(--color-4));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(5) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(15) td {
+  background-color: var(--color, var(--color-5));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(6) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(16) td {
+  background-color: var(--color, var(--color-6));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(7) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(17) td {
+  background-color: var(--color, var(--color-7));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(8) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(18) td {
+  background-color: var(--color, var(--color-8));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(9) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(19) td {
+  background-color: var(--color, var(--color-9));
+}
+
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(10) td,
+.charts-css.column:not(.multiple) tbody tr:nth-of-type(20) td {
+  background-color: var(--color, var(--color-10));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(1),
+.charts-css.column.multiple tbody tr td:nth-of-type(11) {
+  background-color: var(--color, var(--color-1));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(2),
+.charts-css.column.multiple tbody tr td:nth-of-type(12) {
+  background-color: var(--color, var(--color-2));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(3),
+.charts-css.column.multiple tbody tr td:nth-of-type(13) {
+  background-color: var(--color, var(--color-3));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(4),
+.charts-css.column.multiple tbody tr td:nth-of-type(14) {
+  background-color: var(--color, var(--color-4));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(5),
+.charts-css.column.multiple tbody tr td:nth-of-type(15) {
+  background-color: var(--color, var(--color-5));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(6),
+.charts-css.column.multiple tbody tr td:nth-of-type(16) {
+  background-color: var(--color, var(--color-6));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(7),
+.charts-css.column.multiple tbody tr td:nth-of-type(17) {
+  background-color: var(--color, var(--color-7));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(8),
+.charts-css.column.multiple tbody tr td:nth-of-type(18) {
+  background-color: var(--color, var(--color-8));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(9),
+.charts-css.column.multiple tbody tr td:nth-of-type(19) {
+  background-color: var(--color, var(--color-9));
+}
+
+.charts-css.column.multiple tbody tr td:nth-of-type(10),
+.charts-css.column.multiple tbody tr td:nth-of-type(20) {
+  background-color: var(--color, var(--color-10));
+}
+
+.charts-css.column:not(.reverse) tbody {
+  flex-direction: row;
+}
+
+.charts-css.column.reverse tbody {
+  flex-direction: row-reverse;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column.row-spacing tbody tr {
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+}
+
+.charts-css.column:not(.hide-main-axis):not(.top-labels) tbody tr {
+  border-block-end: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
+}
+
+.charts-css.column:not(.hide-main-axis).top-labels tbody tr {
+  border-block-start: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
+}
+
+.charts-css.column.show-y-axes tbody tr {
+  border-inline-end: var(--axis-width) var(--axis-style) var(--axis-color);
+}
+
+.charts-css.column.show-y-axes:not(.reverse) tbody tr:first-of-type {
+  border-inline-start: var(--axis-width) var(--axis-style) var(--axis-color);
+}
+
+.charts-css.column.show-y-axes.reverse tbody tr:last-of-type {
+  border-inline-start: var(--axis-width) var(--axis-style) var(--axis-color);
+}
+
+.charts-css.column.show-1-x-axes tbody {
+  background-size: 100% 100%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-2-x-axes tbody {
+  background-size: 100% 50%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-3-x-axes tbody {
+  background-size: 100% 33.333333%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-4-x-axes tbody {
+  background-size: 100% 25%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-5-x-axes tbody {
+  background-size: 100% 20%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-6-x-axes tbody {
+  background-size: 100% 16.666667%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-7-x-axes tbody {
+  background-size: 100% 14.285714%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-8-x-axes tbody {
+  background-size: 100% 12.5%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-9-x-axes tbody {
+  background-size: 100% 11.111111%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-10-x-axes tbody {
+  background-size: 100% 10%;
+  background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.hover tr:hover {
+  background-color: var(--tr-hover-color, rgba(0, 0, 0, 0.05));
+}
+
+.charts-css.column.hover td:hover {
+  opacity: .75;
+}
+
+.charts-css.line {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.charts-css.bubble {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.charts-css.pie {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 0;
+  padding-block-end: 100%;
+  border-radius: 50%;
+  background-color: var(--chart-bg-color);
+}
+
+.charts-css.pie:not(:empty) {
+  --accumulated-1: var( --percent-1, 0% );
+  --accumulated-2: calc( var( --accumulated-1, 0% ) + var( --percent-2, 0% ) );
+  --accumulated-3: calc( var( --accumulated-2, 0% ) + var( --percent-3, 0% ) );
+  --accumulated-4: calc( var( --accumulated-3, 0% ) + var( --percent-4, 0% ) );
+  --accumulated-5: calc( var( --accumulated-4, 0% ) + var( --percent-5, 0% ) );
+  --accumulated-6: calc( var( --accumulated-5, 0% ) + var( --percent-6, 0% ) );
+  --accumulated-7: calc( var( --accumulated-6, 0% ) + var( --percent-7, 0% ) );
+  --accumulated-8: calc( var( --accumulated-7, 0% ) + var( --percent-8, 0% ) );
+  --accumulated-9: calc( var( --accumulated-8, 0% ) + var( --percent-9, 0% ) );
+  background-image: conic-gradient(var(--color-1, transparent) 0 var(--accumulated-1, 100%), var(--color-2, transparent) 0 var(--accumulated-2, 100%), var(--color-3, transparent) 0 var(--accumulated-3, 100%), var(--color-4, transparent) 0 var(--accumulated-4, 100%), var(--color-5, transparent) 0 var(--accumulated-5, 100%), var(--color-6, transparent) 0 var(--accumulated-6, 100%), var(--color-7, transparent) 0 var(--accumulated-7, 100%), var(--color-8, transparent) 0 var(--accumulated-8, 100%), var(--color-9, transparent) 0 var(--accumulated-9, 100%));
+}
+
+.charts-css.pie:not(:empty) > * {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/*
+.pie {
+  position: relative;
+  overflow: hidden;
+}
+.pie-slice {
+  --x: calc( var( --over50, 0 ) * -100% );
+  --y: calc( ( 1 + var( --over50, 0 ) ) * 100% );
+  --degrees: calc( ( var( --offset, 0 ) / 100 ) * 360 );
+  clip-path: polygon(
+    var( --x ) var( --x ),
+    var( --y ) var( --x ),
+    var( --y ) var( --y ),
+    var( --x ) var( --y )
+  );
+  -webkit-clip-path: polygon(
+    var( --x ) var( --x ),
+    var( --y ) var( --x ),
+    var( --y ) var( --y ),
+    var( --x ) var( --y )
+  );
+  height: 100%;
+  position: absolute;
+  transform: translate(0, -50%) rotate(90deg) rotate( calc( var( --degrees ) * 1deg ) );
+  transform-origin: 50% 100%;
+  width: 100%;
+  z-index: calc( 1 + var( --over50 ) );
+}
+
+.pie-slice::after,
+.pie-slice::before {
+  background: var( --chart-bg-color, #e74c3c );
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.pie-slice::before {
+  --degrees: calc( ( var( --value, 45 ) / 100 ) * 360 );
+  transform: translate(0, 100%) rotate( calc( var( --degrees ) * 1deg ) );
+  transform-origin: 50% 0%;
+}
+
+.pie-slice::after {
+  opacity: var( --over50, 0 );
+}
+*/
+.charts-css.donut {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 0;
+  padding-block-end: 100%;
+  border-radius: 50%;
+  background-color: var(--chart-bg-color);
+}
+
+.charts-css.donut:not(:empty) {
+  --accumulated-1: var( --percent-1, 0% );
+  --accumulated-2: calc( var( --accumulated-1, 0% ) + var( --percent-2, 0% ) );
+  --accumulated-3: calc( var( --accumulated-2, 0% ) + var( --percent-3, 0% ) );
+  --accumulated-4: calc( var( --accumulated-3, 0% ) + var( --percent-4, 0% ) );
+  --accumulated-5: calc( var( --accumulated-4, 0% ) + var( --percent-5, 0% ) );
+  --accumulated-6: calc( var( --accumulated-5, 0% ) + var( --percent-6, 0% ) );
+  --accumulated-7: calc( var( --accumulated-6, 0% ) + var( --percent-7, 0% ) );
+  --accumulated-8: calc( var( --accumulated-7, 0% ) + var( --percent-8, 0% ) );
+  --accumulated-9: calc( var( --accumulated-8, 0% ) + var( --percent-9, 0% ) );
+  background-image: conic-gradient(var(--color-1, transparent) 0 var(--accumulated-1, 100%), var(--color-2, transparent) 0 var(--accumulated-2, 100%), var(--color-3, transparent) 0 var(--accumulated-3, 100%), var(--color-4, transparent) 0 var(--accumulated-4, 100%), var(--color-5, transparent) 0 var(--accumulated-5, 100%), var(--color-6, transparent) 0 var(--accumulated-6, 100%), var(--color-7, transparent) 0 var(--accumulated-7, 100%), var(--color-8, transparent) 0 var(--accumulated-8, 100%), var(--color-9, transparent) 0 var(--accumulated-9, 100%));
+}
+
+.charts-css.donut:not(:empty) > * {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.charts-css.donut::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--donut-inner-size, 50%);
+  height: var(--donut-inner-size, 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--donut-inner-color, #fff);
+}
+
+.charts-css.radar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 0;
+  padding-block-end: 100%;
+  background-color: var(--chart-bg-color);
+}
+
+.charts-css.polar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 0;
+  padding-block-end: 100%;
+  border-radius: 50%;
+  background-color: var(--chart-bg-color);
+  --size: 17.585%;
+  background: repeating-radial-gradient(circle at center, var(--charts-axes-color), var(--charts-axes-color) 1px, transparent 1px, transparent var(--size)), linear-gradient(transparent calc( 50% - 1px), var(--charts-axes-color) calc( 50% - 1px), var(--charts-axes-color) calc( 50% + 1px), transparent calc( 50% + 1px)), linear-gradient(90deg, transparent calc( 50% - 1px), var(--charts-axes-color) calc( 50% - 1px), var(--charts-axes-color) calc( 50% + 1px), transparent calc( 50% + 1px));
+}
+
+.charts-css.polar:not(:empty) > * {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.charts-css.gauge {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
 /*# sourceMappingURL=charts.css.map */

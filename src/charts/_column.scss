@@ -1,0 +1,202 @@
+.charts-css {
+  &.column {
+    // Reset
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    // Shape
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    caption,
+    colgroup,
+    thead,
+    tfoot {
+      display: none;
+    }
+
+    // Layout
+    tbody {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+      width: 100%;
+      height: 100%;
+
+      tr {
+        position: relative;
+
+        // Even row size
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+
+        // Display cells in a row
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+
+        padding: 0;
+        margin: 0;
+
+        text-align: center;
+
+        td {
+          // Even cell size
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+
+          width: 100%;
+          height: 100%;
+
+          padding: 0;
+          margin: 0;
+        }
+
+        th {
+          // display: block;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          padding: 0;
+          margin: 0;
+
+          position: absolute;
+          right: 0;
+          left: 0;
+        }
+
+      }
+    }
+
+    // Labels Position
+    &:not(.top-labels) {
+      tbody {
+        tr {
+          align-items: flex-end;
+          flex-basis: var( --column-labels-size );
+          margin-block-end: var( --column-labels-size );
+
+          th {
+            bottom: calc( -1 * var( --column-labels-size ) );
+            // line-height: var( --column-labels-size );
+          }
+        }
+      }
+    }
+    &.top-labels {
+      tbody {
+        tr {
+          align-items: flex-start;
+          flex-basis: var( --column-labels-size );
+          margin-block-start: var( --column-labels-size );
+
+          th {
+            top: calc( -1 * var( --column-labels-size ) );
+            // line-height: var( --column-labels-size );
+          }
+        }
+      }
+    }
+
+    // Colors
+    &:not(.multiple) {
+      @for $i from 1 through $max-items {
+        tbody tr:nth-of-type( #{ $i } ) td,
+        tbody tr:nth-of-type( #{ $i + $max-items } ) td {
+          background-color: var( --color, var( --color-#{ $i }));
+        }
+      }
+    }
+    &.multiple {
+      @for $i from 1 through $max-items {
+        tbody tr td:nth-of-type( #{ $i } ),
+        tbody tr td:nth-of-type( #{ $i + $max-items } ) {
+          background-color: var( --color, var( --color-#{ $i }));
+        }
+      }
+    }
+
+    // Reverse Order
+    &:not(.reverse) {
+      tbody {
+        flex-direction: row;
+      }
+    }
+    &.reverse {
+      tbody {
+        flex-direction: row-reverse;
+      }
+    }
+
+    // Row Spacing
+    @for $i from 1 through 10 {
+      &.row-spacing {
+        tbody tr {
+          padding-inline-start: 4px;
+          padding-inline-end: 4px;
+        }
+      }
+    }
+
+    // Axes
+    &:not(.hide-main-axis) {
+      &:not(.top-labels) {
+        tbody tr {
+          border-block-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+        }
+      }
+      &.top-labels {
+        tbody tr {
+          border-block-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+        }
+      }
+    }
+    &.show-y-axes {
+      tbody tr {
+        border-inline-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
+      }
+      &:not(.reverse) {
+        tbody tr:first-of-type {
+          border-inline-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+      &.reverse {
+        tbody tr:last-of-type {
+          border-inline-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+    }
+    @for $i from 1 through 10 {
+      &.show-#{$i}-x-axes {
+        tbody {
+          background-size: 100% ( 100% / $i );
+          background-image: linear-gradient(
+            var( --axis-color ) var( --axis-width ),
+            transparent var( --axis-width )
+          );
+
+          // tr {
+          //   border-block-start-color: transparent;
+          // }
+        }
+      }
+    }
+
+    // Hover
+    &.hover {
+      tr:hover {
+        background-color: var( --tr-hover-color, rgba(0, 0, 0, 0.05) );
+      }
+      td:hover {
+        opacity: .75;
+      }
+    }
+
+  }
+}

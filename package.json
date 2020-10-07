@@ -1,6 +1,6 @@
 {
   "name": "charts.css",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Open source data visualization framework using pure CSS.",
   "author": "Rami Yushuvaev",
   "homepage": "https://ChartsCSS.com/",
@@ -14,7 +14,7 @@
     "scss",
     "ui-component"
   ],
-  "main": "dist/charts.css",
+  "main": "dist/charts.min.css",
   "files": [
     "dist/charts.css",
     "dist/charts.css.map",

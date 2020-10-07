@@ -1,0 +1,95 @@
+.charts-css {
+  &.pie {
+    // Reset
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    // Shape (circle)
+    width: 100%;
+    height: 0;
+    padding-block-end: 100%; // makes height 100% of the width
+    border-radius: 50%;
+
+    // Background
+    background-color: var( --chart-bg-color );
+
+    // Data colors
+    &:not(:empty) {
+      --accumulated-1: var( --percent-1, 0% );
+      --accumulated-2: calc( var( --accumulated-1, 0% ) + var( --percent-2, 0% ) );
+      --accumulated-3: calc( var( --accumulated-2, 0% ) + var( --percent-3, 0% ) );
+      --accumulated-4: calc( var( --accumulated-3, 0% ) + var( --percent-4, 0% ) );
+      --accumulated-5: calc( var( --accumulated-4, 0% ) + var( --percent-5, 0% ) );
+      --accumulated-6: calc( var( --accumulated-5, 0% ) + var( --percent-6, 0% ) );
+      --accumulated-7: calc( var( --accumulated-6, 0% ) + var( --percent-7, 0% ) );
+      --accumulated-8: calc( var( --accumulated-7, 0% ) + var( --percent-8, 0% ) );
+      --accumulated-9: calc( var( --accumulated-8, 0% ) + var( --percent-9, 0% ) );
+
+      background-image: conic-gradient(
+        var( --color-1, transparent ) 0 var( --accumulated-1, 100% ),
+        var( --color-2, transparent ) 0 var( --accumulated-2, 100% ),
+        var( --color-3, transparent ) 0 var( --accumulated-3, 100% ),
+        var( --color-4, transparent ) 0 var( --accumulated-4, 100% ),
+        var( --color-5, transparent ) 0 var( --accumulated-5, 100% ),
+        var( --color-6, transparent ) 0 var( --accumulated-6, 100% ),
+        var( --color-7, transparent ) 0 var( --accumulated-7, 100% ),
+        var( --color-8, transparent ) 0 var( --accumulated-8, 100% ),
+        var( --color-9, transparent ) 0 var( --accumulated-9, 100% )
+      );
+
+      > * {
+        @include hide;
+      }
+    }
+  }
+}
+
+/*
+.pie {
+  position: relative;
+  overflow: hidden;
+}
+.pie-slice {
+  --x: calc( var( --over50, 0 ) * -100% );
+  --y: calc( ( 1 + var( --over50, 0 ) ) * 100% );
+  --degrees: calc( ( var( --offset, 0 ) / 100 ) * 360 );
+  clip-path: polygon(
+    var( --x ) var( --x ),
+    var( --y ) var( --x ),
+    var( --y ) var( --y ),
+    var( --x ) var( --y )
+  );
+  -webkit-clip-path: polygon(
+    var( --x ) var( --x ),
+    var( --y ) var( --x ),
+    var( --y ) var( --y ),
+    var( --x ) var( --y )
+  );
+  height: 100%;
+  position: absolute;
+  transform: translate(0, -50%) rotate(90deg) rotate( calc( var( --degrees ) * 1deg ) );
+  transform-origin: 50% 100%;
+  width: 100%;
+  z-index: calc( 1 + var( --over50 ) );
+}
+
+.pie-slice::after,
+.pie-slice::before {
+  background: var( --chart-bg-color, #e74c3c );
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.pie-slice::before {
+  --degrees: calc( ( var( --value, 45 ) / 100 ) * 360 );
+  transform: translate(0, 100%) rotate( calc( var( --degrees ) * 1deg ) );
+  transform-origin: 50% 0%;
+}
+
+.pie-slice::after {
+  opacity: var( --over50, 0 );
+}
+*/
