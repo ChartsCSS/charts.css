@@ -1,5 +1,5 @@
 /*!
- * charts.css v0.2.0 (https://ChartsCSS.com/)
+ * charts.css v0.2.0 (https://ChartsCSS.org/)
  * Copyright 2020 Rami Yushuvaev
  * Licensed under MIT
  */
@@ -29,9 +29,10 @@
 }
 
 .charts-css {
-  position: relative;
   margin: 0;
   padding: 0;
+  border: 0;
+  position: relative;
 }
 
 .charts-css,
@@ -42,6 +43,25 @@
 ul.charts-css,
 ol.charts-css {
   list-style-type: none;
+  counter-reset: data;
+}
+
+ul.charts-css li,
+ol.charts-css li {
+  counter-increment: data;
+}
+
+table.charts-css tbody {
+  counter-reset: data;
+}
+
+table.charts-css tbody tr {
+  counter-increment: data;
+  counter-reset: dataset;
+}
+
+table.charts-css tbody tr td {
+  counter-increment: dataset;
 }
 
 .charts-css.legend {
@@ -164,10 +184,41 @@ ol.charts-css {
   border-radius: 2px;
 }
 
+.charts-css .tooltip {
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  padding: 5px 10px;
+  border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.charts-css .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.charts-css td:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 .charts-css.bar {
-  margin: 0;
-  padding: 0;
-  border: 0;
   display: block;
   width: 100%;
 }
@@ -207,6 +258,7 @@ ol.charts-css {
   height: 100%;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 .charts-css.bar tbody tr th {
@@ -486,11 +538,11 @@ ol.charts-css {
   padding-block-end: 4px;
 }
 
-.charts-css.bar:not(.hide-main-axis):not(.end-labels) tbody tr {
+.charts-css.bar.show-main-axis:not(.end-labels) tbody tr {
   border-inline-start: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
-.charts-css.bar:not(.hide-main-axis).end-labels tbody tr {
+.charts-css.bar.show-main-axis.end-labels tbody tr {
   border-inline-end: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
@@ -565,9 +617,6 @@ ol.charts-css {
 }
 
 .charts-css.column {
-  margin: 0;
-  padding: 0;
-  border: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -609,6 +658,7 @@ ol.charts-css {
   height: 100%;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 .charts-css.column tbody tr th {
@@ -800,11 +850,11 @@ ol.charts-css {
   padding-inline-end: 4px;
 }
 
-.charts-css.column:not(.hide-main-axis):not(.top-labels) tbody tr {
+.charts-css.column.show-main-axis:not(.top-labels) tbody tr {
   border-block-end: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
-.charts-css.column:not(.hide-main-axis).top-labels tbody tr {
+.charts-css.column.show-main-axis.top-labels tbody tr {
   border-block-start: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
@@ -878,22 +928,7 @@ ol.charts-css {
   opacity: .75;
 }
 
-.charts-css.line {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.charts-css.bubble {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 .charts-css.pie {
-  margin: 0;
-  padding: 0;
-  border: 0;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
@@ -974,9 +1009,6 @@ ol.charts-css {
 }
 */
 .charts-css.donut {
-  margin: 0;
-  padding: 0;
-  border: 0;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
@@ -1024,9 +1056,6 @@ ol.charts-css {
 }
 
 .charts-css.radar {
-  margin: 0;
-  padding: 0;
-  border: 0;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
@@ -1034,9 +1063,6 @@ ol.charts-css {
 }
 
 .charts-css.polar {
-  margin: 0;
-  padding: 0;
-  border: 0;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
@@ -1055,12 +1081,6 @@ ol.charts-css {
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-}
-
-.charts-css.gauge {
-  margin: 0;
-  padding: 0;
-  border: 0;
 }
 
 /*# sourceMappingURL=charts.css.map */

@@ -18,7 +18,7 @@ yarn add charts.css
 
 ## Getting started
 
-Check the full documentation on the [website](https://ChartsCSS.com/).
+Check the full documentation on [ChartsCSS.org](https://ChartsCSS.org/).
 
 ## License
 
