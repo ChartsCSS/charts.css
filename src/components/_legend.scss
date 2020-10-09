@@ -1,4 +1,5 @@
 .charts-css {
+
   &.legend {
     margin: 0;
     padding: 1rem;
@@ -38,7 +39,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
   }
-  // Horizontal Legend
   &.legend-inline {
     display: flex;
     flex-direction: row;

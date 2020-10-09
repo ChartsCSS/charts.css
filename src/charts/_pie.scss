@@ -1,4 +1,5 @@
 .charts-css {
+
   &.pie {
     // Shape (circle)
     width: 100%;
@@ -37,7 +38,9 @@
         @include hide;
       }
     }
+
   }
+
 }
 
 /*
