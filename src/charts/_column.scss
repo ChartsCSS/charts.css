@@ -142,7 +142,7 @@
     }
 
     // Axes
-    &:not(.hide-main-axis) {
+    &.show-main-axis {
       &:not(.top-labels) {
         tbody tr {
           border-block-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );

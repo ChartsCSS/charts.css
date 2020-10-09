@@ -153,7 +153,7 @@
     }
 
     // Axes
-    &:not(.hide-main-axis) {
+    &.show-main-axis {
       &:not(.end-labels) {
         tbody tr {
           border-inline-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
