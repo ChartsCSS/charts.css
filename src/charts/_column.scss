@@ -56,9 +56,8 @@
         }
 
         th {
-          // display: block;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
 
           padding: 0;
@@ -77,12 +76,11 @@
       tbody {
         tr {
           align-items: flex-end;
-          flex-basis: var( --column-labels-size );
           margin-block-end: var( --column-labels-size );
 
           th {
             bottom: calc( -1 * var( --column-labels-size ) );
-            // line-height: var( --column-labels-size );
+            height: var( --column-labels-size );
           }
         }
       }
@@ -91,12 +89,11 @@
       tbody {
         tr {
           align-items: flex-start;
-          flex-basis: var( --column-labels-size );
           margin-block-start: var( --column-labels-size );
 
           th {
             top: calc( -1 * var( --column-labels-size ) );
-            // line-height: var( --column-labels-size );
+            height: var( --column-labels-size );
           }
         }
       }

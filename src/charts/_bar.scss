@@ -54,8 +54,9 @@
 
         th {
           display: flex;
-          justify-content: center;
-          align-items: space-between;
+          justify-content: start;
+          align-items: center;
+
           padding: 0;
           margin: 0;
 
@@ -72,16 +73,15 @@
       tbody {
         tr {
           align-items: flex-start;
-          flex-basis: var( --bar-labels-size );
           margin-inline-start: var( --bar-labels-size );
 
           th {
             left: calc( -1 * var( --bar-labels-size ) );
+            width: var( --bar-labels-size );
           }
 
           td {
             text-align: end;
-            // line-height: 1.5;
           }
         }
       }
@@ -90,16 +90,15 @@
       tbody {
         tr {
           align-items: flex-end;
-          flex-basis: var( --bar-labels-size );
           margin-inline-end: var( --bar-labels-size );
 
           th {
             right: calc( -1 * var( --bar-labels-size ) );
+            width: var( --bar-labels-size );
           }
 
           td {
             text-align: start;
-            // line-height: 1.5;
           }
         }
       }

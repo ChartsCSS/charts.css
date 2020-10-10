@@ -22,7 +22,7 @@
   --axis-style: solid;
   --axis-width: 1px;
   --legend-border-color: lightgrey;
-  --bar-labels-size: 30%;
+  --bar-labels-size: 80px;
   --column-labels-size: 1.5rem;
   --donut-inner-color: white;
   --donut-inner-size: 50%;
@@ -263,8 +263,8 @@ table.charts-css tbody tr td {
 
 .charts-css.bar tbody tr th {
   display: flex;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: start;
+  align-items: center;
   padding: 0;
   margin: 0;
   position: absolute;
@@ -274,12 +274,12 @@ table.charts-css tbody tr td {
 
 .charts-css.bar:not(.end-labels) tbody tr {
   align-items: flex-start;
-  flex-basis: var(--bar-labels-size);
   margin-inline-start: var(--bar-labels-size);
 }
 
 .charts-css.bar:not(.end-labels) tbody tr th {
   left: calc( -1 * var( --bar-labels-size ));
+  width: var(--bar-labels-size);
 }
 
 .charts-css.bar:not(.end-labels) tbody tr td {
@@ -288,12 +288,12 @@ table.charts-css tbody tr td {
 
 .charts-css.bar.end-labels tbody tr {
   align-items: flex-end;
-  flex-basis: var(--bar-labels-size);
   margin-inline-end: var(--bar-labels-size);
 }
 
 .charts-css.bar.end-labels tbody tr th {
   right: calc( -1 * var( --bar-labels-size ));
+  width: var(--bar-labels-size);
 }
 
 .charts-css.bar.end-labels tbody tr td {
@@ -663,7 +663,7 @@ table.charts-css tbody tr td {
 
 .charts-css.column tbody tr th {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -674,22 +674,22 @@ table.charts-css tbody tr td {
 
 .charts-css.column:not(.top-labels) tbody tr {
   align-items: flex-end;
-  flex-basis: var(--column-labels-size);
   margin-block-end: var(--column-labels-size);
 }
 
 .charts-css.column:not(.top-labels) tbody tr th {
   bottom: calc( -1 * var( --column-labels-size ));
+  height: var(--column-labels-size);
 }
 
 .charts-css.column.top-labels tbody tr {
   align-items: flex-start;
-  flex-basis: var(--column-labels-size);
   margin-block-start: var(--column-labels-size);
 }
 
 .charts-css.column.top-labels tbody tr th {
   top: calc( -1 * var( --column-labels-size ));
+  height: var(--column-labels-size);
 }
 
 .charts-css.column:not(.multiple) tbody tr:nth-of-type(1) td,
