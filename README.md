@@ -2,6 +2,8 @@
 
 **Charts.css** is an MIT-licensed open source CSS framework for data visualization.
 
+Visualization help end-users to understand data. **Charts.css** help frontend developers to turn data into beautiful charts and graphs using simple CSS classes.
+
 ## Documentation
 
 Check the full documentation on [ChartsCSS.org](https://ChartsCSS.org/).
