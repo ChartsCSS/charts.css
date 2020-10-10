@@ -26,6 +26,17 @@ ol.charts-css {
 }
 
 table.charts-css {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: initial;
+
+  th,
+  td {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
   // Counter
   tbody {
     counter-reset: data;
