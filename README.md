@@ -1,22 +1,8 @@
 # Charts.css
 
-Open source data visualization framework using pure CSS.
+**Charts.css** is an MIT-licensed open source CSS framework for data visualization.
 
-## Installation
-
-Install with npm:
-
-```shell
-npm install charts.css
-```
-
-Install with yarn:
-
-```shell
-yarn add charts.css
-```
-
-## Getting started
+## Documentation
 
 Check the full documentation on [ChartsCSS.org](https://ChartsCSS.org/).
 
