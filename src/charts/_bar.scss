@@ -43,7 +43,7 @@
           flex-shrink: 1;
           flex-basis: 0;
 
-          width: 100%;
+          width: calc( 100% * var( --size, 1 ) );
           height: 100%;
 
           padding: 0;
