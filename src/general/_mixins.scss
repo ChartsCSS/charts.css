@@ -8,3 +8,20 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
+
+@mixin circle {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-block-end: 100%; // makes height 100% of the width
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+@mixin rectangle {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-block-end: 50%; // makes height 50% of the width
+  aspect-ratio: 2 / 1;
+}
