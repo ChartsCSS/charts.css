@@ -152,11 +152,11 @@
     }
 
     // Row Spacing
-    @for $i from 1 through 10 {
-      &.row-spacing {
+    @for $i from 1 through 20 {
+      &.row-spacing-#{$i} {
         tbody tr {
-          padding-block-start: 4px;
-          padding-block-end: 4px;
+          padding-block-start: #{$i}px;
+          padding-block-end: #{$i}px;
         }
       }
     }

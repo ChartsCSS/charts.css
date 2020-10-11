@@ -127,7 +127,6 @@
         flex-direction: row-reverse;
       }
     }
-
     &:not(.reverse-datasets) {
       tbody tr {
         flex-direction: row;
@@ -140,11 +139,11 @@
     }
 
     // Row Spacing
-    @for $i from 1 through 10 {
-      &.row-spacing {
+    @for $i from 1 through 20 {
+      &.row-spacing-#{$i} {
         tbody tr {
-          padding-inline-start: 4px;
-          padding-inline-end: 4px;
+          padding-inline-start: #{$i}px;
+          padding-inline-end: #{$i}px;
         }
       }
     }
