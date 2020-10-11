@@ -9,7 +9,9 @@
 }
 
 .charts-css,
-.charts-css * {
+.charts-css *,
+.charts-css ::after,
+.charts-css ::before {
   box-sizing: border-box;
 }
 
