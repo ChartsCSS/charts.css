@@ -33,7 +33,6 @@
         // Display cells in a row
         display: flex;
         justify-content: space-around;
-        flex-direction: row;
 
         padding: 0;
         margin: 0;
@@ -125,6 +124,17 @@
     }
     &.reverse {
       tbody {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &:not(.reverse-datasets) {
+      tbody tr {
+        flex-direction: row;
+      }
+    }
+    &.reverse-datasets {
+      tbody tr {
         flex-direction: row-reverse;
       }
     }

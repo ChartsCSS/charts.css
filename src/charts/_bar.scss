@@ -32,7 +32,6 @@
         // Display cells in a column
         display: flex;
         justify-content: space-around;
-        flex-direction: column;
 
         padding: 0;
         margin: 0;
@@ -138,6 +137,16 @@
     }
     &.reverse {
       tbody {
+        flex-direction: column-reverse;
+      }
+    }
+    &:not(.reverse-datasets) {
+      tbody tr {
+        flex-direction: column;
+      }
+    }
+    &.reverse-datasets {
+      tbody tr {
         flex-direction: column-reverse;
       }
     }
