@@ -72,7 +72,7 @@
     }
 
     // Labels Position
-    &:not(.top-labels) {
+    &:not(.labels-before) {
       tbody {
         tr {
           align-items: flex-end;
@@ -85,7 +85,7 @@
         }
       }
     }
-    &.top-labels {
+    &.labels-before {
       tbody {
         tr {
           align-items: flex-start;
@@ -141,12 +141,12 @@
 
     // Axes
     &.show-main-axis {
-      &:not(.top-labels) {
+      &:not(.labels-before) {
         tbody tr {
           border-block-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
         }
       }
-      &.top-labels {
+      &.labels-before {
         tbody tr {
           border-block-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
         }
