@@ -98,24 +98,6 @@
       }
     }
 
-    // Colors
-    &:not(.multiple) {
-      @for $i from 1 through $max-items {
-        tbody tr:nth-of-type( #{ $i } ) td,
-        tbody tr:nth-of-type( #{ $i + $max-items } ) td {
-          background-color: var( --color, var( --color-#{ $i }));
-        }
-      }
-    }
-    &.multiple {
-      @for $i from 1 through $max-items {
-        tbody tr td:nth-of-type( #{ $i } ),
-        tbody tr td:nth-of-type( #{ $i + $max-items } ) {
-          background-color: var( --color, var( --color-#{ $i }));
-        }
-      }
-    }
-
     // Reverse Order
     &:not(.reverse) {
       tbody {

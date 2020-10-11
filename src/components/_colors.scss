@@ -1,0 +1,28 @@
+.charts-css {
+
+  @for $i from 1 through $max-items {
+    &.multiple tbody tr td:nth-of-type( #{ $i } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 10 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 20 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 30 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 40 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 50 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 60 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 70 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 80 } ),
+    &.multiple tbody tr td:nth-of-type( #{ $i + 90 } ),
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 10 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 20 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 30 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 40 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 50 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 60 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 70 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 80 } ) td,
+    &:not(.multiple) tbody tr:nth-of-type( #{ $i + 90 } ) td {
+      background-color: var( --color, var( --color-#{ $i }));
+    }
+  }
+
+}
