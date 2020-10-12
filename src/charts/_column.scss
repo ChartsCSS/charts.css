@@ -40,11 +40,6 @@
         text-align: center;
 
         td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
-
           width: 100%;
           height: calc( 100% * var( --size, 1 ) );
 
@@ -94,6 +89,32 @@
             top: calc( -1 * var( --column-labels-size ) );
             height: var( --column-labels-size );
           }
+        }
+      }
+    }
+
+    // Stacked
+    &:not(.stacked) {
+      tbody tr {
+
+        td {
+          // Even cell size
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+        }
+      }
+    }
+    &.stacked {
+      tbody tr {
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: flex-start;
+
+        td {
+          flex-grow: unset;
+          flex-shrink: unset;
+          flex-basis: unset;
         }
       }
     }

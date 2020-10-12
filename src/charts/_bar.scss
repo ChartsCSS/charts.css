@@ -37,11 +37,6 @@
         margin: 0;
 
         td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
-
           width: calc( 100% * var( --size, 1 ) );
           height: 100%;
 
@@ -99,6 +94,32 @@
           td {
             text-align: start;
           }
+        }
+      }
+    }
+
+    // Stacked
+    &:not(.stacked) {
+      tbody tr {
+
+        td {
+          // Even cell size
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
+        }
+      }
+    }
+    &.multiple.stacked {
+      tbody tr {
+        flex-direction: row;
+        justify-content: start;
+        align-items: flex-start;
+
+        td {
+          flex-grow: unset;
+          flex-shrink: unset;
+          flex-basis: unset;
         }
       }
     }

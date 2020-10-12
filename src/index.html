@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChartsCSS.org</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="../dist/charts.min.css">
 
   <style>
@@ -343,6 +344,139 @@
 
     </div>
 
+    <div class="examples bar">
+
+      <div>
+        <h3>Stacked</h3>
+        <style>
+          #custom-stacked-bar-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css bar multiple stacked row-spacing-4" id="custom-stacked-bar-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Stacked Reverse</h3>
+        <style>
+          #custom-stacked-bar-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css bar multiple stacked row-spacing-4 reverse-datasets" id="custom-stacked-bar-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Stacked labels-after</h3>
+        <style>
+          #custom-stacked-labels-after-bar-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css bar multiple row-spacing-4 stacked labels-after" id="custom-stacked-labels-after-bar-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
     <h2>Column Chart</h2>
 
     <div class="examples column">
@@ -496,6 +630,105 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+    </div>
+
+    <div class="examples column">
+
+      <div>
+        <h3>Stacked</h3>
+        <style>
+          #custom-stacked-column-chart {
+            height: 300px;
+            }
+          #custom-stacked-column-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css column multiple stacked row-spacing-4" id="custom-stacked-column-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Stacked Reverse</h3>
+        <style>
+          #custom-stacked-column-chart {
+            height: 300px;
+            }
+          #custom-stacked-column-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css column multiple stacked row-spacing-4 reverse-datasets" id="custom-stacked-column-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
       </div>
 
     </div>
