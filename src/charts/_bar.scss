@@ -125,12 +125,12 @@
     }
 
     // Reverse Order
-    &:not(.reverse) {
+    &:not(.reverse-data) {
       tbody {
         flex-direction: column;
       }
     }
-    &.reverse {
+    &.reverse-data {
       tbody {
         flex-direction: column-reverse;
       }
