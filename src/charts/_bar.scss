@@ -165,7 +165,7 @@
     }
 
     // Axes
-    &.show-main-axis {
+    &.show-primary-axis {
       &:not(.labels-after) {
         tbody tr {
           border-inline-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
@@ -177,23 +177,8 @@
         }
       }
     }
-    &.show-x-axes {
-      tbody tr {
-        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
-      }
-      &:not(.reverse) {
-        tbody tr:first-of-type {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
-        }
-      }
-      &.reverse {
-        tbody tr:last-of-type {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
-        }
-      }
-    }
     @for $i from 1 through $max-items {
-      &.show-#{$i}-y-axes {
+      &.show-#{$i}-secondary-axes {
         &:not(.labels-after) {
           tbody tr {
             background-size: ( 100% / $i ) 100%;
@@ -205,6 +190,36 @@
             background-size: ( 100% / $i ) 100%;
             background-image: linear-gradient( 90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
           }
+        }
+      }
+    }
+    &.show-data-axes {
+      tbody tr {
+        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type {
+          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type {
+          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+    }
+    &.show-dataset-axes { // TODO: fix this
+      tbody tr td {
+        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type td {
+          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type td {
+          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
         }
       }
     }
