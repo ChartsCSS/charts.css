@@ -146,10 +146,18 @@
       }
     }
 
-    // Row Spacing
+    // Spacing
     @for $i from 1 through 20 {
-      &.row-spacing-#{$i} {
+      &.data-spacing-#{$i} {
         tbody tr {
+          padding-block-start: #{$i}px;
+          padding-block-end: #{$i}px;
+        }
+      }
+    }
+    @for $i from 1 through 20 {
+      &.datasets-spacing-#{$i} {
+        tbody tr td {
           padding-block-start: #{$i}px;
           padding-block-end: #{$i}px;
         }
