@@ -186,14 +186,16 @@
     }
     @for $i from 1 through $max-items {
       &.show-#{$i}-y-axes {
-        tbody {
-          tr {
+        &:not(.labels-after) {
+          tbody tr {
             background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient(
-              90deg,
-              var( --axis-color ) var( --axis-width ),
-              transparent var( --axis-width )
-            );
+            background-image: linear-gradient( -90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+          }
+        }
+        &.labels-after {
+          tbody tr {
+            background-size: ( 100% / $i ) 100%;
+            background-image: linear-gradient( 90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
           }
         }
       }

@@ -179,18 +179,19 @@
         }
       }
     }
-    @for $i from 1 through 10 {
+    @for $i from 1 through $max-items {
       &.show-#{$i}-x-axes {
-        tbody {
-          background-size: 100% ( 100% / $i );
-          background-image: linear-gradient(
-            var( --axis-color ) var( --axis-width ),
-            transparent var( --axis-width )
-          );
-
-          // tr {
-          //   border-block-start-color: transparent;
-          // }
+        &:not(.labels-before) {
+          tbody tr {
+            background-size: 100% ( 100% / $i );
+            background-image: linear-gradient( var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+          }
+        }
+        &.labels-before {
+          tbody tr {
+            background-size: 100% ( 100% / $i );
+            background-image: linear-gradient( 0deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+          }
         }
       }
     }
