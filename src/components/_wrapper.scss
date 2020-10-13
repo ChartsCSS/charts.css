@@ -9,7 +9,9 @@
 }
 
 .charts-css,
-.charts-css * {
+.charts-css *,
+.charts-css ::after,
+.charts-css ::before {
   box-sizing: border-box;
 }
 
@@ -26,6 +28,24 @@ ol.charts-css {
 }
 
 table.charts-css {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  overflow: initial;
+  background-color: transparent;
+
+  tr {
+    background-color: transparent;
+    border: 0;
+  }
+
+  th,
+  td {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
   // Counter
   tbody {
     counter-reset: data;

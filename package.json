@@ -1,7 +1,7 @@
 {
   "name": "charts.css",
-  "version": "0.2.0",
-  "description": "Open source data visualization framework using pure CSS.",
+  "version": "0.3.0",
+  "description": "Open source CSS framework for data visualization.",
   "author": "Rami Yushuvaev",
   "homepage": "https://ChartsCSS.org/",
   "license": "MIT",
@@ -32,9 +32,6 @@
   },
   "bugs": {
     "url": "https://github.com/ChartsCSS/charts.css/issues"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",

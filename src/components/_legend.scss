@@ -58,6 +58,15 @@
     }
   }
 
+  // Ellipse Label
+  &.legend-ellipse {
+    li::before {
+      width: 2rem;
+      height: 1rem;
+      border-radius: 50%;
+    }
+  }
+
   // Square Label
   &.legend-square {
     li::before {
@@ -92,6 +101,7 @@
       width: 2rem;
       height: 3px;
       border-radius: 2px;
+      box-sizing: content-box;
     }
   }
 

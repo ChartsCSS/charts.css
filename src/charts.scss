@@ -1,10 +1,9 @@
-/*!
- * charts.css v0.2.0 (https://ChartsCSS.org/)
+/*
+ * Charts.css v0.3.0 (https://ChartsCSS.org/)
  * Copyright 2020 Rami Yushuvaev
  * Licensed under MIT
  */
 
-// Configuration
 // General
 @import "general/variables";
 @import "general/mixins";
@@ -13,6 +12,7 @@
 
 // Components
 @import "components/wrapper";
+@import "components/colors";
 @import "components/legend";
 @import "components/tooltips";
 
@@ -24,6 +24,5 @@
 
 @import "charts/pie";
 @import "charts/donut";
-@import "charts/radar";
 @import "charts/polar";
-@import "charts/gauge"; // with a dial
+@import "charts/radar";

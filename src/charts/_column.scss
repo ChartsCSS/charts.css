@@ -33,7 +33,6 @@
         // Display cells in a row
         display: flex;
         justify-content: space-around;
-        flex-direction: row;
 
         padding: 0;
         margin: 0;
@@ -41,13 +40,8 @@
         text-align: center;
 
         td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
-
           width: 100%;
-          height: 100%;
+          height: calc( 100% * var( --size, 1 ) );
 
           padding: 0;
           margin: 0;
@@ -72,7 +66,7 @@
     }
 
     // Labels Position
-    &:not(.top-labels) {
+    &:not(.labels-before) {
       tbody {
         tr {
           align-items: flex-end;
@@ -85,7 +79,7 @@
         }
       }
     }
-    &.top-labels {
+    &.labels-before {
       tbody {
         tr {
           align-items: flex-start;
@@ -99,20 +93,28 @@
       }
     }
 
-    // Colors
-    &:not(.multiple) {
-      @for $i from 1 through $max-items {
-        tbody tr:nth-of-type( #{ $i } ) td,
-        tbody tr:nth-of-type( #{ $i + $max-items } ) td {
-          background-color: var( --color, var( --color-#{ $i }));
+    // Stacked
+    &:not(.stacked) {
+      tbody tr {
+
+        td {
+          // Even cell size
+          flex-grow: 1;
+          flex-shrink: 1;
+          flex-basis: 0;
         }
       }
     }
-    &.multiple {
-      @for $i from 1 through $max-items {
-        tbody tr td:nth-of-type( #{ $i } ),
-        tbody tr td:nth-of-type( #{ $i + $max-items } ) {
-          background-color: var( --color, var( --color-#{ $i }));
+    &.stacked {
+      tbody tr {
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: flex-start;
+
+        td {
+          flex-grow: unset;
+          flex-shrink: unset;
+          flex-basis: unset;
         }
       }
     }
@@ -128,25 +130,35 @@
         flex-direction: row-reverse;
       }
     }
+    &:not(.reverse-datasets) {
+      tbody tr {
+        flex-direction: row;
+      }
+    }
+    &.reverse-datasets {
+      tbody tr {
+        flex-direction: row-reverse;
+      }
+    }
 
     // Row Spacing
-    @for $i from 1 through 10 {
-      &.row-spacing {
+    @for $i from 1 through 20 {
+      &.row-spacing-#{$i} {
         tbody tr {
-          padding-inline-start: 4px;
-          padding-inline-end: 4px;
+          padding-inline-start: #{$i}px;
+          padding-inline-end: #{$i}px;
         }
       }
     }
 
     // Axes
     &.show-main-axis {
-      &:not(.top-labels) {
+      &:not(.labels-before) {
         tbody tr {
           border-block-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
         }
       }
-      &.top-labels {
+      &.labels-before {
         tbody tr {
           border-block-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
         }
@@ -167,18 +179,19 @@
         }
       }
     }
-    @for $i from 1 through 10 {
+    @for $i from 1 through $max-items {
       &.show-#{$i}-x-axes {
-        tbody {
-          background-size: 100% ( 100% / $i );
-          background-image: linear-gradient(
-            var( --axis-color ) var( --axis-width ),
-            transparent var( --axis-width )
-          );
-
-          // tr {
-          //   border-block-start-color: transparent;
-          // }
+        &:not(.labels-before) {
+          tbody tr {
+            background-size: 100% ( 100% / $i );
+            background-image: linear-gradient( var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+          }
+        }
+        &.labels-before {
+          tbody tr {
+            background-size: 100% ( 100% / $i );
+            background-image: linear-gradient( 0deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+          }
         }
       }
     }

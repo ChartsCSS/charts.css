@@ -1,5 +1,5 @@
-/*!
- * charts.css v0.2.0 (https://ChartsCSS.org/)
+/*
+ * Charts.css v0.3.0 (https://ChartsCSS.org/)
  * Copyright 2020 Rami Yushuvaev
  * Licensed under MIT
  */
@@ -36,7 +36,9 @@
 }
 
 .charts-css,
-.charts-css * {
+.charts-css *,
+.charts-css ::after,
+.charts-css ::before {
   box-sizing: border-box;
 }
 
@@ -51,6 +53,26 @@ ol.charts-css li {
   counter-increment: data;
 }
 
+table.charts-css {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  overflow: initial;
+  background-color: transparent;
+}
+
+table.charts-css tr {
+  background-color: transparent;
+  border: 0;
+}
+
+table.charts-css th,
+table.charts-css td {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 table.charts-css tbody {
   counter-reset: data;
 }
@@ -62,6 +84,236 @@ table.charts-css tbody tr {
 
 table.charts-css tbody tr td {
   counter-increment: dataset;
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(1),
+.charts-css.multiple tbody tr td:nth-of-type(11),
+.charts-css.multiple tbody tr td:nth-of-type(21),
+.charts-css.multiple tbody tr td:nth-of-type(31),
+.charts-css.multiple tbody tr td:nth-of-type(41),
+.charts-css.multiple tbody tr td:nth-of-type(51),
+.charts-css.multiple tbody tr td:nth-of-type(61),
+.charts-css.multiple tbody tr td:nth-of-type(71),
+.charts-css.multiple tbody tr td:nth-of-type(81),
+.charts-css.multiple tbody tr td:nth-of-type(91),
+.charts-css:not(.multiple) tbody tr:nth-of-type(1) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(11) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(21) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(31) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(41) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(51) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(61) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(71) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(81) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(91) td {
+  background-color: var(--color, var(--color-1));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(2),
+.charts-css.multiple tbody tr td:nth-of-type(12),
+.charts-css.multiple tbody tr td:nth-of-type(22),
+.charts-css.multiple tbody tr td:nth-of-type(32),
+.charts-css.multiple tbody tr td:nth-of-type(42),
+.charts-css.multiple tbody tr td:nth-of-type(52),
+.charts-css.multiple tbody tr td:nth-of-type(62),
+.charts-css.multiple tbody tr td:nth-of-type(72),
+.charts-css.multiple tbody tr td:nth-of-type(82),
+.charts-css.multiple tbody tr td:nth-of-type(92),
+.charts-css:not(.multiple) tbody tr:nth-of-type(2) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(12) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(22) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(32) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(42) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(52) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(62) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(72) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(82) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(92) td {
+  background-color: var(--color, var(--color-2));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(3),
+.charts-css.multiple tbody tr td:nth-of-type(13),
+.charts-css.multiple tbody tr td:nth-of-type(23),
+.charts-css.multiple tbody tr td:nth-of-type(33),
+.charts-css.multiple tbody tr td:nth-of-type(43),
+.charts-css.multiple tbody tr td:nth-of-type(53),
+.charts-css.multiple tbody tr td:nth-of-type(63),
+.charts-css.multiple tbody tr td:nth-of-type(73),
+.charts-css.multiple tbody tr td:nth-of-type(83),
+.charts-css.multiple tbody tr td:nth-of-type(93),
+.charts-css:not(.multiple) tbody tr:nth-of-type(3) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(13) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(23) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(33) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(43) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(53) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(63) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(73) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(83) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(93) td {
+  background-color: var(--color, var(--color-3));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(4),
+.charts-css.multiple tbody tr td:nth-of-type(14),
+.charts-css.multiple tbody tr td:nth-of-type(24),
+.charts-css.multiple tbody tr td:nth-of-type(34),
+.charts-css.multiple tbody tr td:nth-of-type(44),
+.charts-css.multiple tbody tr td:nth-of-type(54),
+.charts-css.multiple tbody tr td:nth-of-type(64),
+.charts-css.multiple tbody tr td:nth-of-type(74),
+.charts-css.multiple tbody tr td:nth-of-type(84),
+.charts-css.multiple tbody tr td:nth-of-type(94),
+.charts-css:not(.multiple) tbody tr:nth-of-type(4) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(14) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(24) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(34) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(44) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(54) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(64) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(74) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(84) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(94) td {
+  background-color: var(--color, var(--color-4));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(5),
+.charts-css.multiple tbody tr td:nth-of-type(15),
+.charts-css.multiple tbody tr td:nth-of-type(25),
+.charts-css.multiple tbody tr td:nth-of-type(35),
+.charts-css.multiple tbody tr td:nth-of-type(45),
+.charts-css.multiple tbody tr td:nth-of-type(55),
+.charts-css.multiple tbody tr td:nth-of-type(65),
+.charts-css.multiple tbody tr td:nth-of-type(75),
+.charts-css.multiple tbody tr td:nth-of-type(85),
+.charts-css.multiple tbody tr td:nth-of-type(95),
+.charts-css:not(.multiple) tbody tr:nth-of-type(5) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(15) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(25) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(35) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(45) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(55) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(65) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(75) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(85) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(95) td {
+  background-color: var(--color, var(--color-5));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(6),
+.charts-css.multiple tbody tr td:nth-of-type(16),
+.charts-css.multiple tbody tr td:nth-of-type(26),
+.charts-css.multiple tbody tr td:nth-of-type(36),
+.charts-css.multiple tbody tr td:nth-of-type(46),
+.charts-css.multiple tbody tr td:nth-of-type(56),
+.charts-css.multiple tbody tr td:nth-of-type(66),
+.charts-css.multiple tbody tr td:nth-of-type(76),
+.charts-css.multiple tbody tr td:nth-of-type(86),
+.charts-css.multiple tbody tr td:nth-of-type(96),
+.charts-css:not(.multiple) tbody tr:nth-of-type(6) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(16) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(26) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(36) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(46) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(56) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(66) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(76) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(86) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(96) td {
+  background-color: var(--color, var(--color-6));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(7),
+.charts-css.multiple tbody tr td:nth-of-type(17),
+.charts-css.multiple tbody tr td:nth-of-type(27),
+.charts-css.multiple tbody tr td:nth-of-type(37),
+.charts-css.multiple tbody tr td:nth-of-type(47),
+.charts-css.multiple tbody tr td:nth-of-type(57),
+.charts-css.multiple tbody tr td:nth-of-type(67),
+.charts-css.multiple tbody tr td:nth-of-type(77),
+.charts-css.multiple tbody tr td:nth-of-type(87),
+.charts-css.multiple tbody tr td:nth-of-type(97),
+.charts-css:not(.multiple) tbody tr:nth-of-type(7) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(17) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(27) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(37) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(47) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(57) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(67) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(77) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(87) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(97) td {
+  background-color: var(--color, var(--color-7));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(8),
+.charts-css.multiple tbody tr td:nth-of-type(18),
+.charts-css.multiple tbody tr td:nth-of-type(28),
+.charts-css.multiple tbody tr td:nth-of-type(38),
+.charts-css.multiple tbody tr td:nth-of-type(48),
+.charts-css.multiple tbody tr td:nth-of-type(58),
+.charts-css.multiple tbody tr td:nth-of-type(68),
+.charts-css.multiple tbody tr td:nth-of-type(78),
+.charts-css.multiple tbody tr td:nth-of-type(88),
+.charts-css.multiple tbody tr td:nth-of-type(98),
+.charts-css:not(.multiple) tbody tr:nth-of-type(8) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(18) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(28) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(38) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(48) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(58) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(68) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(78) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(88) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(98) td {
+  background-color: var(--color, var(--color-8));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(9),
+.charts-css.multiple tbody tr td:nth-of-type(19),
+.charts-css.multiple tbody tr td:nth-of-type(29),
+.charts-css.multiple tbody tr td:nth-of-type(39),
+.charts-css.multiple tbody tr td:nth-of-type(49),
+.charts-css.multiple tbody tr td:nth-of-type(59),
+.charts-css.multiple tbody tr td:nth-of-type(69),
+.charts-css.multiple tbody tr td:nth-of-type(79),
+.charts-css.multiple tbody tr td:nth-of-type(89),
+.charts-css.multiple tbody tr td:nth-of-type(99),
+.charts-css:not(.multiple) tbody tr:nth-of-type(9) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(19) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(29) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(39) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(49) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(59) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(69) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(79) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(89) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(99) td {
+  background-color: var(--color, var(--color-9));
+}
+
+.charts-css.multiple tbody tr td:nth-of-type(10),
+.charts-css.multiple tbody tr td:nth-of-type(20),
+.charts-css.multiple tbody tr td:nth-of-type(30),
+.charts-css.multiple tbody tr td:nth-of-type(40),
+.charts-css.multiple tbody tr td:nth-of-type(50),
+.charts-css.multiple tbody tr td:nth-of-type(60),
+.charts-css.multiple tbody tr td:nth-of-type(70),
+.charts-css.multiple tbody tr td:nth-of-type(80),
+.charts-css.multiple tbody tr td:nth-of-type(90),
+.charts-css.multiple tbody tr td:nth-of-type(100),
+.charts-css:not(.multiple) tbody tr:nth-of-type(10) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(20) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(30) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(40) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(50) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(60) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(70) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(80) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(90) td,
+.charts-css:not(.multiple) tbody tr:nth-of-type(100) td {
+  background-color: var(--color, var(--color-10));
 }
 
 .charts-css.legend {
@@ -159,6 +411,12 @@ table.charts-css tbody tr td {
   border-radius: 50%;
 }
 
+.charts-css.legend-ellipse li::before {
+  width: 2rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
 .charts-css.legend-square li::before {
   width: 1rem;
   height: 1rem;
@@ -182,6 +440,7 @@ table.charts-css tbody tr td {
   width: 2rem;
   height: 3px;
   border-radius: 2px;
+  box-sizing: content-box;
 }
 
 .charts-css .tooltip {
@@ -245,16 +504,12 @@ table.charts-css tbody tr td {
   flex-basis: 0;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
   padding: 0;
   margin: 0;
 }
 
 .charts-css.bar tbody tr td {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  width: 100%;
+  width: calc( 100% * var( --size, 1 ));
   height: 100%;
   padding: 0;
   margin: 0;
@@ -272,212 +527,50 @@ table.charts-css tbody tr td {
   bottom: 0;
 }
 
-.charts-css.bar:not(.end-labels) tbody tr {
+.charts-css.bar:not(.labels-after) tbody tr {
   align-items: flex-start;
   margin-inline-start: var(--bar-labels-size);
 }
 
-.charts-css.bar:not(.end-labels) tbody tr th {
+.charts-css.bar:not(.labels-after) tbody tr th {
   left: calc( -1 * var( --bar-labels-size ));
   width: var(--bar-labels-size);
 }
 
-.charts-css.bar:not(.end-labels) tbody tr td {
+.charts-css.bar:not(.labels-after) tbody tr td {
   text-align: end;
 }
 
-.charts-css.bar.end-labels tbody tr {
+.charts-css.bar.labels-after tbody tr {
   align-items: flex-end;
   margin-inline-end: var(--bar-labels-size);
 }
 
-.charts-css.bar.end-labels tbody tr th {
+.charts-css.bar.labels-after tbody tr th {
   right: calc( -1 * var( --bar-labels-size ));
   width: var(--bar-labels-size);
 }
 
-.charts-css.bar.end-labels tbody tr td {
+.charts-css.bar.labels-after tbody tr td {
   text-align: start;
 }
 
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(1) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(11) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(21) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(31) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(41) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(51) td {
-  background-color: var(--color, var(--color-1));
+.charts-css.bar:not(.stacked) tbody tr td {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(2) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(12) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(22) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(32) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(42) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(52) td {
-  background-color: var(--color, var(--color-2));
+.charts-css.bar.multiple.stacked tbody tr {
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-start;
 }
 
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(3) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(13) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(23) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(33) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(43) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(53) td {
-  background-color: var(--color, var(--color-3));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(4) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(14) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(24) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(34) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(44) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(54) td {
-  background-color: var(--color, var(--color-4));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(5) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(15) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(25) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(35) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(45) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(55) td {
-  background-color: var(--color, var(--color-5));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(6) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(16) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(26) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(36) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(46) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(56) td {
-  background-color: var(--color, var(--color-6));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(7) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(17) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(27) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(37) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(47) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(57) td {
-  background-color: var(--color, var(--color-7));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(8) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(18) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(28) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(38) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(48) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(58) td {
-  background-color: var(--color, var(--color-8));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(9) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(19) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(29) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(39) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(49) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(59) td {
-  background-color: var(--color, var(--color-9));
-}
-
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(10) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(20) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(30) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(40) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(50) td,
-.charts-css.bar:not(.multiple) tbody tr:nth-of-type(60) td {
-  background-color: var(--color, var(--color-10));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(1),
-.charts-css.bar.multiple tbody tr td:nth-of-type(11),
-.charts-css.bar.multiple tbody tr td:nth-of-type(21),
-.charts-css.bar.multiple tbody tr td:nth-of-type(31),
-.charts-css.bar.multiple tbody tr td:nth-of-type(41),
-.charts-css.bar.multiple tbody tr td:nth-of-type(51) {
-  background-color: var(--color, var(--color-1));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(2),
-.charts-css.bar.multiple tbody tr td:nth-of-type(12),
-.charts-css.bar.multiple tbody tr td:nth-of-type(22),
-.charts-css.bar.multiple tbody tr td:nth-of-type(32),
-.charts-css.bar.multiple tbody tr td:nth-of-type(42),
-.charts-css.bar.multiple tbody tr td:nth-of-type(52) {
-  background-color: var(--color, var(--color-2));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(3),
-.charts-css.bar.multiple tbody tr td:nth-of-type(13),
-.charts-css.bar.multiple tbody tr td:nth-of-type(23),
-.charts-css.bar.multiple tbody tr td:nth-of-type(33),
-.charts-css.bar.multiple tbody tr td:nth-of-type(43),
-.charts-css.bar.multiple tbody tr td:nth-of-type(53) {
-  background-color: var(--color, var(--color-3));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(4),
-.charts-css.bar.multiple tbody tr td:nth-of-type(14),
-.charts-css.bar.multiple tbody tr td:nth-of-type(24),
-.charts-css.bar.multiple tbody tr td:nth-of-type(34),
-.charts-css.bar.multiple tbody tr td:nth-of-type(44),
-.charts-css.bar.multiple tbody tr td:nth-of-type(54) {
-  background-color: var(--color, var(--color-4));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(5),
-.charts-css.bar.multiple tbody tr td:nth-of-type(15),
-.charts-css.bar.multiple tbody tr td:nth-of-type(25),
-.charts-css.bar.multiple tbody tr td:nth-of-type(35),
-.charts-css.bar.multiple tbody tr td:nth-of-type(45),
-.charts-css.bar.multiple tbody tr td:nth-of-type(55) {
-  background-color: var(--color, var(--color-5));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(6),
-.charts-css.bar.multiple tbody tr td:nth-of-type(16),
-.charts-css.bar.multiple tbody tr td:nth-of-type(26),
-.charts-css.bar.multiple tbody tr td:nth-of-type(36),
-.charts-css.bar.multiple tbody tr td:nth-of-type(46),
-.charts-css.bar.multiple tbody tr td:nth-of-type(56) {
-  background-color: var(--color, var(--color-6));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(7),
-.charts-css.bar.multiple tbody tr td:nth-of-type(17),
-.charts-css.bar.multiple tbody tr td:nth-of-type(27),
-.charts-css.bar.multiple tbody tr td:nth-of-type(37),
-.charts-css.bar.multiple tbody tr td:nth-of-type(47),
-.charts-css.bar.multiple tbody tr td:nth-of-type(57) {
-  background-color: var(--color, var(--color-7));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(8),
-.charts-css.bar.multiple tbody tr td:nth-of-type(18),
-.charts-css.bar.multiple tbody tr td:nth-of-type(28),
-.charts-css.bar.multiple tbody tr td:nth-of-type(38),
-.charts-css.bar.multiple tbody tr td:nth-of-type(48),
-.charts-css.bar.multiple tbody tr td:nth-of-type(58) {
-  background-color: var(--color, var(--color-8));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(9),
-.charts-css.bar.multiple tbody tr td:nth-of-type(19),
-.charts-css.bar.multiple tbody tr td:nth-of-type(29),
-.charts-css.bar.multiple tbody tr td:nth-of-type(39),
-.charts-css.bar.multiple tbody tr td:nth-of-type(49),
-.charts-css.bar.multiple tbody tr td:nth-of-type(59) {
-  background-color: var(--color, var(--color-9));
-}
-
-.charts-css.bar.multiple tbody tr td:nth-of-type(10),
-.charts-css.bar.multiple tbody tr td:nth-of-type(20),
-.charts-css.bar.multiple tbody tr td:nth-of-type(30),
-.charts-css.bar.multiple tbody tr td:nth-of-type(40),
-.charts-css.bar.multiple tbody tr td:nth-of-type(50),
-.charts-css.bar.multiple tbody tr td:nth-of-type(60) {
-  background-color: var(--color, var(--color-10));
+.charts-css.bar.multiple.stacked tbody tr td {
+  flex-grow: unset;
+  flex-shrink: unset;
+  flex-basis: unset;
 }
 
 .charts-css.bar:not(.reverse) tbody {
@@ -488,61 +581,119 @@ table.charts-css tbody tr td {
   flex-direction: column-reverse;
 }
 
-.charts-css.bar.row-spacing tbody tr {
+.charts-css.bar:not(.reverse-datasets) tbody tr {
+  flex-direction: column;
+}
+
+.charts-css.bar.reverse-datasets tbody tr {
+  flex-direction: column-reverse;
+}
+
+.charts-css.bar.row-spacing-1 tbody tr {
+  padding-block-start: 1px;
+  padding-block-end: 1px;
+}
+
+.charts-css.bar.row-spacing-2 tbody tr {
+  padding-block-start: 2px;
+  padding-block-end: 2px;
+}
+
+.charts-css.bar.row-spacing-3 tbody tr {
+  padding-block-start: 3px;
+  padding-block-end: 3px;
+}
+
+.charts-css.bar.row-spacing-4 tbody tr {
   padding-block-start: 4px;
   padding-block-end: 4px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-5 tbody tr {
+  padding-block-start: 5px;
+  padding-block-end: 5px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-6 tbody tr {
+  padding-block-start: 6px;
+  padding-block-end: 6px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-7 tbody tr {
+  padding-block-start: 7px;
+  padding-block-end: 7px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-8 tbody tr {
+  padding-block-start: 8px;
+  padding-block-end: 8px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-9 tbody tr {
+  padding-block-start: 9px;
+  padding-block-end: 9px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-10 tbody tr {
+  padding-block-start: 10px;
+  padding-block-end: 10px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-11 tbody tr {
+  padding-block-start: 11px;
+  padding-block-end: 11px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-12 tbody tr {
+  padding-block-start: 12px;
+  padding-block-end: 12px;
 }
 
-.charts-css.bar.row-spacing tbody tr {
-  padding-block-start: 4px;
-  padding-block-end: 4px;
+.charts-css.bar.row-spacing-13 tbody tr {
+  padding-block-start: 13px;
+  padding-block-end: 13px;
 }
 
-.charts-css.bar.show-main-axis:not(.end-labels) tbody tr {
+.charts-css.bar.row-spacing-14 tbody tr {
+  padding-block-start: 14px;
+  padding-block-end: 14px;
+}
+
+.charts-css.bar.row-spacing-15 tbody tr {
+  padding-block-start: 15px;
+  padding-block-end: 15px;
+}
+
+.charts-css.bar.row-spacing-16 tbody tr {
+  padding-block-start: 16px;
+  padding-block-end: 16px;
+}
+
+.charts-css.bar.row-spacing-17 tbody tr {
+  padding-block-start: 17px;
+  padding-block-end: 17px;
+}
+
+.charts-css.bar.row-spacing-18 tbody tr {
+  padding-block-start: 18px;
+  padding-block-end: 18px;
+}
+
+.charts-css.bar.row-spacing-19 tbody tr {
+  padding-block-start: 19px;
+  padding-block-end: 19px;
+}
+
+.charts-css.bar.row-spacing-20 tbody tr {
+  padding-block-start: 20px;
+  padding-block-end: 20px;
+}
+
+.charts-css.bar.show-main-axis:not(.labels-after) tbody tr {
   border-inline-start: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
-.charts-css.bar.show-main-axis.end-labels tbody tr {
+.charts-css.bar.show-main-axis.labels-after tbody tr {
   border-inline-end: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
@@ -558,52 +709,102 @@ table.charts-css tbody tr td {
   border-block-start: var(--axis-width) var(--axis-style) var(--axis-color);
 }
 
-.charts-css.bar.show-1-y-axes tbody tr {
+.charts-css.bar.show-1-y-axes:not(.labels-after) tbody tr {
+  background-size: 100% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-1-y-axes.labels-after tbody tr {
   background-size: 100% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-2-y-axes tbody tr {
+.charts-css.bar.show-2-y-axes:not(.labels-after) tbody tr {
+  background-size: 50% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-2-y-axes.labels-after tbody tr {
   background-size: 50% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-3-y-axes tbody tr {
+.charts-css.bar.show-3-y-axes:not(.labels-after) tbody tr {
+  background-size: 33.333333% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-3-y-axes.labels-after tbody tr {
   background-size: 33.333333% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-4-y-axes tbody tr {
+.charts-css.bar.show-4-y-axes:not(.labels-after) tbody tr {
+  background-size: 25% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-4-y-axes.labels-after tbody tr {
   background-size: 25% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-5-y-axes tbody tr {
+.charts-css.bar.show-5-y-axes:not(.labels-after) tbody tr {
+  background-size: 20% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-5-y-axes.labels-after tbody tr {
   background-size: 20% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-6-y-axes tbody tr {
+.charts-css.bar.show-6-y-axes:not(.labels-after) tbody tr {
+  background-size: 16.666667% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-6-y-axes.labels-after tbody tr {
   background-size: 16.666667% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-7-y-axes tbody tr {
+.charts-css.bar.show-7-y-axes:not(.labels-after) tbody tr {
+  background-size: 14.285714% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-7-y-axes.labels-after tbody tr {
   background-size: 14.285714% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-8-y-axes tbody tr {
+.charts-css.bar.show-8-y-axes:not(.labels-after) tbody tr {
+  background-size: 12.5% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-8-y-axes.labels-after tbody tr {
   background-size: 12.5% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-9-y-axes tbody tr {
+.charts-css.bar.show-9-y-axes:not(.labels-after) tbody tr {
+  background-size: 11.111111% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-9-y-axes.labels-after tbody tr {
   background-size: 11.111111% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.bar.show-10-y-axes tbody tr {
+.charts-css.bar.show-10-y-axes:not(.labels-after) tbody tr {
+  background-size: 10% 100%;
+  background-image: linear-gradient(-90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.bar.show-10-y-axes.labels-after tbody tr {
   background-size: 10% 100%;
   background-image: linear-gradient(90deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
@@ -644,18 +845,14 @@ table.charts-css tbody tr td {
   flex-basis: 0;
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
   padding: 0;
   margin: 0;
   text-align: center;
 }
 
 .charts-css.column tbody tr td {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
   width: 100%;
-  height: 100%;
+  height: calc( 100% * var( --size, 1 ));
   padding: 0;
   margin: 0;
   position: relative;
@@ -672,124 +869,42 @@ table.charts-css tbody tr td {
   left: 0;
 }
 
-.charts-css.column:not(.top-labels) tbody tr {
+.charts-css.column:not(.labels-before) tbody tr {
   align-items: flex-end;
   margin-block-end: var(--column-labels-size);
 }
 
-.charts-css.column:not(.top-labels) tbody tr th {
+.charts-css.column:not(.labels-before) tbody tr th {
   bottom: calc( -1 * var( --column-labels-size ));
   height: var(--column-labels-size);
 }
 
-.charts-css.column.top-labels tbody tr {
+.charts-css.column.labels-before tbody tr {
   align-items: flex-start;
   margin-block-start: var(--column-labels-size);
 }
 
-.charts-css.column.top-labels tbody tr th {
+.charts-css.column.labels-before tbody tr th {
   top: calc( -1 * var( --column-labels-size ));
   height: var(--column-labels-size);
 }
 
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(1) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(11) td {
-  background-color: var(--color, var(--color-1));
+.charts-css.column:not(.stacked) tbody tr td {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(2) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(12) td {
-  background-color: var(--color, var(--color-2));
+.charts-css.column.stacked tbody tr {
+  flex-direction: column-reverse;
+  justify-content: start;
+  align-items: flex-start;
 }
 
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(3) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(13) td {
-  background-color: var(--color, var(--color-3));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(4) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(14) td {
-  background-color: var(--color, var(--color-4));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(5) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(15) td {
-  background-color: var(--color, var(--color-5));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(6) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(16) td {
-  background-color: var(--color, var(--color-6));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(7) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(17) td {
-  background-color: var(--color, var(--color-7));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(8) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(18) td {
-  background-color: var(--color, var(--color-8));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(9) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(19) td {
-  background-color: var(--color, var(--color-9));
-}
-
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(10) td,
-.charts-css.column:not(.multiple) tbody tr:nth-of-type(20) td {
-  background-color: var(--color, var(--color-10));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(1),
-.charts-css.column.multiple tbody tr td:nth-of-type(11) {
-  background-color: var(--color, var(--color-1));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(2),
-.charts-css.column.multiple tbody tr td:nth-of-type(12) {
-  background-color: var(--color, var(--color-2));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(3),
-.charts-css.column.multiple tbody tr td:nth-of-type(13) {
-  background-color: var(--color, var(--color-3));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(4),
-.charts-css.column.multiple tbody tr td:nth-of-type(14) {
-  background-color: var(--color, var(--color-4));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(5),
-.charts-css.column.multiple tbody tr td:nth-of-type(15) {
-  background-color: var(--color, var(--color-5));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(6),
-.charts-css.column.multiple tbody tr td:nth-of-type(16) {
-  background-color: var(--color, var(--color-6));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(7),
-.charts-css.column.multiple tbody tr td:nth-of-type(17) {
-  background-color: var(--color, var(--color-7));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(8),
-.charts-css.column.multiple tbody tr td:nth-of-type(18) {
-  background-color: var(--color, var(--color-8));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(9),
-.charts-css.column.multiple tbody tr td:nth-of-type(19) {
-  background-color: var(--color, var(--color-9));
-}
-
-.charts-css.column.multiple tbody tr td:nth-of-type(10),
-.charts-css.column.multiple tbody tr td:nth-of-type(20) {
-  background-color: var(--color, var(--color-10));
+.charts-css.column.stacked tbody tr td {
+  flex-grow: unset;
+  flex-shrink: unset;
+  flex-basis: unset;
 }
 
 .charts-css.column:not(.reverse) tbody {
@@ -800,61 +915,119 @@ table.charts-css tbody tr td {
   flex-direction: row-reverse;
 }
 
-.charts-css.column.row-spacing tbody tr {
+.charts-css.column:not(.reverse-datasets) tbody tr {
+  flex-direction: row;
+}
+
+.charts-css.column.reverse-datasets tbody tr {
+  flex-direction: row-reverse;
+}
+
+.charts-css.column.row-spacing-1 tbody tr {
+  padding-inline-start: 1px;
+  padding-inline-end: 1px;
+}
+
+.charts-css.column.row-spacing-2 tbody tr {
+  padding-inline-start: 2px;
+  padding-inline-end: 2px;
+}
+
+.charts-css.column.row-spacing-3 tbody tr {
+  padding-inline-start: 3px;
+  padding-inline-end: 3px;
+}
+
+.charts-css.column.row-spacing-4 tbody tr {
   padding-inline-start: 4px;
   padding-inline-end: 4px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-5 tbody tr {
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-6 tbody tr {
+  padding-inline-start: 6px;
+  padding-inline-end: 6px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-7 tbody tr {
+  padding-inline-start: 7px;
+  padding-inline-end: 7px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-8 tbody tr {
+  padding-inline-start: 8px;
+  padding-inline-end: 8px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-9 tbody tr {
+  padding-inline-start: 9px;
+  padding-inline-end: 9px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-10 tbody tr {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-11 tbody tr {
+  padding-inline-start: 11px;
+  padding-inline-end: 11px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-12 tbody tr {
+  padding-inline-start: 12px;
+  padding-inline-end: 12px;
 }
 
-.charts-css.column.row-spacing tbody tr {
-  padding-inline-start: 4px;
-  padding-inline-end: 4px;
+.charts-css.column.row-spacing-13 tbody tr {
+  padding-inline-start: 13px;
+  padding-inline-end: 13px;
 }
 
-.charts-css.column.show-main-axis:not(.top-labels) tbody tr {
+.charts-css.column.row-spacing-14 tbody tr {
+  padding-inline-start: 14px;
+  padding-inline-end: 14px;
+}
+
+.charts-css.column.row-spacing-15 tbody tr {
+  padding-inline-start: 15px;
+  padding-inline-end: 15px;
+}
+
+.charts-css.column.row-spacing-16 tbody tr {
+  padding-inline-start: 16px;
+  padding-inline-end: 16px;
+}
+
+.charts-css.column.row-spacing-17 tbody tr {
+  padding-inline-start: 17px;
+  padding-inline-end: 17px;
+}
+
+.charts-css.column.row-spacing-18 tbody tr {
+  padding-inline-start: 18px;
+  padding-inline-end: 18px;
+}
+
+.charts-css.column.row-spacing-19 tbody tr {
+  padding-inline-start: 19px;
+  padding-inline-end: 19px;
+}
+
+.charts-css.column.row-spacing-20 tbody tr {
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+}
+
+.charts-css.column.show-main-axis:not(.labels-before) tbody tr {
   border-block-end: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
-.charts-css.column.show-main-axis.top-labels tbody tr {
+.charts-css.column.show-main-axis.labels-before tbody tr {
   border-block-start: var(--main-axis-width) var(--main-axis-style) var(--main-axis-color);
 }
 
@@ -870,54 +1043,104 @@ table.charts-css tbody tr td {
   border-inline-start: var(--axis-width) var(--axis-style) var(--axis-color);
 }
 
-.charts-css.column.show-1-x-axes tbody {
+.charts-css.column.show-1-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 100%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-2-x-axes tbody {
+.charts-css.column.show-1-x-axes.labels-before tbody tr {
+  background-size: 100% 100%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-2-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 50%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-3-x-axes tbody {
+.charts-css.column.show-2-x-axes.labels-before tbody tr {
+  background-size: 100% 50%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-3-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 33.333333%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-4-x-axes tbody {
+.charts-css.column.show-3-x-axes.labels-before tbody tr {
+  background-size: 100% 33.333333%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-4-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 25%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-5-x-axes tbody {
+.charts-css.column.show-4-x-axes.labels-before tbody tr {
+  background-size: 100% 25%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-5-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 20%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-6-x-axes tbody {
+.charts-css.column.show-5-x-axes.labels-before tbody tr {
+  background-size: 100% 20%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-6-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 16.666667%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-7-x-axes tbody {
+.charts-css.column.show-6-x-axes.labels-before tbody tr {
+  background-size: 100% 16.666667%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-7-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 14.285714%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-8-x-axes tbody {
+.charts-css.column.show-7-x-axes.labels-before tbody tr {
+  background-size: 100% 14.285714%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-8-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 12.5%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-9-x-axes tbody {
+.charts-css.column.show-8-x-axes.labels-before tbody tr {
+  background-size: 100% 12.5%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-9-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 11.111111%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
-.charts-css.column.show-10-x-axes tbody {
+.charts-css.column.show-9-x-axes.labels-before tbody tr {
+  background-size: 100% 11.111111%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-10-x-axes:not(.labels-before) tbody tr {
   background-size: 100% 10%;
   background-image: linear-gradient(var(--axis-color) var(--axis-width), transparent var(--axis-width));
+}
+
+.charts-css.column.show-10-x-axes.labels-before tbody tr {
+  background-size: 100% 10%;
+  background-image: linear-gradient(0deg, var(--axis-color) var(--axis-width), transparent var(--axis-width));
 }
 
 .charts-css.column.hover tr:hover {
@@ -928,116 +1151,66 @@ table.charts-css tbody tr td {
   opacity: .75;
 }
 
+.charts-css.line {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-block-end: 50%;
+  aspect-ratio: 2 / 1;
+  background-color: var(--chart-bg-color);
+}
+
+.charts-css.line caption,
+.charts-css.line colgroup,
+.charts-css.line tbody,
+.charts-css.line thead,
+.charts-css.line tfoot {
+  display: none;
+}
+
+.charts-css.bubble {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-block-end: 50%;
+  aspect-ratio: 2 / 1;
+  background-color: var(--chart-bg-color);
+}
+
+.charts-css.bubble caption,
+.charts-css.bubble colgroup,
+.charts-css.bubble tbody,
+.charts-css.bubble thead,
+.charts-css.bubble tfoot {
+  display: none;
+}
+
 .charts-css.pie {
+  display: block;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
   background-color: var(--chart-bg-color);
 }
 
-.charts-css.pie:not(:empty) {
-  --accumulated-1: var( --percent-1, 0% );
-  --accumulated-2: calc( var( --accumulated-1, 0% ) + var( --percent-2, 0% ) );
-  --accumulated-3: calc( var( --accumulated-2, 0% ) + var( --percent-3, 0% ) );
-  --accumulated-4: calc( var( --accumulated-3, 0% ) + var( --percent-4, 0% ) );
-  --accumulated-5: calc( var( --accumulated-4, 0% ) + var( --percent-5, 0% ) );
-  --accumulated-6: calc( var( --accumulated-5, 0% ) + var( --percent-6, 0% ) );
-  --accumulated-7: calc( var( --accumulated-6, 0% ) + var( --percent-7, 0% ) );
-  --accumulated-8: calc( var( --accumulated-7, 0% ) + var( --percent-8, 0% ) );
-  --accumulated-9: calc( var( --accumulated-8, 0% ) + var( --percent-9, 0% ) );
-  background-image: conic-gradient(var(--color-1, transparent) 0 var(--accumulated-1, 100%), var(--color-2, transparent) 0 var(--accumulated-2, 100%), var(--color-3, transparent) 0 var(--accumulated-3, 100%), var(--color-4, transparent) 0 var(--accumulated-4, 100%), var(--color-5, transparent) 0 var(--accumulated-5, 100%), var(--color-6, transparent) 0 var(--accumulated-6, 100%), var(--color-7, transparent) 0 var(--accumulated-7, 100%), var(--color-8, transparent) 0 var(--accumulated-8, 100%), var(--color-9, transparent) 0 var(--accumulated-9, 100%));
+.charts-css.pie caption,
+.charts-css.pie colgroup,
+.charts-css.pie tbody,
+.charts-css.pie thead,
+.charts-css.pie tfoot {
+  display: none;
 }
 
-.charts-css.pie:not(:empty) > * {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
-/*
-.pie {
-  position: relative;
-  overflow: hidden;
-}
-.pie-slice {
-  --x: calc( var( --over50, 0 ) * -100% );
-  --y: calc( ( 1 + var( --over50, 0 ) ) * 100% );
-  --degrees: calc( ( var( --offset, 0 ) / 100 ) * 360 );
-  clip-path: polygon(
-    var( --x ) var( --x ),
-    var( --y ) var( --x ),
-    var( --y ) var( --y ),
-    var( --x ) var( --y )
-  );
-  -webkit-clip-path: polygon(
-    var( --x ) var( --x ),
-    var( --y ) var( --x ),
-    var( --y ) var( --y ),
-    var( --x ) var( --y )
-  );
-  height: 100%;
-  position: absolute;
-  transform: translate(0, -50%) rotate(90deg) rotate( calc( var( --degrees ) * 1deg ) );
-  transform-origin: 50% 100%;
-  width: 100%;
-  z-index: calc( 1 + var( --over50 ) );
-}
-
-.pie-slice::after,
-.pie-slice::before {
-  background: var( --chart-bg-color, #e74c3c );
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-.pie-slice::before {
-  --degrees: calc( ( var( --value, 45 ) / 100 ) * 360 );
-  transform: translate(0, 100%) rotate( calc( var( --degrees ) * 1deg ) );
-  transform-origin: 50% 0%;
-}
-
-.pie-slice::after {
-  opacity: var( --over50, 0 );
-}
-*/
 .charts-css.donut {
+  display: block;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
   background-color: var(--chart-bg-color);
-}
-
-.charts-css.donut:not(:empty) {
-  --accumulated-1: var( --percent-1, 0% );
-  --accumulated-2: calc( var( --accumulated-1, 0% ) + var( --percent-2, 0% ) );
-  --accumulated-3: calc( var( --accumulated-2, 0% ) + var( --percent-3, 0% ) );
-  --accumulated-4: calc( var( --accumulated-3, 0% ) + var( --percent-4, 0% ) );
-  --accumulated-5: calc( var( --accumulated-4, 0% ) + var( --percent-5, 0% ) );
-  --accumulated-6: calc( var( --accumulated-5, 0% ) + var( --percent-6, 0% ) );
-  --accumulated-7: calc( var( --accumulated-6, 0% ) + var( --percent-7, 0% ) );
-  --accumulated-8: calc( var( --accumulated-7, 0% ) + var( --percent-8, 0% ) );
-  --accumulated-9: calc( var( --accumulated-8, 0% ) + var( --percent-9, 0% ) );
-  background-image: conic-gradient(var(--color-1, transparent) 0 var(--accumulated-1, 100%), var(--color-2, transparent) 0 var(--accumulated-2, 100%), var(--color-3, transparent) 0 var(--accumulated-3, 100%), var(--color-4, transparent) 0 var(--accumulated-4, 100%), var(--color-5, transparent) 0 var(--accumulated-5, 100%), var(--color-6, transparent) 0 var(--accumulated-6, 100%), var(--color-7, transparent) 0 var(--accumulated-7, 100%), var(--color-8, transparent) 0 var(--accumulated-8, 100%), var(--color-9, transparent) 0 var(--accumulated-9, 100%));
-}
-
-.charts-css.donut:not(:empty) > * {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
 }
 
 .charts-css.donut::after {
@@ -1055,32 +1228,48 @@ table.charts-css tbody tr td {
   background-color: var(--donut-inner-color, #fff);
 }
 
-.charts-css.radar {
-  width: 100%;
-  height: 0;
-  padding-block-end: 100%;
-  background-color: var(--chart-bg-color);
+.charts-css.donut caption,
+.charts-css.donut colgroup,
+.charts-css.donut tbody,
+.charts-css.donut thead,
+.charts-css.donut tfoot {
+  display: none;
 }
 
 .charts-css.polar {
+  display: block;
   width: 100%;
   height: 0;
   padding-block-end: 100%;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
   background-color: var(--chart-bg-color);
-  --size: 17.585%;
-  background: repeating-radial-gradient(circle at center, var(--charts-axes-color), var(--charts-axes-color) 1px, transparent 1px, transparent var(--size)), linear-gradient(transparent calc( 50% - 1px), var(--charts-axes-color) calc( 50% - 1px), var(--charts-axes-color) calc( 50% + 1px), transparent calc( 50% + 1px)), linear-gradient(90deg, transparent calc( 50% - 1px), var(--charts-axes-color) calc( 50% - 1px), var(--charts-axes-color) calc( 50% + 1px), transparent calc( 50% + 1px));
 }
 
-.charts-css.polar:not(:empty) > * {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+.charts-css.polar caption,
+.charts-css.polar colgroup,
+.charts-css.polar tbody,
+.charts-css.polar thead,
+.charts-css.polar tfoot {
+  display: none;
+}
+
+.charts-css.radar {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-block-end: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--chart-bg-color);
+}
+
+.charts-css.radar caption,
+.charts-css.radar colgroup,
+.charts-css.radar tbody,
+.charts-css.radar thead,
+.charts-css.radar tfoot {
+  display: none;
 }
 
 /*# sourceMappingURL=charts.css.map */

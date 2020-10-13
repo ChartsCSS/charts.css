@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChartsCSS.org</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="../dist/charts.min.css">
 
   <style>
@@ -92,10 +93,27 @@
           <li>Green</li>
           <li>Blue</li>
           <li>Violet</li>
+          <li>Ivory</li>
           <li>Grey</li>
+          <li>Tan</li>
           <li>Brown</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Ellipse</h3>
+        <p><code>.legend.legend-ellipse</code></p>
+        <ul class="charts-css legend legend-ellipse">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Ivory</li>
+          <li>Grey</li>
+          <li>Tan</li>
           <li>Brown</li>
-          <li>Dark</li>
         </ul>
       </div>
 
@@ -109,27 +127,10 @@
           <li>Green</li>
           <li>Blue</li>
           <li>Violet</li>
+          <li>Ivory</li>
           <li>Grey</li>
+          <li>Tan</li>
           <li>Brown</li>
-          <li>Brown</li>
-          <li>Dark</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Rhombus</h3>
-        <p><code>.legend.legend-rhombus</code></p>
-        <ul class="charts-css legend legend-rhombus">
-          <li>Red</li>
-          <li>Orange</li>
-          <li>Yellow</li>
-          <li>Green</li>
-          <li>Blue</li>
-          <li>Violet</li>
-          <li>Grey</li>
-          <li>Brown</li>
-          <li>Brown</li>
-          <li>Dark</li>
         </ul>
       </div>
 
@@ -143,10 +144,27 @@
           <li>Green</li>
           <li>Blue</li>
           <li>Violet</li>
+          <li>Ivory</li>
           <li>Grey</li>
+          <li>Tan</li>
           <li>Brown</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Rhombus</h3>
+        <p><code>.legend.legend-rhombus</code></p>
+        <ul class="charts-css legend legend-rhombus">
+          <li>Red</li>
+          <li>Orange</li>
+          <li>Yellow</li>
+          <li>Green</li>
+          <li>Blue</li>
+          <li>Violet</li>
+          <li>Ivory</li>
+          <li>Grey</li>
+          <li>Tan</li>
           <li>Brown</li>
-          <li>Dark</li>
         </ul>
       </div>
 
@@ -160,27 +178,10 @@
           <li>Green</li>
           <li>Blue</li>
           <li>Violet</li>
+          <li>Ivory</li>
           <li>Grey</li>
+          <li>Tan</li>
           <li>Brown</li>
-          <li>Brown</li>
-          <li>Dark</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3>Line</h3>
-        <p><code>.legend.legend-???</code></p>
-        <ul class="charts-css legend legend-???">
-          <li>Red</li>
-          <li>Orange</li>
-          <li>Yellow</li>
-          <li>Green</li>
-          <li>Blue</li>
-          <li>Violet</li>
-          <li>Grey</li>
-          <li>Brown</li>
-          <li>Brown</li>
-          <li>Dark</li>
         </ul>
       </div>
 
@@ -191,8 +192,8 @@
     <div class="examples bar">
 
       <div>
-        <h3>Single data set</h3>
-        <table class="charts-css bar hover show-main-axis show-x-axes 1show-10-y-axes row-spacing">
+        <h3>Single dataset</h3>
+        <table class="charts-css bar hover show-main-axis show-x-axes show-1-y-axes row-spacing-4">
           <caption>Months Compare</caption>
           <thead>
             <tr>
@@ -203,51 +204,51 @@
           <tbody>
             <tr>
               <th scope="row">January</th>
-              <td style="width: 35%;"> <span class="data">35</span> <span class="tooltip">data: 35<br>asd</span> </td>
+              <td style="--size: 0.35;"> <span class="data">35</span> <span class="tooltip">data: 35<br>asd</span> </td>
             </tr>
             <tr>
               <th scope="row">February</th>
-              <td style="width: 80%;"> <span class="data">80</span> <span class="tooltip">data: 80<br>more info</span> </td>
+              <td style="--size: 0.8;"> <span class="data">80</span> <span class="tooltip">data: 80<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">March</th>
-              <td style="width: 50%;"> <span class="data">50</span> <span class="tooltip">data: 80<br>more info</span> </td>
+              <td style="--size: 0.5;"> <span class="data">50</span> <span class="tooltip">data: 80<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">April</th>
-              <td style="width: 100%;"> <span class="data">100</span> <span class="tooltip">data: 100<br>more info</span> </td>
+              <td style="--size: 1;"> <span class="data">100</span> <span class="tooltip">data: 100<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">May</th>
-              <td style="width: 0%;"> <span class="data">0</span> <span class="tooltip">data: 0<br>more info</span> </td>
+              <td style="--size: 0;"> <span class="data">0</span> <span class="tooltip">data: 0<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">June</th>
-              <td style="width: 45%;"> <span class="data">45</span> <span class="tooltip">data: 45<br>more info</span> </td>
+              <td style="--size: 0.45;"> <span class="data">45</span> <span class="tooltip">data: 45<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">July</th>
-              <td style="width: 82%;">82</td>
+              <td style="--size: 0.82;">82</td>
             </tr>
             <tr>
               <th scope="row">August</th>
-              <td style="width: 70%;">70</td>
+              <td style="--size: 0.7;">70</td>
             </tr>
             <tr>
               <th scope="row">September</th>
-              <td style="width: 5%;">5</td>
+              <td style="--size: 0.05;">5</td>
             </tr>
             <tr>
               <th scope="row">October</th>
-              <td style="width: 20%;">20</td>
+              <td style="--size: 0.2;">20</td>
             </tr>
             <tr>
               <th scope="row">November</th>
-              <td style="width: 50%;">50</td>
+              <td style="--size: 0.5;">50</td>
             </tr>
             <tr>
               <th scope="row">December</th>
-              <td style="width: 40%;">40</td>
+              <td style="--size: 0.4;">40</td>
             </tr>
           </tbody>
         </table>
@@ -255,7 +256,7 @@
 
       <div>
         <h3>Multiple reverse</h3>
-        <table class="charts-css bar hover show-main-axis 1show-x-axes multiple reverse row-spacing">
+        <table class="charts-css bar hover show-main-axis multiple reverse reverse-datasets row-spacing-4">
           <caption>Countries Compare</caption>
           <thead>
             <tr>
@@ -268,35 +269,35 @@
           <tbody>
             <tr>
               <th scope="row">USA</th>
-              <td style="width: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
-              <td style="width: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
-              <td style="width: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+              <td style="--size: calc( 17.0 / 17.1 );">17</td>
+              <td style="--size: calc(  0.3 /  1.4 );">0.3</td>
+              <td style="--size: calc( 21.4 / 21.4 );">21.4</td>
             </tr>
             <tr>
               <th scope="row">China</th>
-              <td style="width: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
-              <td style="width: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
-              <td style="width: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+              <td style="--size: calc(  9.6 / 17.1 );">9.6</td>
+              <td style="--size: calc(  1.4 /  1.4 );">1.4</td>
+              <td style="--size: calc( 14.1 / 21.4 );">14.1</td>
             </tr>
             <tr>
               <th scope="row">India</th>
-              <td style="width: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
-              <td style="width: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
-              <td style="width: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+              <td style="--size: calc( 3.2 / 17.1 );">3.2</td>
+              <td style="--size: calc( 1.3 /  1.4 );">1.3</td>
+              <td style="--size: calc( 2.9 / 21.4 );">2.9</td>
             </tr>
             <tr>
               <th scope="row">Russia</th>
-              <td style="width: calc( 10% * ( 17.1 / 17.1 ) );">17.1</td>
-              <td style="width: calc( 10% * (  0.1 /  1.4 ) );">0.1</td>
-              <td style="width: calc( 10% * (  1.6 / 21.4 ) );">1.6</td>
+              <td style="--size: calc( 17.1 / 17.1 );">17.1</td>
+              <td style="--size: calc(  0.1 /  1.4 );">0.1</td>
+              <td style="--size: calc(  1.6 / 21.4 );">1.6</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div>
-        <h3>Multiple end-labels</h3>
-        <table class="charts-css bar hover show-main-axis 1show-x-axes 1show-2-y-axes multiple end-labels row-spacing">
+        <h3>Multiple labels-after</h3>
+        <table class="charts-css bar hover show-main-axis multiple labels-after row-spacing-4">
           <caption>Countries Compare</caption>
           <thead>
             <tr>
@@ -309,33 +310,166 @@
           <tbody>
             <tr>
               <th scope="row">USA</th>
-              <td style="width: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
-              <td style="width: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
-              <td style="width: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+              <td style="--size: calc( 17.0 / 17.1 );">17</td>
+              <td style="--size: calc(  0.3 /  1.4 );">0.3</td>
+              <td style="--size: calc( 21.4 / 21.4 );">21.4</td>
             </tr>
             <tr>
               <th scope="row">China</th>
-              <td style="width: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
-              <td style="width: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
-              <td style="width: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+              <td style="--size: calc(  9.6 / 17.1 );">9.6</td>
+              <td style="--size: calc(  1.4 /  1.4 );">1.4</td>
+              <td style="--size: calc( 14.1 / 21.4 );">14.1</td>
             </tr>
             <tr>
               <th scope="row">India</th>
-              <td style="width: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
-              <td style="width: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
-              <td style="width: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+              <td style="--size: calc( 3.2 / 17.1 );">3.2</td>
+              <td style="--size: calc( 1.3 /  1.4 );">1.3</td>
+              <td style="--size: calc( 2.9 / 21.4 );">2.9</td>
             </tr>
             <tr>
               <th scope="row">Russia</th>
-              <td style="width: calc( 100% * ( 17.1 / 17.1 ) );">17.1</td>
-              <td style="width: calc( 100% * (  0.1 /  1.4 ) );">0.1</td>
-              <td style="width: calc( 100% * (  1.6 / 21.4 ) );">1.6</td>
+              <td style="--size: calc( 17.1 / 17.1 );">17.1</td>
+              <td style="--size: calc(  0.1 /  1.4 );">0.1</td>
+              <td style="--size: calc(  1.6 / 21.4 );">1.6</td>
             </tr>
             <tr>
               <th scope="row">X</th>
-              <td style="width: 0%;">.</td>
-              <td style="width: 0%;">.</td>
-              <td style="width: 0%;">.</td>
+              <td style="--size: 0;">.</td>
+              <td style="--size: 0;">.</td>
+              <td style="--size: 0;">.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="examples bar">
+
+      <div>
+        <h3>Stacked</h3>
+        <style>
+          #custom-stacked-bar-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css bar multiple stacked row-spacing-4" id="custom-stacked-bar-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Stacked Reverse</h3>
+        <style>
+          #custom-stacked-bar-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css bar multiple stacked row-spacing-4 reverse-datasets" id="custom-stacked-bar-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Stacked labels-after</h3>
+        <style>
+          #custom-stacked-labels-after-bar-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css bar multiple row-spacing-4 stacked labels-after" id="custom-stacked-labels-after-bar-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
             </tr>
           </tbody>
         </table>
@@ -348,8 +482,8 @@
     <div class="examples column">
 
       <div>
-        <h3>Single data set</h3>
-        <table class="charts-css column hover show-main-axis show-y-axes 1show-10-x-axes row-spacing" style="height: 300px;">
+        <h3>Single dataset</h3>
+        <table class="charts-css column hover show-main-axis show-y-axes show-1-x-axes row-spacing-4" style="height: 300px;">
           <caption>Months Compare</caption>
           <thead>
             <tr>
@@ -360,51 +494,51 @@
           <tbody>
             <tr>
               <th scope="row">January</th>
-              <td style="height: 35%; --color: red;"> <span class="data">35</span> <span class="tooltip">data: 35<br>more info</span> </td>
+              <td style="--size: 0.35; --color: red;"> <span class="data">35</span> <span class="tooltip">data: 35<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">February</th>
-              <td style="height: 80%;"> 80 <span class="tooltip">data: 80<br>more info</span> </td>
+              <td style="--size: 0.8;"> 80 <span class="tooltip">data: 80<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">March</th>
-              <td style="height: 50%;"> <span class="data">50</span> <span class="tooltip">data: 80<br>more info</span> </td>
+              <td style="--size: 0.5;"> <span class="data">50</span> <span class="tooltip">data: 80<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">April</th>
-              <td style="height: 100%;"> <span class="data">100</span> <span class="tooltip">data: 100<br>more info</span> </td>
+              <td style="--size: 1;"> <span class="data">100</span> <span class="tooltip">data: 100<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">May</th>
-              <td style="height: 0%;"> <span class="data">0</span> <span class="tooltip">data: 0<br>more info</span> </td>
+              <td style="--size: 0;"> <span class="data">0</span> <span class="tooltip">data: 0<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">June</th>
-              <td style="height: 45%;"> <span class="data">45</span> <span class="tooltip">data: 45<br>more info</span> </td>
+              <td style="--size: 0.45;"> <span class="data">45</span> <span class="tooltip">data: 45<br>more info</span> </td>
             </tr>
             <tr>
               <th scope="row">July</th>
-              <td style="height: 82%;">82</td>
+              <td style="--size: 0.82;">82</td>
             </tr>
             <tr>
               <th scope="row">August</th>
-              <td style="height: 70%;">70</td>
+              <td style="--size: 0.7;">70</td>
             </tr>
             <tr>
               <th scope="row">September</th>
-              <td style="height: 5%;">5</td>
+              <td style="--size: 0.05;">5</td>
             </tr>
             <tr>
               <th scope="row">October</th>
-              <td style="height: 20%;">20</td>
+              <td style="--size: 0.2;">20</td>
             </tr>
             <tr>
               <th scope="row">November</th>
-              <td style="height: 50%;">50</td>
+              <td style="--size: 0.5;">50</td>
             </tr>
             <tr>
               <th scope="row">December</th>
-              <td style="height: 40%;">40</td>
+              <td style="--size: 0.4;">40</td>
             </tr>
           </tbody>
         </table>
@@ -412,7 +546,7 @@
 
       <div>
         <h3>Multiple reverse</h3>
-        <table class="charts-css column hover show-main-axis 1show-y-axes multiple reverse" style="height: 300px;">
+        <table class="charts-css column hover show-main-axis multiple reverse" style="height: 300px;">
           <caption>Countries Compare</caption>
           <thead>
             <tr>
@@ -425,35 +559,35 @@
           <tbody>
             <tr>
               <th scope="row">USA</th>
-              <td style="height: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
-              <td style="height: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
-              <td style="height: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+              <td style="--size: calc( 17.0 / 17.1 );">17</td>
+              <td style="--size: calc(  0.3 /  1.4 );">0.3</td>
+              <td style="--size: calc( 21.4 / 21.4 );">21.4</td>
             </tr>
             <tr>
               <th scope="row">China</th>
-              <td style="height: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
-              <td style="height: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
-              <td style="height: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+              <td style="--size: calc(  9.6 / 17.1 );">9.6</td>
+              <td style="--size: calc(  1.4 /  1.4 );">1.4</td>
+              <td style="--size: calc( 14.1 / 21.4 );">14.1</td>
             </tr>
             <tr>
               <th scope="row">India</th>
-              <td style="height: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
-              <td style="height: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
-              <td style="height: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+              <td style="--size: calc( 3.2 / 17.1 );">3.2</td>
+              <td style="--size: calc( 1.3 /  1.4 );">1.3</td>
+              <td style="--size: calc( 2.9 / 21.4 );">2.9</td>
             </tr>
             <tr>
               <th scope="row">Russia</th>
-              <td style="height: calc( 10% * ( 17.1 / 17.1 ) );">17.1</td>
-              <td style="height: calc( 10% * (  0.1 /  1.4 ) );">0.1</td>
-              <td style="height: calc( 10% * (  1.6 / 21.4 ) );">1.6</td>
+              <td style="--size: calc( 17.1 / 17.1 );">17.1</td>
+              <td style="--size: calc(  0.1 /  1.4 );">0.1</td>
+              <td style="--size: calc(  1.6 / 21.4 );">1.6</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div>
-        <h3>Multiple top-labels</h3>
-        <table class="charts-css column hover show-main-axis 1show-y-axes 1show-2-x-axes multiple top-labels" style="height: 300px;">
+        <h3>Multiple labels-before</h3>
+        <table class="charts-css column hover show-main-axis multiple labels-before" style="height: 300px;">
           <caption>Countries Compare</caption>
           <thead>
             <tr>
@@ -466,36 +600,135 @@
           <tbody>
             <tr>
               <th scope="row">USA</th>
-              <td style="height: calc( 10% * ( 17.0 / 17.1 ) );">17</td>
-              <td style="height: calc( 10% * (  0.3 /  1.4 ) );">0.3</td>
-              <td style="height: calc( 10% * ( 21.4 / 21.4 ) );">21.4</td>
+              <td style="--size: calc( 17.0 / 17.1 );">17</td>
+              <td style="--size: calc(  0.3 /  1.4 );">0.3</td>
+              <td style="--size: calc( 21.4 / 21.4 );">21.4</td>
             </tr>
             <tr>
               <th scope="row">China</th>
-              <td style="height: calc( 100% * (  9.6 / 17.1 ) );">9.6</td>
-              <td style="height: calc( 100% * (  1.4 /  1.4 ) );">1.4</td>
-              <td style="height: calc( 100% * ( 14.1 / 21.4 ) );">14.1</td>
+              <td style="--size: calc(  9.6 / 17.1 );">9.6</td>
+              <td style="--size: calc(  1.4 /  1.4 );">1.4</td>
+              <td style="--size: calc( 14.1 / 21.4 );">14.1</td>
             </tr>
             <tr>
               <th scope="row">India</th>
-              <td style="height: calc( 100% * ( 3.2 / 17.1 ) );">3.2</td>
-              <td style="height: calc( 100% * ( 1.3 /  1.4 ) );">1.3</td>
-              <td style="height: calc( 100% * ( 2.9 / 21.4 ) );">2.9</td>
+              <td style="--size: calc( 3.2 / 17.1 );">3.2</td>
+              <td style="--size: calc( 1.3 /  1.4 );">1.3</td>
+              <td style="--size: calc( 2.9 / 21.4 );">2.9</td>
             </tr>
             <tr>
               <th scope="row">Russia</th>
-              <td style="height: calc( 10% * ( 17.1 / 17.1 ) );">17.1</td>
-              <td style="height: calc( 10% * (  0.1 /  1.4 ) );">0.1</td>
-              <td style="height: calc( 10% * (  1.6 / 21.4 ) );">1.6</td>
+              <td style="--size: calc( 17.1 / 17.1 );">17.1</td>
+              <td style="--size: calc(  0.1 /  1.4 );">0.1</td>
+              <td style="--size: calc(  1.6 / 21.4 );">1.6</td>
             </tr>
             <tr>
               <th scope="row">X</th>
-              <td style="height: 0%;">.</td>
-              <td style="height: 0%;">.</td>
-              <td style="height: 0%;">.</td>
+              <td style="--size: 0;">.</td>
+              <td style="--size: 0;">.</td>
+              <td style="--size: 0;">.</td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+    </div>
+
+    <div class="examples column">
+
+      <div>
+        <h3>Stacked</h3>
+        <style>
+          #custom-stacked-column-chart {
+            height: 300px;
+            }
+          #custom-stacked-column-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css column multiple stacked row-spacing-4" id="custom-stacked-column-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>Stacked Reverse</h3>
+        <style>
+          #custom-stacked-column-chart {
+            height: 300px;
+            }
+          #custom-stacked-column-chart td {
+            color: #fff;
+            line-height: 2;
+            --color-1:#00CD68;
+            --color-2:#FEA300;
+            --color-3:#FE4D3F;
+          }
+        </style>
+        <table class="charts-css column multiple stacked row-spacing-4 reverse-datasets" id="custom-stacked-column-chart">
+          <caption>House Spending by Countries</caption>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Rent</th>
+              <th>Food</th>
+              <th>Other</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">USA</th>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.2;">20%</td>
+              <td style="--size: 0.5;">50%</td>
+            </tr>
+            <tr>
+              <th scope="row">Asia</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.3;">30%</td>
+              <td style="--size: 0.3;">30%</td>
+            </tr>
+            <tr>
+              <th scope="row">Europe</th>
+              <td style="--size: 0.4;">40%</td>
+              <td style="--size: 0.4;">40%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
       </div>
 
     </div>

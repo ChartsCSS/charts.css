@@ -1,6 +1,19 @@
 .charts-css {
 
   &.bubble {
+    // Shape
+    @include rectangle();
+
+    // Background
+    background-color: var( --chart-bg-color );
+
+    caption,
+    colgroup,
+    tbody,
+    thead,
+    tfoot {
+      display: none;
+    }
   }
 
 }
