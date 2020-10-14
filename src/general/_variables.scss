@@ -18,12 +18,15 @@ $max-items: 10; // The number of available colors
   --chart-bg-color: #f5f5f5;
 
   // Axes
-  --main-axis-color: rgba(0, 0, 0, 1);
-  --main-axis-style: solid;
-  --main-axis-width: 1px;
-  --axis-color: rgba(0, 0, 0, 0.15);
-  --axis-style: solid;
-  --axis-width: 1px;
+  --primary-axis-color: rgba(0, 0, 0, 1);
+  --primary-axis-style: solid;
+  --primary-axis-width: 1px;
+  --secondary-axes-color: rgba(0, 0, 0, 0.15);
+  --secondary-axes-style: solid;
+  --secondary-axes-width: 1px;
+  --data-axes-color: rgba(0, 0, 0, 0.15);
+  --data-axes-style: solid;
+  --data-axes-width: 1px;
 
   // Legend
   --legend-border-color: lightgrey;

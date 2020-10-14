@@ -168,12 +168,12 @@
     &.show-primary-axis {
       &:not(.labels-after) {
         tbody tr {
-          border-inline-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+          border-inline-start: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
         }
       }
       &.labels-after {
         tbody tr {
-          border-inline-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+          border-inline-end: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
         }
       }
     }
@@ -182,44 +182,44 @@
         &:not(.labels-after) {
           tbody tr {
             background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient( -90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+            background-image: linear-gradient( -90deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
           }
         }
         &.labels-after {
           tbody tr {
             background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient( 90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+            background-image: linear-gradient( 90deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
           }
         }
       }
     }
     &.show-data-axes {
       tbody tr {
-        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        border-block-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
         }
       }
       &.reverse-data {
         tbody tr:last-of-type {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
         }
       }
     }
     &.show-dataset-axes { // TODO: fix this
       tbody tr td {
-        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
+        border-block-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type td {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
         }
       }
       &.reverse-data {
         tbody tr:last-of-type td {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
         }
       }
     }
