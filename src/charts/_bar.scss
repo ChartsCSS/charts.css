@@ -5,6 +5,8 @@
     display: block;
     width: 100%;
 
+    --labels-size: 80px;
+
     caption,
     colgroup,
     thead,
@@ -48,7 +50,6 @@
 
         th {
           display: flex;
-          justify-content: start;
           align-items: center;
 
           padding: 0;
@@ -67,11 +68,12 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-inline-start: var( --bar-labels-size );
+          margin-inline-start: var( --labels-size );
 
           th {
-            left: calc( -1 * var( --bar-labels-size ) );
-            width: var( --bar-labels-size );
+            left: calc( -1 * var( --labels-size ) );
+            width: var( --labels-size );
+            justify-content: flex-start;
           }
 
           td {
@@ -84,11 +86,12 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-inline-end: var( --bar-labels-size );
+          margin-inline-end: var( --labels-size );
 
           th {
-            right: calc( -1 * var( --bar-labels-size ) );
-            width: var( --bar-labels-size );
+            right: calc( -1 * var( --labels-size ) );
+            width: var( --labels-size );
+            justify-content: flex-end;
           }
 
           td {

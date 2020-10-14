@@ -6,6 +6,8 @@
     width: 100%;
     height: 100%;
 
+    --labels-size: 1.5rem;
+
     caption,
     colgroup,
     thead,
@@ -51,7 +53,6 @@
 
         th {
           display: flex;
-          justify-content: center;
           align-items: center;
 
           padding: 0;
@@ -70,11 +71,12 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var( --column-labels-size );
+          margin-block-end: var( --labels-size );
 
           th {
-            bottom: calc( -1 * var( --column-labels-size ) );
-            height: var( --column-labels-size );
+            bottom: calc( -1 * var( --labels-size ) );
+            height: var( --labels-size );
+            justify-content: center;
           }
         }
       }
@@ -83,11 +85,12 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var( --column-labels-size );
+          margin-block-start: var( --labels-size );
 
           th {
-            top: calc( -1 * var( --column-labels-size ) );
-            height: var( --column-labels-size );
+            top: calc( -1 * var( --labels-size ) );
+            height: var( --labels-size );
+            justify-content: center;
           }
         }
       }
