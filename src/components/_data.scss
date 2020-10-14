@@ -3,7 +3,7 @@
   &.hide-data {
 
     .data {
-      visibility: hidden;
+      opacity: 0;
     }
 
   }
@@ -12,12 +12,12 @@
 
     .data {
       transition-duration: 0.3s;
-      visibility: hidden;
+      opacity: 0;
     }
 
     tr:hover .data {
       transition-duration: 0.3s;
-      visibility: visible;
+      opacity: 1;
     }
 
   }
