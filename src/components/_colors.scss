@@ -1,8 +1,8 @@
 .charts-css {
 
-  @for $i from 1 through 10 {
-    &:not(.multiple) tbody tr:nth-of-type( 10n + #{ $i } ) td,
-    &.multiple tbody tr td:nth-of-type( 10n + #{ $i } ) {
+  @for $i from 1 through $max-items {
+    &:not(.multiple) tbody tr:nth-of-type( #{ $max-items }n + #{ $i } ) td,
+    &.multiple tbody tr td:nth-of-type( #{ $max-items }n + #{ $i } ) {
       background-color: var( --color, var( --color-#{ $i } ) );
     }
   }
