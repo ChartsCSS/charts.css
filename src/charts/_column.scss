@@ -156,8 +156,8 @@
     @for $i from 1 through 20 {
       &.datasets-spacing-#{$i} {
         tbody tr td {
-          padding-inline-start: #{$i}px;
-          padding-inline-end: #{$i}px;
+          margin-inline-start: #{$i}px;
+          margin-inline-end: #{$i}px;
         }
       }
     }
