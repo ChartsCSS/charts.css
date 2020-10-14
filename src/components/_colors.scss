@@ -3,7 +3,7 @@
   @for $i from 1 through 10 {
     &:not(.multiple) tbody tr:nth-of-type( 10n + #{ $i } ) td,
     &.multiple tbody tr td:nth-of-type( 10n + #{ $i } ) {
-      background-color: var( --color-#{ $i });
+      background-color: var( --color, var( --color-#{ $i } ) );
     }
   }
 
