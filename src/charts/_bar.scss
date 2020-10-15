@@ -39,6 +39,9 @@
         margin: 0;
 
         td {
+          display: flex;
+          align-items: center;
+
           width: calc( 100% * var( --size, 1 ) );
           height: 100%;
 
@@ -77,7 +80,7 @@
           }
 
           td {
-            text-align: end;
+            justify-content: flex-end;
           }
         }
       }
@@ -95,7 +98,7 @@
           }
 
           td {
-            text-align: start;
+            justify-content: flex-start;
           }
         }
       }

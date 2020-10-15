@@ -39,9 +39,10 @@
         padding: 0;
         margin: 0;
 
-        text-align: center;
-
         td {
+          display: flex;
+          justify-content: center;
+
           width: 100%;
           height: calc( 100% * var( --size, 1 ) );
 
@@ -78,6 +79,10 @@
             height: var( --labels-size );
             justify-content: center;
           }
+
+          td {
+            align-items: flex-start;
+          }
         }
       }
     }
@@ -91,6 +96,10 @@
             top: calc( -1 * var( --labels-size ) );
             height: var( --labels-size );
             justify-content: center;
+          }
+
+          td {
+            align-items: flex-end;
           }
         }
       }
