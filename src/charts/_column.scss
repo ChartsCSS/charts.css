@@ -6,6 +6,8 @@
     width: 100%;
     height: 100%;
 
+    --labels-size: 1.5rem;
+
     caption,
     colgroup,
     thead,
@@ -29,6 +31,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
+        overflow-wrap: anywhere;
 
         // Display cells in a row
         display: flex;
@@ -37,21 +40,8 @@
         padding: 0;
         margin: 0;
 
-        text-align: center;
-
-        td {
-          width: 100%;
-          height: calc( 100% * var( --size, 1 ) );
-
-          padding: 0;
-          margin: 0;
-
-          position: relative; // For tooltips
-        }
-
         th {
           display: flex;
-          justify-content: center;
           align-items: center;
 
           padding: 0;
@@ -62,6 +52,19 @@
           left: 0;
         }
 
+        td {
+          display: flex;
+          justify-content: center;
+
+          width: 100%;
+          height: calc( 100% * var( --size, 1 ) );
+
+          padding: 0;
+          margin: 0;
+
+          position: relative; // For tooltips
+        }
+
       }
     }
 
@@ -70,11 +73,16 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var( --column-labels-size );
+          margin-block-end: var( --labels-size );
 
           th {
-            bottom: calc( -1 * var( --column-labels-size ) );
-            height: var( --column-labels-size );
+            bottom: calc( -1 * var( --labels-size ) );
+            height: var( --labels-size );
+            justify-content: center;
+          }
+
+          td {
+            align-items: flex-start;
           }
         }
       }
@@ -83,11 +91,16 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var( --column-labels-size );
+          margin-block-start: var( --labels-size );
 
           th {
-            top: calc( -1 * var( --column-labels-size ) );
-            height: var( --column-labels-size );
+            top: calc( -1 * var( --labels-size ) );
+            height: var( --labels-size );
+            justify-content: center;
+          }
+
+          td {
+            align-items: flex-end;
           }
         }
       }
@@ -120,12 +133,12 @@
     }
 
     // Reverse Order
-    &:not(.reverse) {
+    &:not(.reverse-data) {
       tbody {
         flex-direction: row;
       }
     }
-    &.reverse {
+    &.reverse-data {
       tbody {
         flex-direction: row-reverse;
       }
@@ -141,57 +154,80 @@
       }
     }
 
-    // Row Spacing
+    // Spacing
     @for $i from 1 through 20 {
-      &.row-spacing-#{$i} {
+      &.data-spacing-#{$i} {
         tbody tr {
           padding-inline-start: #{$i}px;
           padding-inline-end: #{$i}px;
         }
       }
     }
+    @for $i from 1 through 20 {
+      &.datasets-spacing-#{$i} {
+        tbody tr td {
+          margin-inline-start: #{$i}px;
+          margin-inline-end: #{$i}px;
+        }
+      }
+    }
 
     // Axes
-    &.show-main-axis {
+    &.show-primary-axis {
       &:not(.labels-before) {
         tbody tr {
-          border-block-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+          border-block-end: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
         }
       }
       &.labels-before {
         tbody tr {
-          border-block-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
-        }
-      }
-    }
-    &.show-y-axes {
-      tbody tr {
-        border-inline-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
-      }
-      &:not(.reverse) {
-        tbody tr:first-of-type {
-          border-inline-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
-        }
-      }
-      &.reverse {
-        tbody tr:last-of-type {
-          border-inline-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+          border-block-start: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
         }
       }
     }
     @for $i from 1 through $max-items {
-      &.show-#{$i}-x-axes {
+      &.show-#{$i}-secondary-axes {
         &:not(.labels-before) {
           tbody tr {
             background-size: 100% ( 100% / $i );
-            background-image: linear-gradient( var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+            background-image: linear-gradient( var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
           }
         }
         &.labels-before {
           tbody tr {
             background-size: 100% ( 100% / $i );
-            background-image: linear-gradient( 0deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+            background-image: linear-gradient( 0deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
           }
+        }
+      }
+    }
+    &.show-data-axes {
+      tbody tr {
+        border-inline-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type {
+          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type {
+          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        }
+      }
+    }
+    &.show-dataset-axes { // TODO: fix this
+      tbody tr td {
+        border-inline-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type td {
+          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type td {
+          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
         }
       }
     }

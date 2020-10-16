@@ -22,7 +22,7 @@
         border-style: solid;
       }
 
-      @for $i from 1 through $max-items {
+      @for $i from 1 through $total-colors {
 
         &:nth-child(#{ $i })::before {
           background-color: var( --color-#{ $i }, transparent );

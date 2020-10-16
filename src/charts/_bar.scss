@@ -5,6 +5,8 @@
     display: block;
     width: 100%;
 
+    --labels-size: 80px;
+
     caption,
     colgroup,
     thead,
@@ -28,6 +30,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
+        overflow-wrap: anywhere;
 
         // Display cells in a column
         display: flex;
@@ -36,19 +39,8 @@
         padding: 0;
         margin: 0;
 
-        td {
-          width: calc( 100% * var( --size, 1 ) );
-          height: 100%;
-
-          padding: 0;
-          margin: 0;
-
-          position: relative; // For tooltips
-        }
-
         th {
           display: flex;
-          justify-content: start;
           align-items: center;
 
           padding: 0;
@@ -59,6 +51,19 @@
           bottom: 0;
         }
 
+        td {
+          display: flex;
+          align-items: center;
+
+          width: calc( 100% * var( --size, 1 ) );
+          height: 100%;
+
+          padding: 0;
+          margin: 0;
+
+          position: relative; // For tooltips
+        }
+
       }
     }
 
@@ -67,15 +72,16 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-inline-start: var( --bar-labels-size );
+          margin-inline-start: var( --labels-size );
 
           th {
-            left: calc( -1 * var( --bar-labels-size ) );
-            width: var( --bar-labels-size );
+            left: calc( -1 * var( --labels-size ) );
+            width: var( --labels-size );
+            justify-content: flex-start;
           }
 
           td {
-            text-align: end;
+            justify-content: flex-end;
           }
         }
       }
@@ -84,15 +90,16 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-inline-end: var( --bar-labels-size );
+          margin-inline-end: var( --labels-size );
 
           th {
-            right: calc( -1 * var( --bar-labels-size ) );
-            width: var( --bar-labels-size );
+            right: calc( -1 * var( --labels-size ) );
+            width: var( --labels-size );
+            justify-content: flex-end;
           }
 
           td {
-            text-align: start;
+            justify-content: flex-start;
           }
         }
       }
@@ -125,12 +132,12 @@
     }
 
     // Reverse Order
-    &:not(.reverse) {
+    &:not(.reverse-data) {
       tbody {
         flex-direction: column;
       }
     }
-    &.reverse {
+    &.reverse-data {
       tbody {
         flex-direction: column-reverse;
       }
@@ -146,57 +153,80 @@
       }
     }
 
-    // Row Spacing
+    // Spacing
     @for $i from 1 through 20 {
-      &.row-spacing-#{$i} {
+      &.data-spacing-#{$i} {
         tbody tr {
           padding-block-start: #{$i}px;
           padding-block-end: #{$i}px;
         }
       }
     }
+    @for $i from 1 through 20 {
+      &.datasets-spacing-#{$i} {
+        tbody tr td {
+          margin-block-start: #{$i}px;
+          margin-block-end: #{$i}px;
+        }
+      }
+    }
 
     // Axes
-    &.show-main-axis {
+    &.show-primary-axis {
       &:not(.labels-after) {
         tbody tr {
-          border-inline-start: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
+          border-inline-start: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
         }
       }
       &.labels-after {
         tbody tr {
-          border-inline-end: var( --main-axis-width ) var( --main-axis-style ) var( --main-axis-color );
-        }
-      }
-    }
-    &.show-x-axes {
-      tbody tr {
-        border-block-end: var( --axis-width ) var( --axis-style ) var( --axis-color );
-      }
-      &:not(.reverse) {
-        tbody tr:first-of-type {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
-        }
-      }
-      &.reverse {
-        tbody tr:last-of-type {
-          border-block-start: var( --axis-width ) var( --axis-style ) var( --axis-color );
+          border-inline-end: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
         }
       }
     }
     @for $i from 1 through $max-items {
-      &.show-#{$i}-y-axes {
+      &.show-#{$i}-secondary-axes {
         &:not(.labels-after) {
           tbody tr {
             background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient( -90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+            background-image: linear-gradient( -90deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
           }
         }
         &.labels-after {
           tbody tr {
             background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient( 90deg, var( --axis-color ) var( --axis-width ), transparent var( --axis-width ) );
+            background-image: linear-gradient( 90deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
           }
+        }
+      }
+    }
+    &.show-data-axes {
+      tbody tr {
+        border-block-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type {
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type {
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        }
+      }
+    }
+    &.show-dataset-axes { // TODO: fix this
+      tbody tr td {
+        border-block-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type td {
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type td {
+          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
         }
       }
     }

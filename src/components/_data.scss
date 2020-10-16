@@ -1,0 +1,25 @@
+.charts-css {
+
+  &.hide-data {
+
+    .data {
+      opacity: 0;
+    }
+
+  }
+
+  &.show-data-on-hover {
+
+    .data {
+      transition-duration: 0.3s;
+      opacity: 0;
+    }
+
+    tr:hover .data {
+      transition-duration: 0.3s;
+      opacity: 1;
+    }
+
+  }
+
+}
