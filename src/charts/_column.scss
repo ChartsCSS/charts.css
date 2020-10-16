@@ -31,6 +31,7 @@
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
+        overflow-wrap: anywhere;
 
         // Display cells in a row
         display: flex;
