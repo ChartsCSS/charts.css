@@ -75,7 +75,7 @@
           margin-inline-start: var( --labels-size );
 
           th {
-            left: calc( -1 * var( --labels-size ) );
+            left: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
             width: var( --labels-size );
             justify-content: flex-start;
           }
@@ -93,7 +93,7 @@
           margin-inline-end: var( --labels-size );
 
           th {
-            right: calc( -1 * var( --labels-size ) );
+            right: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
             width: var( --labels-size );
             justify-content: flex-end;
           }

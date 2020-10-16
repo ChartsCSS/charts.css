@@ -76,7 +76,7 @@
           margin-block-end: var( --labels-size );
 
           th {
-            bottom: calc( -1 * var( --labels-size ) );
+            bottom: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
             height: var( --labels-size );
             justify-content: center;
           }
@@ -94,7 +94,7 @@
           margin-block-start: var( --labels-size );
 
           th {
-            top: calc( -1 * var( --labels-size ) );
+            top: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
             height: var( --labels-size );
             justify-content: center;
           }
