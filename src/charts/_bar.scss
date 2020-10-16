@@ -38,6 +38,18 @@
         padding: 0;
         margin: 0;
 
+        th {
+          display: flex;
+          align-items: center;
+
+          padding: 0;
+          margin: 0;
+
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        }
+
         td {
           display: flex;
           align-items: center;
@@ -49,18 +61,6 @@
           margin: 0;
 
           position: relative; // For tooltips
-        }
-
-        th {
-          display: flex;
-          align-items: center;
-
-          padding: 0;
-          margin: 0;
-
-          position: absolute;
-          top: 0;
-          bottom: 0;
         }
 
       }

@@ -39,6 +39,18 @@
         padding: 0;
         margin: 0;
 
+        th {
+          display: flex;
+          align-items: center;
+
+          padding: 0;
+          margin: 0;
+
+          position: absolute;
+          right: 0;
+          left: 0;
+        }
+
         td {
           display: flex;
           justify-content: center;
@@ -50,18 +62,6 @@
           margin: 0;
 
           position: relative; // For tooltips
-        }
-
-        th {
-          display: flex;
-          align-items: center;
-
-          padding: 0;
-          margin: 0;
-
-          position: absolute;
-          right: 0;
-          left: 0;
         }
 
       }
