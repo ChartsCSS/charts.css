@@ -104,6 +104,21 @@
         }
       }
     }
+    &.labels-align-start {
+      tbody tr th {
+        justify-content: flex-start;
+      }
+    }
+    &.labels-align-end {
+      tbody tr th {
+        justify-content: flex-end;
+      }
+    }
+    &.labels-align-center {
+      tbody tr th {
+        justify-content: center;
+      }
+    }
 
     // Stacked
     &:not(.stacked) {
