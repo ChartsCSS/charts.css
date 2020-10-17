@@ -34,21 +34,16 @@ table.charts-css {
   overflow: initial;
   background-color: transparent;
 
+  // Reset
   thead,
-  tbody {
-    border: 0;
-  }
-
-  tr {
-    background-color: transparent;
-    border: 0;
-  }
-
+  tbody,
+  tr,
   th,
   td {
     padding: 0;
     margin: 0;
     border: 0;
+    background-color: transparent;
   }
 
   // Counter
