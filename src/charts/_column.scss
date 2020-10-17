@@ -88,7 +88,7 @@
           th {
             bottom: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
             height: var( --labels-size );
-            justify-content: center;
+            justify-content: var( --labels-align, center );
           }
 
           td {
@@ -106,7 +106,7 @@
           th {
             top: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
             height: var( --labels-size );
-            justify-content: center;
+            justify-content: var( --labels-align, center );
           }
 
           td {
@@ -117,17 +117,17 @@
     }
     &.labels-align-start {
       tbody tr th {
-        justify-content: flex-start;
+        justify-content: var( --labels-align, flex-start );
       }
     }
     &.labels-align-end {
       tbody tr th {
-        justify-content: flex-end;
+        justify-content: var( --labels-align, flex-end );
       }
     }
     &.labels-align-center {
       tbody tr th {
-        justify-content: center;
+        justify-content: var( --labels-align, center );
       }
     }
 
