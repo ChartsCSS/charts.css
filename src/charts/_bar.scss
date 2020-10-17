@@ -36,15 +36,9 @@
         display: flex;
         justify-content: flex-start;
 
-        padding: 0;
-        margin: 0;
-
         th {
           display: flex;
           align-items: center;
-
-          padding: 0;
-          margin: 0;
 
           position: absolute;
           top: 0;
@@ -57,9 +51,6 @@
 
           width: calc( 100% * var( --size, 1 ) );
           height: 100%;
-
-          padding: 0;
-          margin: 0;
 
           position: relative; // For tooltips
         }
