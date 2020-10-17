@@ -1,6 +1,26 @@
-$max-items: 10; // The number of available colors
+$max-items: 10; // The number of available items
+
+// Colors List (source: https://www.schemecolor.com/rainbow-on-sale.php)
+$colors:
+  rgba(240, 100, 100, 1),
+  rgba(255, 200, 100, 1),
+  rgba(255, 230, 130, 1),
+  rgba(140, 220, 120, 1),
+  rgba(130, 190, 255, 1),
+  rgba(190, 130, 255, 1),
+  rgba(200, 200, 200, 1),
+  rgba(150, 150, 150, 1),
+  rgba(190, 180, 150, 1),
+  rgba(160, 100,  80, 1);
+
+$total-colors: length( $colors );
 
 .charts-css {
+
+  // Colors
+  @for $i from 1 through length( $colors ) {
+    --color-#{$i}: #{ nth( $colors, $i ) };
+  }
 
   // General Colors
   --chart-bg-color: #f5f5f5;
