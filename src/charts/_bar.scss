@@ -67,7 +67,17 @@
       }
     }
 
-    // Labels Position
+    // Labels
+    &.labels-hide {
+      --labels-size: 0;
+      tbody {
+        tr {
+          th {
+            display: none;
+          }
+        }
+      }
+    }
     &:not(.labels-after) {
       tbody {
         tr {
