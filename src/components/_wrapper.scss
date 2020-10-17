@@ -34,6 +34,11 @@ table.charts-css {
   overflow: initial;
   background-color: transparent;
 
+  thead,
+  tbody {
+    border: 0;
+  }
+
   tr {
     background-color: transparent;
     border: 0;
