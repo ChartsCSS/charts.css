@@ -35,7 +35,7 @@
 
         // Display cells in a row
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
 
         padding: 0;
         margin: 0;
@@ -134,7 +134,6 @@
     // Stacked
     &:not(.stacked) {
       tbody tr {
-
         td {
           // Even cell size
           flex-grow: 1;
@@ -145,14 +144,16 @@
     }
     &.stacked {
       tbody tr {
-        flex-direction: column-reverse;
-        justify-content: start;
-        align-items: flex-start;
-
         td {
           flex-grow: unset;
           flex-shrink: unset;
           flex-basis: unset;
+        }
+      }
+
+      &.reverse-datasets {
+        tbody tr {
+          justify-content: flex-end;
         }
       }
     }
@@ -169,13 +170,45 @@
       }
     }
     &:not(.reverse-datasets) {
-      tbody tr {
-        flex-direction: row;
+      &:not(.stacked) {
+        tbody tr {
+          flex-direction: row;
+        }
+      }
+
+      &.stacked {
+        &:not(.labels-before) {
+          tbody tr {
+            flex-direction: column-reverse;
+          }
+        }
+
+        &.labels-before {
+          tbody tr {
+            flex-direction: column;
+          }
+        }
       }
     }
     &.reverse-datasets {
-      tbody tr {
-        flex-direction: row-reverse;
+      &:not(.stacked) {
+        tbody tr {
+          flex-direction: row-reverse;
+        }
+      }
+
+      &.stacked {
+        &:not(.labels-before) {
+          tbody tr {
+            flex-direction: column;
+          }
+        }
+
+        &.labels-before {
+          tbody tr {
+            flex-direction: column-reverse;
+          }
+        }
       }
     }
 
