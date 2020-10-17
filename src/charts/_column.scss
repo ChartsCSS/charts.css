@@ -210,7 +210,7 @@
         }
       }
     }
-    @for $i from 1 through $max-items {
+    @for $i from 1 through $max-axes {
       &.show-#{$i}-secondary-axes {
         &:not(.labels-before) {
           tbody tr {
