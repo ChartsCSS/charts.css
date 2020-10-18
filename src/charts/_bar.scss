@@ -140,6 +140,12 @@
           flex-basis: unset;
         }
       }
+
+      &.reverse-datasets {
+        tbody tr {
+          justify-content: flex-end;
+        }
+      }
     }
 
     // Reverse Order
@@ -184,13 +190,13 @@
       &.stacked {
         &:not(.labels-after) {
           tbody tr {
-            flex-direction: row;
+            flex-direction: row-reverse;
           }
         }
 
         &.labels-after {
           tbody tr {
-            flex-direction: row-reverse;
+            flex-direction: row;
           }
         }
       }
