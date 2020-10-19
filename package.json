@@ -21,9 +21,9 @@
     "dist/charts.min.css"
   ],
   "scripts": {
-    "build": "npm-run-all css-compile css-minify",
+    "build": "npm-run-all css-compile css-postcss",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/ -o dist/",
-    "css-minify": "uglifycss dist/charts.css > dist/charts.min.css",
+    "css-postcss": "postcss dist/charts.css > dist/charts.min.css",
     "watch": "nodemon -e scss,html --watch src --exec \"npm run build\""
   },
   "repository": {
@@ -34,9 +34,19 @@
     "url": "https://github.com/ChartsCSS/charts.css/issues"
   },
   "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "cssnano": "^4.1.10",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
-    "uglifycss": "0.0.29"
-  }
+    "postcss": "^8.1.2",
+    "postcss-cli": "^8.1.0"
+  },
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "not ie >= 0",
+    "not op_mini all",
+    "last 2 versions"
+  ]
 }
