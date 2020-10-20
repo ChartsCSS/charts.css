@@ -21,9 +21,11 @@
     "dist/charts.min.css"
   ],
   "scripts": {
-    "build": "npm-run-all css-compile css-postcss",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/ -o dist/",
-    "css-postcss": "postcss dist/charts.css > dist/charts.min.css",
+    "build": "npm-run-all css-compile css-combine css-prefixes css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents false --source-map-embed false --precision 6 src/ -o dist/",
+    "css-combine": "postcss dist/charts.css --use postcss-combine-duplicated-selectors --output dist/charts.css",
+    "css-prefixes": "postcss dist/charts.css --use autoprefixer --output dist/charts.css",
+    "css-minify": "postcss dist/charts.css --use cssnano --output dist/charts.min.css",
     "watch": "nodemon -e scss,html --watch src --exec \"npm run build\""
   },
   "repository": {
@@ -41,8 +43,17 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.1.2",
     "postcss-cli": "^8.1.0",
-    "stylelint": "^13.7.2",
-    "stylelint-config-twbs-bootstrap": "^2.1.0"
+    "postcss-combine-duplicated-selectors": "^10.0.2"
+  },
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "discardComments": {
+          "removeAll": true
+        }
+      }
+    ]
   },
   "browserslist": [
     ">1%",
