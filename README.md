@@ -1,6 +1,6 @@
 # Charts.css
 
-![GitHub Version](https://img.shields.io/github/v/release/ChartsCSS/charts.css?style=for-the-badge) ![Minified Size](https://img.shields.io/bundlephobia/min/charts.css?style=for-the-badge)] ![License](https://img.shields.io/github/license/ChartsCSS/charts.css?style=for-the-badge)]
+![GitHub Version](https://img.shields.io/github/v/release/ChartsCSS/charts.css?style=for-the-badge) ![Minified Size](https://img.shields.io/bundlephobia/min/charts.css?style=for-the-badge) ![License](https://img.shields.io/github/license/ChartsCSS/charts.css?style=for-the-badge)
 
 **Charts.css is an MIT-licensed open source CSS framework for data visualization.**
 
