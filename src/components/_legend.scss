@@ -3,7 +3,7 @@
   &.legend {
     margin: 0;
     padding: 1rem;
-    border: 1px solid var( --legend-border-color );
+    border: 1px solid var(--legend-border-color);
     list-style: none;
 
     font-size: 1rem;
@@ -14,7 +14,7 @@
       align-items: center;
 
       &::before {
-        content: '';
+        content: "";
         display: inline-block;
         vertical-align: middle;
         margin-inline-end: .5rem;
@@ -25,8 +25,8 @@
       @for $i from 1 through $total-colors {
 
         &:nth-child(#{ $i })::before {
-          background-color: var( --color-#{ $i }, transparent );
-          border-color: var( --border-color-#{ $i }, var( --border-color, #000 ) );
+          background-color: var(--color-#{ $i }, transparent);
+          border-color: var(--border-color-#{ $i }, var(--border-color, #000));
         }
 
       }
@@ -82,7 +82,7 @@
       width: 1rem;
       height: 1rem;
       border-radius: 3px;
-      transform: rotate(45deg) scale(0.85);
+      transform: rotate(45deg) scale(.85);
     }
   }
 

@@ -9,14 +9,13 @@
   }
 
   &.show-data-on-hover {
-
     .data {
-      transition-duration: 0.3s;
+      transition-duration: .3s;
       opacity: 0;
     }
 
     tr:hover .data {
-      transition-duration: 0.3s;
+      transition-duration: .3s;
       opacity: 1;
     }
 

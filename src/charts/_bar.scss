@@ -34,17 +34,11 @@
 
         // Display cells in a column
         display: flex;
-        justify-content: space-around;
-
-        padding: 0;
-        margin: 0;
+        justify-content: flex-start;
 
         th {
           display: flex;
           align-items: center;
-
-          padding: 0;
-          margin: 0;
 
           position: absolute;
           top: 0;
@@ -55,11 +49,8 @@
           display: flex;
           align-items: center;
 
-          width: calc( 100% * var( --size, 1 ) );
+          width: calc(100% * var(--size, 1));
           height: 100%;
-
-          padding: 0;
-          margin: 0;
 
           position: relative; // For tooltips
         }
@@ -67,17 +58,27 @@
       }
     }
 
-    // Labels Position
+    // Labels
+    &.labels-hide {
+      --labels-size: 0;
+      tbody {
+        tr {
+          th {
+            display: none;
+          }
+        }
+      }
+    }
     &:not(.labels-after) {
       tbody {
         tr {
           align-items: flex-start;
-          margin-inline-start: var( --labels-size );
+          margin-inline-start: var(--labels-size);
 
           th {
-            left: calc( -1 * var( --labels-size ) );
-            width: var( --labels-size );
-            justify-content: flex-start;
+            left: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            width: var(--labels-size);
+            justify-content: var(--labels-align, flex-start);
           }
 
           td {
@@ -90,12 +91,12 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-inline-end: var( --labels-size );
+          margin-inline-end: var(--labels-size);
 
           th {
-            right: calc( -1 * var( --labels-size ) );
-            width: var( --labels-size );
-            justify-content: flex-end;
+            right: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            width: var(--labels-size);
+            justify-content: var(--labels-align, flex-end);
           }
 
           td {
@@ -104,11 +105,25 @@
         }
       }
     }
+    &.labels-align-start {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-start);
+      }
+    }
+    &.labels-align-end {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-end);
+      }
+    }
+    &.labels-align-center {
+      tbody tr th {
+        justify-content: var(--labels-align, center);
+      }
+    }
 
     // Stacked
     &:not(.stacked) {
       tbody tr {
-
         td {
           // Even cell size
           flex-grow: 1;
@@ -117,16 +132,18 @@
         }
       }
     }
-    &.multiple.stacked {
+    &.stacked {
       tbody tr {
-        flex-direction: row;
-        justify-content: start;
-        align-items: flex-start;
-
         td {
           flex-grow: unset;
           flex-shrink: unset;
           flex-basis: unset;
+        }
+      }
+
+      &.reverse-datasets {
+        tbody tr {
+          justify-content: flex-end;
         }
       }
     }
@@ -143,13 +160,45 @@
       }
     }
     &:not(.reverse-datasets) {
-      tbody tr {
-        flex-direction: column;
+      &:not(.stacked) {
+        tbody tr {
+          flex-direction: column;
+        }
+      }
+
+      &.stacked {
+        &:not(.labels-after) {
+          tbody tr {
+            flex-direction: row;
+          }
+        }
+
+        &.labels-after {
+          tbody tr {
+            flex-direction: row-reverse;
+          }
+        }
       }
     }
     &.reverse-datasets {
-      tbody tr {
-        flex-direction: column-reverse;
+      &:not(.stacked) {
+        tbody tr {
+          flex-direction: column-reverse;
+        }
+      }
+
+      &.stacked {
+        &:not(.labels-after) {
+          tbody tr {
+            flex-direction: row-reverse;
+          }
+        }
+
+        &.labels-after {
+          tbody tr {
+            flex-direction: row;
+          }
+        }
       }
     }
 
@@ -157,16 +206,16 @@
     @for $i from 1 through 20 {
       &.data-spacing-#{$i} {
         tbody tr {
-          padding-block-start: #{$i}px;
-          padding-block-end: #{$i}px;
+          padding-block-start: $i * 1px;
+          padding-block-end: $i * 1px;
         }
       }
     }
     @for $i from 1 through 20 {
       &.datasets-spacing-#{$i} {
         tbody tr td {
-          margin-block-start: #{$i}px;
-          margin-block-end: #{$i}px;
+          margin-block-start: $i * 1px;
+          margin-block-end: $i * 1px;
         }
       }
     }
@@ -175,58 +224,58 @@
     &.show-primary-axis {
       &:not(.labels-after) {
         tbody tr {
-          border-inline-start: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+          border-inline-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
       &.labels-after {
         tbody tr {
-          border-inline-end: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+          border-inline-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
     }
-    @for $i from 1 through $max-items {
+    @for $i from 1 through $max-axes {
       &.show-#{$i}-secondary-axes {
         &:not(.labels-after) {
           tbody tr {
-            background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient( -90deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
+            background-size: (100% / $i) 100%;
+            background-image: linear-gradient(-90deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
         &.labels-after {
           tbody tr {
-            background-size: ( 100% / $i ) 100%;
-            background-image: linear-gradient( 90deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
+            background-size: (100% / $i) 100%;
+            background-image: linear-gradient(90deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
       }
     }
     &.show-data-axes {
       tbody tr {
-        border-block-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        border-block-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type {
-          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type {
-          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
     }
     &.show-dataset-axes { // TODO: fix this
       tbody tr td {
-        border-block-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        border-block-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type td {
-          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type td {
-          border-block-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
     }
@@ -234,7 +283,7 @@
     // Hover
     &.hover {
       tr:hover {
-        background-color: var( --tr-hover-color, rgba(0, 0, 0, 0.05) );
+        background-color: var(--tr-hover-color, rgba(0, 0, 0, .05));
       }
       td:hover {
         opacity: .75;

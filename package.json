@@ -1,6 +1,6 @@
 {
   "name": "charts.css",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Open source CSS framework for data visualization.",
   "author": "Rami Yushuvaev",
   "homepage": "https://ChartsCSS.org/",
@@ -21,9 +21,11 @@
     "dist/charts.min.css"
   ],
   "scripts": {
-    "build": "npm-run-all css-compile css-minify",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/ -o dist/",
-    "css-minify": "uglifycss dist/charts.css > dist/charts.min.css",
+    "build": "npm-run-all css-compile css-combine css-prefixes css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents false --source-map-embed false --precision 6 src/ -o dist/",
+    "css-combine": "postcss dist/charts.css --use postcss-combine-duplicated-selectors --output dist/charts.css",
+    "css-prefixes": "postcss dist/charts.css --use autoprefixer --output dist/charts.css",
+    "css-minify": "postcss dist/charts.css --no-map --use cssnano --output dist/charts.min.css",
     "watch": "nodemon -e scss,html --watch src --exec \"npm run build\""
   },
   "repository": {
@@ -34,9 +36,30 @@
     "url": "https://github.com/ChartsCSS/charts.css/issues"
   },
   "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "cssnano": "^4.1.10",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
-    "uglifycss": "0.0.29"
-  }
+    "postcss": "^8.1.2",
+    "postcss-cli": "^8.1.0",
+    "postcss-combine-duplicated-selectors": "^10.0.2"
+  },
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "discardComments": {
+          "removeAll": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    ">1%",
+    "not dead",
+    "not ie >= 0",
+    "not op_mini all",
+    "last 2 versions"
+  ]
 }

@@ -35,17 +35,11 @@
 
         // Display cells in a row
         display: flex;
-        justify-content: space-around;
-
-        padding: 0;
-        margin: 0;
+        justify-content: flex-start;
 
         th {
           display: flex;
           align-items: center;
-
-          padding: 0;
-          margin: 0;
 
           position: absolute;
           right: 0;
@@ -57,10 +51,7 @@
           justify-content: center;
 
           width: 100%;
-          height: calc( 100% * var( --size, 1 ) );
-
-          padding: 0;
-          margin: 0;
+          height: calc(100% * var(--size, 1));
 
           position: relative; // For tooltips
         }
@@ -68,17 +59,27 @@
       }
     }
 
-    // Labels Position
+    // Labels
+    &.labels-hide {
+      --labels-size: 0;
+      tbody {
+        tr {
+          th {
+            display: none;
+          }
+        }
+      }
+    }
     &:not(.labels-before) {
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var( --labels-size );
+          margin-block-end: var(--labels-size);
 
           th {
-            bottom: calc( -1 * var( --labels-size ) );
-            height: var( --labels-size );
-            justify-content: center;
+            bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            height: var(--labels-size);
+            justify-content: var(--labels-align, center);
           }
 
           td {
@@ -91,12 +92,12 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var( --labels-size );
+          margin-block-start: var(--labels-size);
 
           th {
-            top: calc( -1 * var( --labels-size ) );
-            height: var( --labels-size );
-            justify-content: center;
+            top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            height: var(--labels-size);
+            justify-content: var(--labels-align, center);
           }
 
           td {
@@ -105,11 +106,25 @@
         }
       }
     }
+    &.labels-align-start {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-start);
+      }
+    }
+    &.labels-align-end {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-end);
+      }
+    }
+    &.labels-align-center {
+      tbody tr th {
+        justify-content: var(--labels-align, center);
+      }
+    }
 
     // Stacked
     &:not(.stacked) {
       tbody tr {
-
         td {
           // Even cell size
           flex-grow: 1;
@@ -120,14 +135,16 @@
     }
     &.stacked {
       tbody tr {
-        flex-direction: column-reverse;
-        justify-content: start;
-        align-items: flex-start;
-
         td {
           flex-grow: unset;
           flex-shrink: unset;
           flex-basis: unset;
+        }
+      }
+
+      &.reverse-datasets {
+        tbody tr {
+          justify-content: flex-end;
         }
       }
     }
@@ -144,13 +161,45 @@
       }
     }
     &:not(.reverse-datasets) {
-      tbody tr {
-        flex-direction: row;
+      &:not(.stacked) {
+        tbody tr {
+          flex-direction: row;
+        }
+      }
+
+      &.stacked {
+        &:not(.labels-before) {
+          tbody tr {
+            flex-direction: column-reverse;
+          }
+        }
+
+        &.labels-before {
+          tbody tr {
+            flex-direction: column;
+          }
+        }
       }
     }
     &.reverse-datasets {
-      tbody tr {
-        flex-direction: row-reverse;
+      &:not(.stacked) {
+        tbody tr {
+          flex-direction: row-reverse;
+        }
+      }
+
+      &.stacked {
+        &:not(.labels-before) {
+          tbody tr {
+            flex-direction: column;
+          }
+        }
+
+        &.labels-before {
+          tbody tr {
+            flex-direction: column-reverse;
+          }
+        }
       }
     }
 
@@ -158,16 +207,16 @@
     @for $i from 1 through 20 {
       &.data-spacing-#{$i} {
         tbody tr {
-          padding-inline-start: #{$i}px;
-          padding-inline-end: #{$i}px;
+          padding-inline-start: $i * 1px;
+          padding-inline-end: $i * 1px;
         }
       }
     }
     @for $i from 1 through 20 {
       &.datasets-spacing-#{$i} {
         tbody tr td {
-          margin-inline-start: #{$i}px;
-          margin-inline-end: #{$i}px;
+          margin-inline-start: $i * 1px;
+          margin-inline-end: $i * 1px;
         }
       }
     }
@@ -176,58 +225,58 @@
     &.show-primary-axis {
       &:not(.labels-before) {
         tbody tr {
-          border-block-end: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+          border-block-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
       &.labels-before {
         tbody tr {
-          border-block-start: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+          border-block-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
     }
-    @for $i from 1 through $max-items {
+    @for $i from 1 through $max-axes {
       &.show-#{$i}-secondary-axes {
         &:not(.labels-before) {
           tbody tr {
-            background-size: 100% ( 100% / $i );
-            background-image: linear-gradient( var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
+            background-size: 100% (100% / $i);
+            background-image: linear-gradient(var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
         &.labels-before {
           tbody tr {
-            background-size: 100% ( 100% / $i );
-            background-image: linear-gradient( 0deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
+            background-size: 100% (100% / $i);
+            background-image: linear-gradient(0deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
       }
     }
     &.show-data-axes {
       tbody tr {
-        border-inline-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
     }
     &.show-dataset-axes { // TODO: fix this
       tbody tr td {
-        border-inline-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type td {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type td {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
     }
@@ -235,7 +284,7 @@
     // Hover
     &.hover {
       tr:hover {
-        background-color: var( --tr-hover-color, rgba(0, 0, 0, 0.05) );
+        background-color: var(--tr-hover-color, rgba(0, 0, 0, .05));
       }
       td:hover {
         opacity: .75;

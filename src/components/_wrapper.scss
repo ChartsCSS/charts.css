@@ -9,9 +9,11 @@
 }
 
 .charts-css,
+.charts-css::after,
+.charts-css::before,
 .charts-css *,
-.charts-css ::after,
-.charts-css ::before {
+.charts-css *::after,
+.charts-css *::before {
   box-sizing: border-box;
 }
 
@@ -34,16 +36,16 @@ table.charts-css {
   overflow: initial;
   background-color: transparent;
 
-  tr {
-    background-color: transparent;
-    border: 0;
-  }
-
+  // Reset
+  thead,
+  tbody,
+  tr,
   th,
   td {
     padding: 0;
     margin: 0;
     border: 0;
+    background-color: transparent;
   }
 
   // Counter
