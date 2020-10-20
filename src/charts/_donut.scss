@@ -5,27 +5,27 @@
     @include circle();
 
     // Background
-    background-color: var( --chart-bg-color );
+    background-color: var(--chart-bg-color);
 
     &::after {
-      content: '';
+      content: "";
 
       // Center the donut
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate( -50%, -50% );
+      transform: translate(-50%, -50%);
 
       // Donut size
-      width: var( --donut-inner-size, 50% );
-      height: var( --donut-inner-size, 50% );
+      width: var(--donut-inner-size, 50%);
+      height: var(--donut-inner-size, 50%);
 
       display: flex;
       justify-content: center;
       align-items: center;
 
       border-radius: 50%;
-      background-color: var( --donut-inner-color, #fff );
+      background-color: var(--donut-inner-color, #fff);
     }
 
     caption,

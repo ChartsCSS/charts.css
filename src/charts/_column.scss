@@ -51,7 +51,7 @@
           justify-content: center;
 
           width: 100%;
-          height: calc( 100% * var( --size, 1 ) );
+          height: calc(100% * var(--size, 1));
 
           position: relative; // For tooltips
         }
@@ -74,12 +74,12 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var( --labels-size );
+          margin-block-end: var(--labels-size);
 
           th {
-            bottom: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
-            height: var( --labels-size );
-            justify-content: var( --labels-align, center );
+            bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            height: var(--labels-size);
+            justify-content: var(--labels-align, center);
           }
 
           td {
@@ -92,12 +92,12 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var( --labels-size );
+          margin-block-start: var(--labels-size);
 
           th {
-            top: calc( -1 * var( --labels-size ) - var( --primary-axis-width ) );
-            height: var( --labels-size );
-            justify-content: var( --labels-align, center );
+            top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            height: var(--labels-size);
+            justify-content: var(--labels-align, center);
           }
 
           td {
@@ -108,17 +108,17 @@
     }
     &.labels-align-start {
       tbody tr th {
-        justify-content: var( --labels-align, flex-start );
+        justify-content: var(--labels-align, flex-start);
       }
     }
     &.labels-align-end {
       tbody tr th {
-        justify-content: var( --labels-align, flex-end );
+        justify-content: var(--labels-align, flex-end);
       }
     }
     &.labels-align-center {
       tbody tr th {
-        justify-content: var( --labels-align, center );
+        justify-content: var(--labels-align, center);
       }
     }
 
@@ -207,16 +207,16 @@
     @for $i from 1 through 20 {
       &.data-spacing-#{$i} {
         tbody tr {
-          padding-inline-start: #{$i}px;
-          padding-inline-end: #{$i}px;
+          padding-inline-start: $i * 1px;
+          padding-inline-end: $i * 1px;
         }
       }
     }
     @for $i from 1 through 20 {
       &.datasets-spacing-#{$i} {
         tbody tr td {
-          margin-inline-start: #{$i}px;
-          margin-inline-end: #{$i}px;
+          margin-inline-start: $i * 1px;
+          margin-inline-end: $i * 1px;
         }
       }
     }
@@ -225,12 +225,12 @@
     &.show-primary-axis {
       &:not(.labels-before) {
         tbody tr {
-          border-block-end: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+          border-block-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
       &.labels-before {
         tbody tr {
-          border-block-start: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+          border-block-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
     }
@@ -238,45 +238,45 @@
       &.show-#{$i}-secondary-axes {
         &:not(.labels-before) {
           tbody tr {
-            background-size: 100% ( 100% / $i );
-            background-image: linear-gradient( var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
+            background-size: 100% (100% / $i);
+            background-image: linear-gradient(var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
         &.labels-before {
           tbody tr {
-            background-size: 100% ( 100% / $i );
-            background-image: linear-gradient( 0deg, var( --secondary-axes-color ) var( --secondary-axes-width ), transparent var( --secondary-axes-width ) );
+            background-size: 100% (100% / $i);
+            background-image: linear-gradient(0deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
       }
     }
     &.show-data-axes {
       tbody tr {
-        border-inline-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
     }
     &.show-dataset-axes { // TODO: fix this
       tbody tr td {
-        border-inline-end: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type td {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type td {
-          border-inline-start: var( --data-axes-width ) var( --data-axes-style ) var( --data-axes-color );
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
         }
       }
     }
@@ -284,7 +284,7 @@
     // Hover
     &.hover {
       tr:hover {
-        background-color: var( --tr-hover-color, rgba(0, 0, 0, 0.05) );
+        background-color: var(--tr-hover-color, rgba(0, 0, 0, .05));
       }
       td:hover {
         opacity: .75;
