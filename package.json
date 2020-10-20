@@ -25,7 +25,7 @@
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents false --source-map-embed false --precision 6 src/ -o dist/",
     "css-combine": "postcss dist/charts.css --use postcss-combine-duplicated-selectors --output dist/charts.css",
     "css-prefixes": "postcss dist/charts.css --use autoprefixer --output dist/charts.css",
-    "css-minify": "postcss dist/charts.css --use cssnano --output dist/charts.min.css",
+    "css-minify": "postcss dist/charts.css --no-map --use cssnano --output dist/charts.min.css",
     "watch": "nodemon -e scss,html --watch src --exec \"npm run build\""
   },
   "repository": {
