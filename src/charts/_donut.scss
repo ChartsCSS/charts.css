@@ -1,39 +1,46 @@
 .charts-css {
 
   &.donut {
-    // Shape
-    @include circle();
+    display: block;
+    width: 100%;
+    height: 100%;
 
-    // Background
-    background-color: var(--chart-bg-color);
-
-    &::after {
-      content: "";
-
-      // Center the donut
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      // Donut size
-      width: var(--donut-inner-size, 50%);
-      height: var(--donut-inner-size, 50%);
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      border-radius: 50%;
-      background-color: var(--donut-inner-color, #fff);
-    }
-
-    caption,
     colgroup,
-    tbody,
     thead,
     tfoot {
       display: none;
+    }
+
+    // Layout
+    tbody {
+      @include circle();
+
+      background-color: var(--chart-bg-color);
+
+      tr {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+
+        // Center the donut
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        // Donut size
+        width: var(--donut-inner-size, 50%);
+        height: var(--donut-inner-size, 50%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        background-color: var(--donut-inner-color, #fff);
+      }
     }
   }
 

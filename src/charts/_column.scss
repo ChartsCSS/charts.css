@@ -1,14 +1,12 @@
 .charts-css {
 
   &.column {
-    // Shape
     display: block;
     width: 100%;
     height: 100%;
 
     --labels-size: 1.5rem;
 
-    caption,
     colgroup,
     thead,
     tfoot {
@@ -22,7 +20,7 @@
       align-items: stretch;
 
       width: 100%;
-      height: 100%;
+      height: calc(100% - var(--heading-size));
 
       tr {
         position: relative;
