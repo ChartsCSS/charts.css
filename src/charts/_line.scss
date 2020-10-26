@@ -1,18 +1,26 @@
 .charts-css {
 
   &.line {
-    // Shape
-    @include rectangle();
+    display: block;
+    width: 100%;
+    height: 100%;
 
-    // Background
-    background-color: var(--chart-bg-color);
-
-    caption,
     colgroup,
-    tbody,
     thead,
     tfoot {
       display: none;
+    }
+
+    // Layout
+    tbody {
+      display: block;
+      width: 100%;
+      height: calc(100% - var(--heading-size));
+      background-color: var(--chart-bg-color);
+
+      tr {
+        display: none;
+      }
     }
   }
 

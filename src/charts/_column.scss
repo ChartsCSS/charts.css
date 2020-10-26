@@ -1,14 +1,10 @@
 .charts-css {
 
   &.column {
-    // Shape
     display: block;
     width: 100%;
     height: 100%;
 
-    --labels-size: 1.5rem;
-
-    caption,
     colgroup,
     thead,
     tfoot {
@@ -22,7 +18,7 @@
       align-items: stretch;
 
       width: 100%;
-      height: 100%;
+      height: calc(100% - var(--heading-size));
 
       tr {
         position: relative;
@@ -38,9 +34,6 @@
         justify-content: flex-start;
 
         th {
-          display: flex;
-          align-items: center;
-
           position: absolute;
           right: 0;
           left: 0;
@@ -60,17 +53,39 @@
     }
 
     // Labels
-    &.labels-hide {
+    &:not(.show-labels) {
       --labels-size: 0;
-      tbody {
-        tr {
-          th {
-            display: none;
-          }
-        }
+
+      tbody tr th {
+        display: none;
       }
     }
-    &:not(.labels-before) {
+    &.show-labels {
+      --labels-size: 1.5rem;
+
+      tbody tr th {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.labels-align-start {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-start);
+      }
+    }
+    &.labels-align-end {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-end);
+      }
+    }
+    &.labels-align-center {
+      tbody tr th {
+        justify-content: var(--labels-align, center);
+      }
+    }
+
+    // Chart Direction
+    &:not(.reverse) {
       tbody {
         tr {
           align-items: flex-end;
@@ -88,7 +103,7 @@
         }
       }
     }
-    &.labels-before {
+    &.reverse {
       tbody {
         tr {
           align-items: flex-start;
@@ -104,21 +119,6 @@
             align-items: flex-end;
           }
         }
-      }
-    }
-    &.labels-align-start {
-      tbody tr th {
-        justify-content: var(--labels-align, flex-start);
-      }
-    }
-    &.labels-align-end {
-      tbody tr th {
-        justify-content: var(--labels-align, flex-end);
-      }
-    }
-    &.labels-align-center {
-      tbody tr th {
-        justify-content: var(--labels-align, center);
       }
     }
 
@@ -168,13 +168,13 @@
       }
 
       &.stacked {
-        &:not(.labels-before) {
+        &:not(.reverse) {
           tbody tr {
             flex-direction: column-reverse;
           }
         }
 
-        &.labels-before {
+        &.reverse {
           tbody tr {
             flex-direction: column;
           }
@@ -189,13 +189,13 @@
       }
 
       &.stacked {
-        &:not(.labels-before) {
+        &:not(.reverse) {
           tbody tr {
             flex-direction: column;
           }
         }
 
-        &.labels-before {
+        &.reverse {
           tbody tr {
             flex-direction: column-reverse;
           }
@@ -223,12 +223,12 @@
 
     // Axes
     &.show-primary-axis {
-      &:not(.labels-before) {
+      &:not(.reverse) {
         tbody tr {
           border-block-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
       }
-      &.labels-before {
+      &.reverse {
         tbody tr {
           border-block-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
         }
@@ -236,13 +236,13 @@
     }
     @for $i from 1 through $max-axes {
       &.show-#{$i}-secondary-axes {
-        &:not(.labels-before) {
+        &:not(.reverse) {
           tbody tr {
             background-size: 100% (100% / $i);
             background-image: linear-gradient(var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
           }
         }
-        &.labels-before {
+        &.reverse {
           tbody tr {
             background-size: 100% (100% / $i);
             background-image: linear-gradient(0deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));

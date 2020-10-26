@@ -1,18 +1,25 @@
 .charts-css {
 
   &.radar {
-    // Shape
-    @include circle();
+    display: block;
+    width: 100%;
+    height: 100%;
 
-    // Background
-    background-color: var(--chart-bg-color);
-
-    caption,
     colgroup,
-    tbody,
     thead,
     tfoot {
       display: none;
+    }
+
+    // Layout
+    tbody {
+      @include circle();
+
+      background-color: var(--chart-bg-color);
+
+      tr {
+        display: none;
+      }
     }
   }
 
