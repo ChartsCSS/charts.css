@@ -37,6 +37,7 @@
           position: absolute;
           right: 0;
           left: 0;
+          justify-content: var(--labels-align, center);
         }
 
         td {
@@ -84,7 +85,7 @@
       }
     }
 
-    // Chart Direction
+    // Orientation
     &:not(.reverse) {
       tbody {
         tr {
@@ -94,7 +95,6 @@
           th {
             bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
             height: var(--labels-size);
-            justify-content: var(--labels-align, center);
           }
 
           td {
@@ -112,7 +112,6 @@
           th {
             top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
             height: var(--labels-size);
-            justify-content: var(--labels-align, center);
           }
 
           td {
