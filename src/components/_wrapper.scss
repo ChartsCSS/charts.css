@@ -20,13 +20,6 @@
 ul.charts-css,
 ol.charts-css {
   list-style-type: none;
-
-  // Counter
-  counter-reset: data;
-
-  li {
-    counter-increment: data;
-  }
 }
 
 table.charts-css {
@@ -48,19 +41,5 @@ table.charts-css {
     margin: 0;
     border: 0;
     background-color: transparent;
-  }
-
-  // Counter
-  tbody {
-    counter-reset: data;
-
-    tr {
-      counter-increment: data;
-      counter-reset: dataset;
-
-      td {
-        counter-increment: dataset;
-      }
-    }
   }
 }
