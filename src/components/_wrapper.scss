@@ -17,11 +17,6 @@
   box-sizing: border-box;
 }
 
-ul.charts-css,
-ol.charts-css {
-  list-style-type: none;
-}
-
 table.charts-css {
   border-collapse: collapse;
   border-spacing: 0;
@@ -41,5 +36,15 @@ table.charts-css {
     margin: 0;
     border: 0;
     background-color: transparent;
+  }
+}
+
+ul.charts-css,
+ol.charts-css {
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
   }
 }
