@@ -6,15 +6,15 @@
 
   // Position
   position: relative;
-}
 
-.charts-css,
-.charts-css::after,
-.charts-css::before,
-.charts-css *,
-.charts-css *::after,
-.charts-css *::before {
-  box-sizing: border-box;
+  &,
+  &::after,
+  &::before,
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
+  }
 }
 
 table.charts-css {
