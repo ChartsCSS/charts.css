@@ -15,6 +15,10 @@
   & *::before {
     box-sizing: border-box;
   }
+
+  // Print
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
 }
 
 table.charts-css {
