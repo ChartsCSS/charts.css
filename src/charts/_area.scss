@@ -42,7 +42,7 @@
 
         td {
           display: flex;
-          justify-content: flex-end;
+          flex-flow: column;
 
           width: 100%;
           height: 100%;
@@ -52,6 +52,20 @@
           right: 0;
           bottom: 0;
           left: 0;
+
+          &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
+
+          &::after {
+            content: "";
+            width: 100%;
+          }
         }
 
       }
@@ -137,45 +151,13 @@
       }
     }
     &:not(.reverse-datasets) {
-      &:not(.stacked) {
-        tbody tr {
-          flex-direction: row;
-        }
-      }
-
-      &.stacked {
-        &:not(.reverse) {
-          tbody tr {
-            flex-direction: column-reverse;
-          }
-        }
-
-        &.reverse {
-          tbody tr {
-            flex-direction: column;
-          }
-        }
+      tbody tr {
+        flex-direction: row;
       }
     }
     &.reverse-datasets {
-      &:not(.stacked) {
-        tbody tr {
-          flex-direction: row-reverse;
-        }
-      }
-
-      &.stacked {
-        &:not(.reverse) {
-          tbody tr {
-            flex-direction: column;
-          }
-        }
-
-        &.reverse {
-          tbody tr {
-            flex-direction: column-reverse;
-          }
-        }
+      tbody tr {
+        flex-direction: row-reverse;
       }
     }
 
@@ -183,24 +165,76 @@
     &:not(.reverse) {
       &:not(.reverse-data) {
         tbody tr td {
-          clip-path: polygon(0% calc(100% * (1 - var(--start, var(--size)))), 100% calc(100% * (1 - var(--size))), 100% 100%, 0% 100%);
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &::before {
+            clip-path: polygon(0% calc(100% * (1 - var(--start, var(--size)))), 100% calc(100% * (1 - var(--size))), 100% 100%, 0% 100%);
+          }
+
+          .data {
+            transform: translateX(50%);
+          }
+
+          &::after {
+            height: calc(100% * var(--size));
+          }
         }
       }
       &.reverse-data {
         tbody tr td {
-          clip-path: polygon(0% calc(100% * (1 - var(--size))), 100% calc(100% * (1 - var(--start, var(--size)))), 100% 100%, 0% 100%);
+          justify-content: flex-end;
+          align-items: flex-start;
+
+          &::before {
+            clip-path: polygon(0% calc(100% * (1 - var(--size))), 100% calc(100% * (1 - var(--start, var(--size)))), 100% 100%, 0% 100%);
+          }
+
+          .data {
+            transform: translateX(-50%);
+          }
+
+          &::after {
+            height: calc(100% * var(--size));
+          }
         }
       }
     }
     &.reverse {
       &:not(.reverse-data) {
         tbody tr td {
-          clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--size)), 0% calc(100% * var(--start, var(--size))));
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--size)), 0% calc(100% * var(--start, var(--size))));
+          }
+
+          .data {
+            transform: translateX(50%);
+          }
+
+          &::after {
+            height: calc(100% * (1 -var(--size)));
+          }
         }
       }
       &.reverse-data {
         tbody tr td {
-          clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--start, var(--size))), 0% calc(100% * var(--size)));
+          justify-content: flex-end;
+          align-items: flex-start;
+
+          &::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--start, var(--size))), 0% calc(100% * var(--size)));
+          }
+
+          .data {
+            transform: translateX(-50%);
+          }
+
+          &::after {
+            height: calc(100% * (1 - var(--size)));
+          }
         }
       }
     }
