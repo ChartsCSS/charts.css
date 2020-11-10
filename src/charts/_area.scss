@@ -1,6 +1,6 @@
 .charts-css {
 
-  &.column {
+  &.area {
     display: block;
     width: 100%;
     height: 100%;
@@ -42,12 +42,30 @@
 
         td {
           display: flex;
-          justify-content: center;
+          flex-flow: column;
 
           width: 100%;
-          height: calc(100% * var(--size, 1));
+          height: 100%;
 
-          position: relative; // For tooltips
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
+
+          &::after {
+            content: "";
+            width: 100%;
+          }
         }
 
       }
@@ -121,33 +139,6 @@
       }
     }
 
-    // Stacked
-    &:not(.stacked) {
-      tbody tr {
-        td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
-        }
-      }
-    }
-    &.stacked {
-      tbody tr {
-        td {
-          flex-grow: unset;
-          flex-shrink: unset;
-          flex-basis: unset;
-        }
-      }
-
-      &.reverse-datasets {
-        tbody tr {
-          justify-content: flex-end;
-        }
-      }
-    }
-
     // Reverse Order
     &:not(.reverse-data) {
       tbody {
@@ -160,43 +151,89 @@
       }
     }
     &:not(.reverse-datasets) {
-      &:not(.stacked) {
-        tbody tr {
-          flex-direction: row;
-        }
+      tbody tr {
+        flex-direction: row;
       }
+    }
+    &.reverse-datasets {
+      tbody tr {
+        flex-direction: row-reverse;
+      }
+    }
 
-      &.stacked {
-        &:not(.reverse) {
-          tbody tr {
-            flex-direction: column-reverse;
+    // Area
+    &:not(.reverse) {
+      &:not(.reverse-data) {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &::before {
+            clip-path: polygon(0% calc(100% * (1 - var(--start, var(--size)))), 100% calc(100% * (1 - var(--size))), 100% 100%, 0% 100%);
+          }
+
+          .data {
+            transform: translateX(50%);
+          }
+
+          &::after {
+            height: calc(100% * var(--size));
           }
         }
+      }
+      &.reverse-data {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-start;
 
-        &.reverse {
-          tbody tr {
-            flex-direction: column;
+          &::before {
+            clip-path: polygon(0% calc(100% * (1 - var(--size))), 100% calc(100% * (1 - var(--start, var(--size)))), 100% 100%, 0% 100%);
+          }
+
+          .data {
+            transform: translateX(-50%);
+          }
+
+          &::after {
+            height: calc(100% * var(--size));
           }
         }
       }
     }
-    &.reverse-datasets {
-      &:not(.stacked) {
-        tbody tr {
-          flex-direction: row-reverse;
-        }
-      }
+    &.reverse {
+      &:not(.reverse-data) {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-end;
 
-      &.stacked {
-        &:not(.reverse) {
-          tbody tr {
-            flex-direction: column;
+          &::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--size)), 0% calc(100% * var(--start, var(--size))));
+          }
+
+          .data {
+            transform: translateX(50%);
+          }
+
+          &::after {
+            height: calc(100% * (1 -var(--size)));
           }
         }
+      }
+      &.reverse-data {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-start;
 
-        &.reverse {
-          tbody tr {
-            flex-direction: column-reverse;
+          &::before {
+            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--start, var(--size))), 0% calc(100% * var(--size)));
+          }
+
+          .data {
+            transform: translateX(-50%);
+          }
+
+          &::after {
+            height: calc(100% * (1 - var(--size)));
           }
         }
       }

@@ -1,6 +1,6 @@
 .charts-css {
 
-  &.bubble {
+  &.radial {
     display: block;
     width: 100%;
     height: 100%;
@@ -13,9 +13,8 @@
 
     // Layout
     tbody {
-      display: block;
-      width: 100%;
-      height: calc(100% - var(--heading-size));
+      @include circle();
+
       background-color: var(--chart-bg-color);
 
       tr {

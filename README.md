@@ -89,7 +89,7 @@ The data is structured using semantic HTML tags and styled using CSS classes whi
 </table>
 ```
 
-The framework offers flexibility to developers. You choose what components to display and how to style them. Each component offers several CSS classes and CSS variables to customizes your style.
+The framework offers developers flexibility. You choose what components to display and how to style them. Each component offers several CSS classes and CSS variables to customizes your style.
 
 The key feature is the ability to customize everything using basic CSS. Frontend developers can target any HTML element and customize it. This philosophical guideline is what makes the framework so flexible, easy and fun to use.
 

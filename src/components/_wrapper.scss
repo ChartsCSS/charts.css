@@ -1,32 +1,24 @@
 .charts-css {
   // Reset
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border: 0;
 
   // Position
   position: relative;
-}
 
-.charts-css,
-.charts-css::after,
-.charts-css::before,
-.charts-css *,
-.charts-css *::after,
-.charts-css *::before {
-  box-sizing: border-box;
-}
-
-ul.charts-css,
-ol.charts-css {
-  list-style-type: none;
-
-  // Counter
-  counter-reset: data;
-
-  li {
-    counter-increment: data;
+  &,
+  &::after,
+  &::before,
+  & *,
+  & *::after,
+  & *::before {
+    box-sizing: border-box;
   }
+
+  // Print
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
 }
 
 table.charts-css {
@@ -49,18 +41,14 @@ table.charts-css {
     border: 0;
     background-color: transparent;
   }
+}
 
-  // Counter
-  tbody {
-    counter-reset: data;
+ul.charts-css,
+ol.charts-css {
+  list-style-type: none;
 
-    tr {
-      counter-increment: data;
-      counter-reset: dataset;
-
-      td {
-        counter-increment: dataset;
-      }
-    }
+  li {
+    margin: 0;
+    padding: 0;
   }
 }

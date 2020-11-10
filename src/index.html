@@ -70,7 +70,7 @@
 
 
 
-    <h2>Bar Chart</h2>
+    <h2 id="bar">Bar Chart</h2>
 
     <div class="examples bar-charts">
       <h3>Regular</h3>
@@ -497,7 +497,7 @@
 
 
 
-    <h2>Column Chart</h2>
+    <h2 id="column">Column Chart</h2>
 
     <div class="examples column-charts">
       <h3>Regular</h3>
@@ -924,7 +924,438 @@
 
 
 
-    <h2>Line Chart</h2>
+    <h2 id="area">Area Chart</h2>
+
+    <div class="examples area-charts">
+      <h3>Regular</h3>
+      <h3>Reverse</h3>
+    </div>
+
+    <h4>Single</h4>
+
+    <div class="examples area-charts">
+
+      <table class="charts-css area hide-data show-primary-axis show-data-axes show-1-secondary-axes show-heading" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> 1 </th>
+            <td style="--start:0.1; --size: 0.4"> <span class="data">40</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2 </th>
+            <td style="--start:0.4; --size: 0.8"> <span class="data">80</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 3 </th>
+            <td style="--start:0.8; --size: 0.6"> <span class="data">60</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 4 </th>
+            <td style="--start:0.6; --size: 1.0"> <span class="data">100</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 6 </th>
+            <td style="--start:1.0; --size: 0.3"> <span class="data">30</span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="charts-css area hide-data show-primary-axis show-data-axes show-1-secondary-axes show-heading reverse" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> 1 </th>
+            <td style="--start:0.1; --size: 0.4"> <span class="data">40</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2 </th>
+            <td style="--start:0.4; --size: 0.8"> <span class="data">80</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 3 </th>
+            <td style="--start:0.8; --size: 0.6"> <span class="data">60</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 4 </th>
+            <td style="--start:0.6; --size: 1.0"> <span class="data">100</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 5 </th>
+            <td style="--start:1.0; --size: 0.3"> <span class="data">30</span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <h4>Single & Reverse Data</h4>
+
+    <div class="examples area-charts">
+
+      <table class="charts-css area show-labels hide-data show-primary-axis reverse-data" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> 2016 </th>
+            <td style="--start:0.1; --size: 0.4"> <span class="data">40</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2017 </th>
+            <td style="--start:0.4; --size: 0.8"> <span class="data">80</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2018 </th>
+            <td style="--start:0.8; --size: 0.6"> <span class="data">60</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2019 </th>
+            <td style="--start:0.6; --size: 1.0"> <span class="data">100</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2020 </th>
+            <td style="--start:1.0; --size: 0.3"> <span class="data">30</span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="charts-css area show-labels hide-data show-primary-axis reverse-data reverse" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> 2016 </th>
+            <td style="--start:0.1; --size: 0.4"> <span class="data">40</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2017 </th>
+            <td style="--start:0.4; --size: 0.8"> <span class="data">80</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2018 </th>
+            <td style="--start:0.8; --size: 0.6"> <span class="data">60</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2019 </th>
+            <td style="--start:0.6; --size: 1.0"> <span class="data">100</span> </td>
+          </tr>
+          <tr>
+            <th scope="row"> 2020 </th>
+            <td style="--start:1.0; --size: 0.3"> <span class="data">30</span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <h4>Multiple</h4>
+
+    <div class="examples area-charts">
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-data-axes multiple" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-data-axes multiple reverse" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <h4>Multiple & Reverse Data + Datasets</h4>
+
+    <div class="examples area-charts">
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-10-secondary-axes show-data-axes multiple reverse-data reverse-datasets" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-10-secondary-axes show-data-axes multiple reverse-data reverse-datasets reverse" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <h4>Stacked</h4>
+
+    <div class="examples area-charts">
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-10-secondary-axes multiple stacked" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-10-secondary-axes multiple stacked reverse" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <h4>Stacked & Reverse Datasets</h4>
+
+    <div class="examples area-charts">
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-10-secondary-axes multiple stacked reverse-datasets" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="charts-css area show-labels show-data-on-hover show-primary-axis show-10-secondary-axes multiple stacked reverse-datasets reverse" style="height: 200px;">
+        <caption>Years Compared</caption>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Progress 1</th>
+            <th>Progress 2</th>
+            <th>Progress 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">2000</th>
+            <td style="--start:0.1; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.0; --size: 0.2;"> <span class="data"> 20 </span> </td>
+            <td style="--start:0.2; --size: 0.4;"> <span class="data"> 40 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2010</th>
+            <td style="--start:0.5; --size: 0.8;"> <span class="data"> 80 </span> </td>
+            <td style="--start:0.2; --size: 0.5;"> <span class="data"> 50 </span> </td>
+            <td style="--start:0.4; --size: 0.1;"> <span class="data"> 10 </span> </td>
+          </tr>
+          <tr>
+            <th scope="row">2020</th>
+            <td style="--start:0.8; --size: 0.4;"> <span class="data"> 40 </span> </td>
+            <td style="--start:0.5; --size: 0.3;"> <span class="data"> 30 </span> </td>
+            <td style="--start:0.1; --size: 0.2;"> <span class="data"> 20 </span> </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+
+
+
+
+    <h2 id="line">Line Chart</h2>
 
     <div class="examples line-charts">
       <h3>Regular</h3>
@@ -1005,7 +1436,7 @@
 
 
 
-    <h2>Pie Chart</h2>
+    <h2 id="pie">Pie Chart</h2>
 
     <div class="examples pie">
 
@@ -1191,7 +1622,7 @@
 
 
 
-    <h2>Donut Chart</h2>
+    <h2 id="donut">Donut Chart</h2>
 
     <div class="examples donut">
 
@@ -1250,7 +1681,7 @@
 
 
 
-    <h2>Polar Chart</h2>
+    <h2 id="polar">Polar Chart</h2>
 
     <div class="examples polar">
 
@@ -1309,7 +1740,7 @@
 
 
 
-    <h2>Radar Chart</h2>
+    <h2 id="radar">Radar Chart</h2>
 
     <div class="examples radar">
 
@@ -1368,7 +1799,7 @@
 
 
 
-    <h2>Chart Legend</h2>
+    <h2 id="legend">Chart Legend</h2>
 
     <div class="examples legends">
 
