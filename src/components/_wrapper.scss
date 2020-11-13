@@ -1,16 +1,25 @@
+/*
+ * Reset main chart element
+ */
 .charts-css {
+  // Position child elements relative to main chart element
+  position: relative;
+
+  // Not a table anymore
+  display: block;
+
+  // Chart Dimensions
+  width: 100%;
+  height: 100%;
+
   // Reset
   margin: 0 auto;
   padding: 0;
   border: 0;
 
-  // Dimensions
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  // Position
-  position: relative;
+  // Keep colors in print view
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
 
   &,
   &::after,
@@ -20,12 +29,13 @@
   & *::before {
     box-sizing: border-box;
   }
-
-  // Print
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
 }
 
+
+
+/*
+ * Reset table element
+ */
 table.charts-css {
   border-collapse: collapse;
   border-spacing: 0;
@@ -41,8 +51,9 @@ table.charts-css {
   tr,
   th,
   td {
-    padding: 0;
+    display: block;
     margin: 0;
+    padding: 0;
     border: 0;
     background-color: transparent;
   }
@@ -55,6 +66,11 @@ table.charts-css {
   }
 }
 
+
+
+/*
+ * Reset list elements
+ */
 ul.charts-css,
 ol.charts-css {
   list-style-type: none;
@@ -62,5 +78,6 @@ ol.charts-css {
   li {
     margin: 0;
     padding: 0;
+    border: 0;
   }
 }
