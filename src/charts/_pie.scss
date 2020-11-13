@@ -2,12 +2,6 @@
 
   &.pie {
 
-    colgroup,
-    thead,
-    tfoot {
-      display: none;
-    }
-
     // Layout
     tbody {
       @include circle();

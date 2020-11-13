@@ -46,6 +46,13 @@ table.charts-css {
     border: 0;
     background-color: transparent;
   }
+
+  // Hide unused tags
+  colgroup,
+  thead,
+  tfoot {
+    display: none;
+  }
 }
 
 ul.charts-css,
