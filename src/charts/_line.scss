@@ -267,16 +267,6 @@
       }
     }
 
-    // Hover
-    &.hover {
-      tr:hover {
-        background-color: var(--tr-hover-color, rgba(0, 0, 0, .05));
-      }
-      td:hover {
-        opacity: .75;
-      }
-    }
-
   }
 
 }
