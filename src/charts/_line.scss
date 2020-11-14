@@ -258,16 +258,9 @@
 
     // Spacing
     @for $i from 1 through 20 {
-      &.data-spacing-#{$i} {
-        tbody tr {
-          padding-inline-start: $i * 1px;
-          padding-inline-end: $i * 1px;
-        }
-      }
-    }
-    @for $i from 1 through 20 {
+      &.data-spacing-#{$i},
       &.datasets-spacing-#{$i} {
-        tbody tr td {
+          tbody tr td::before {
           margin-inline-start: $i * 1px;
           margin-inline-end: $i * 1px;
         }
