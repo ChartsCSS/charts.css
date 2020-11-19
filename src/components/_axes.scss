@@ -1,0 +1,134 @@
+/*
+ * Chart axes
+ */
+.charts-css {
+
+  &.column,
+  &.area,
+  &.line {
+
+    &.show-primary-axis {
+      &:not(.reverse) {
+        tbody tr {
+          border-block-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
+        }
+      }
+      &.reverse {
+        tbody tr {
+          border-block-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
+        }
+      }
+    }
+    @for $i from 1 through $max-axes {
+      &.show-#{$i}-secondary-axes {
+        &:not(.reverse) {
+          tbody tr {
+            background-size: 100% (100% / $i);
+            background-image: linear-gradient(var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
+          }
+        }
+        &.reverse {
+          tbody tr {
+            background-size: 100% (100% / $i);
+            background-image: linear-gradient(0deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
+          }
+        }
+      }
+    }
+    &.show-data-axes {
+      tbody tr {
+        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type {
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type {
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+    }
+    &.show-dataset-axes {
+      tbody tr td {
+        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type td {
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type td {
+          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+    }
+
+  }
+
+  &.bar {
+
+    &.show-primary-axis {
+      &:not(.reverse) {
+        tbody tr {
+          border-inline-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
+        }
+      }
+      &.reverse {
+        tbody tr {
+          border-inline-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
+        }
+      }
+    }
+    @for $i from 1 through $max-axes {
+      &.show-#{$i}-secondary-axes {
+        &:not(.reverse) {
+          tbody tr {
+            background-size: (100% / $i) 100%;
+            background-image: linear-gradient(-90deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
+          }
+        }
+        &.reverse {
+          tbody tr {
+            background-size: (100% / $i) 100%;
+            background-image: linear-gradient(90deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
+          }
+        }
+      }
+    }
+    &.show-data-axes {
+      tbody tr {
+        border-block-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type {
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type {
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+    }
+    &.show-dataset-axes {
+      tbody tr td {
+        border-block-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+      }
+      &:not(.reverse-data) {
+        tbody tr:first-of-type td {
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+      &.reverse-data {
+        tbody tr:last-of-type td {
+          border-block-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
+        }
+      }
+    }
+
+  }
+
+}

@@ -1,27 +1,272 @@
+/*
+ * Line Chart
+ */
 .charts-css {
 
   &.line {
-    display: block;
-    width: 100%;
-    height: 100%;
 
-    colgroup,
-    thead,
-    tfoot {
-      display: none;
-    }
+    --line-size: 3px;
 
     // Layout
     tbody {
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
       width: 100%;
       height: calc(100% - var(--heading-size));
-      background-color: var(--chart-bg-color);
 
       tr {
+        position: relative;
+
+        // Even row size
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        overflow-wrap: anywhere;
+
+        // Display cells in a row
+        display: flex;
+        justify-content: flex-start;
+
+        th {
+          position: absolute;
+          right: 0;
+          left: 0;
+          justify-content: var(--labels-align, center);
+        }
+
+        td {
+          display: flex;
+          flex-flow: column;
+
+          width: 100%;
+          height: 100%;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+
+          &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+          }
+
+          &::after {
+            content: "";
+            width: 100%;
+          }
+        }
+
+      }
+    }
+
+    // Labels
+    &:not(.show-labels) {
+      --labels-size: 0;
+
+      tbody tr th {
         display: none;
       }
     }
+    &.show-labels {
+      --labels-size: 1.5rem;
+
+      tbody tr th {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &.labels-align-start {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-start);
+      }
+    }
+    &.labels-align-end {
+      tbody tr th {
+        justify-content: var(--labels-align, flex-end);
+      }
+    }
+    &.labels-align-center {
+      tbody tr th {
+        justify-content: var(--labels-align, center);
+      }
+    }
+
+    // Orientation
+    &:not(.reverse) {
+      tbody {
+        tr {
+          align-items: flex-end;
+          margin-block-end: var(--labels-size);
+
+          th {
+            bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            height: var(--labels-size);
+          }
+
+          td {
+            align-items: flex-start;
+          }
+        }
+      }
+    }
+    &.reverse {
+      tbody {
+        tr {
+          align-items: flex-start;
+          margin-block-start: var(--labels-size);
+
+          th {
+            top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+            height: var(--labels-size);
+          }
+
+          td {
+            align-items: flex-end;
+          }
+        }
+      }
+    }
+
+    // Reverse Order
+    &:not(.reverse-data) {
+      tbody {
+        flex-direction: row;
+      }
+    }
+    &.reverse-data {
+      tbody {
+        flex-direction: row-reverse;
+      }
+    }
+    &:not(.reverse-datasets) {
+      tbody tr {
+        flex-direction: row;
+      }
+    }
+    &.reverse-datasets {
+      tbody tr {
+        flex-direction: row-reverse;
+      }
+    }
+
+    // Area
+    &:not(.reverse) {
+      &:not(.reverse-data) {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &::before {
+            clip-path: polygon(
+              0% calc(100% * (1 - var(--start, var(--size)))),
+              100% calc(100% * (1 - var(--size))),
+              100% calc(100% * (1 - var(--size)) - var(--line-size)),
+              0% calc(100% * (1 - var(--start, var(--size))) - var(--line-size))
+            );
+          }
+
+          .data {
+            transform: translateX(50%);
+          }
+
+          &::after {
+            height: calc(100% * var(--size));
+          }
+        }
+      }
+      &.reverse-data {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-start;
+
+          &::before {
+            clip-path: polygon(
+              0% calc(100% * (1 - var(--size))),
+              100% calc(100% * (1 - var(--start, var(--size)))),
+              100% calc(100% * (1 - var(--start, var(--size))) - var(--line-size)),
+              0% calc(100% * (1 - var(--size)) - var(--line-size)),
+            );
+          }
+
+          .data {
+            transform: translateX(-50%);
+          }
+
+          &::after {
+            height: calc(100% * var(--size));
+          }
+        }
+      }
+    }
+    &.reverse {
+      &:not(.reverse-data) {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &::before {
+            clip-path: polygon(
+              0% calc(100% * var(--start, var(--size)) - var(--line-size)),
+              100% calc(100% * var(--size) - var(--line-size)),
+              100% calc(100% * var(--size)),
+              0% calc(100% * var(--start, var(--size)))
+            );
+          }
+
+          .data {
+            transform: translateX(50%);
+          }
+
+          &::after {
+            height: calc(100% * (1 -var(--size)));
+          }
+        }
+      }
+      &.reverse-data {
+        tbody tr td {
+          justify-content: flex-end;
+          align-items: flex-start;
+
+          &::before {
+            clip-path: polygon(
+              0% calc(100% * var(--size) - var(--line-size)),
+              100% calc(100% * var(--start, var(--size)) - var(--line-size)),
+              100% calc(100% * var(--start, var(--size))),
+              0% calc(100% * var(--size))
+            );
+          }
+
+          .data {
+            transform: translateX(-50%);
+          }
+
+          &::after {
+            height: calc(100% * (1 - var(--size)));
+          }
+        }
+      }
+    }
+
+    // Spacing
+    @for $i from 1 through 20 {
+      &.data-spacing-#{$i},
+      &.datasets-spacing-#{$i} {
+          tbody tr td::before {
+          margin-inline-start: $i * 1px;
+          margin-inline-end: $i * 1px;
+        }
+      }
+    }
+
   }
 
 }

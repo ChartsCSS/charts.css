@@ -1,15 +1,9 @@
+/*
+ * Area Chart
+ */
 .charts-css {
 
   &.area {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    colgroup,
-    thead,
-    tfoot {
-      display: none;
-    }
 
     // Layout
     tbody {
@@ -60,6 +54,7 @@
             right: 0;
             bottom: 0;
             left: 0;
+            z-index: -1;
           }
 
           &::after {
@@ -241,89 +236,12 @@
 
     // Spacing
     @for $i from 1 through 20 {
-      &.data-spacing-#{$i} {
-        tbody tr {
-          padding-inline-start: $i * 1px;
-          padding-inline-end: $i * 1px;
-        }
-      }
-    }
-    @for $i from 1 through 20 {
+      &.data-spacing-#{$i},
       &.datasets-spacing-#{$i} {
-        tbody tr td {
+          tbody tr td::before {
           margin-inline-start: $i * 1px;
           margin-inline-end: $i * 1px;
         }
-      }
-    }
-
-    // Axes
-    &.show-primary-axis {
-      &:not(.reverse) {
-        tbody tr {
-          border-block-end: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
-        }
-      }
-      &.reverse {
-        tbody tr {
-          border-block-start: var(--primary-axis-width) var(--primary-axis-style) var(--primary-axis-color);
-        }
-      }
-    }
-    @for $i from 1 through $max-axes {
-      &.show-#{$i}-secondary-axes {
-        &:not(.reverse) {
-          tbody tr {
-            background-size: 100% (100% / $i);
-            background-image: linear-gradient(var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
-          }
-        }
-        &.reverse {
-          tbody tr {
-            background-size: 100% (100% / $i);
-            background-image: linear-gradient(0deg, var(--secondary-axes-color) var(--secondary-axes-width), transparent var(--secondary-axes-width));
-          }
-        }
-      }
-    }
-    &.show-data-axes {
-      tbody tr {
-        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
-      }
-      &:not(.reverse-data) {
-        tbody tr:first-of-type {
-          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
-        }
-      }
-      &.reverse-data {
-        tbody tr:last-of-type {
-          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
-        }
-      }
-    }
-    &.show-dataset-axes { // TODO: fix this
-      tbody tr td {
-        border-inline-end: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
-      }
-      &:not(.reverse-data) {
-        tbody tr:first-of-type td {
-          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
-        }
-      }
-      &.reverse-data {
-        tbody tr:last-of-type td {
-          border-inline-start: var(--data-axes-width) var(--data-axes-style) var(--data-axes-color);
-        }
-      }
-    }
-
-    // Hover
-    &.hover {
-      tr:hover {
-        background-color: var(--tr-hover-color, rgba(0, 0, 0, .05));
-      }
-      td:hover {
-        opacity: .75;
       }
     }
 

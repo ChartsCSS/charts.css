@@ -1,5 +1,5 @@
 /*
- * Charts.css v0.7.0 (https://ChartsCSS.org/)
+ * Charts.css v0.8.0 (https://ChartsCSS.org/)
  * Copyright 2020 Rami Yushuvaev
  * Licensed under MIT
  */
@@ -13,14 +13,15 @@
 @import "components/heading";
 @import "components/colors";
 @import "components/data";
+@import "components/axes";
 @import "components/legend";
 @import "components/tooltips";
 
 // Charts
 @import "charts/bar";
 @import "charts/column";
-@import "charts/line";
 @import "charts/area";
+@import "charts/line";
 
 @import "charts/radial";
 @import "charts/pie";

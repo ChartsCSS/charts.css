@@ -1,3 +1,6 @@
+/*
+ * Chart colors
+ */
 .charts-css {
 
   @for $i from 1 through $total-colors {
@@ -5,7 +8,8 @@
     &.bar.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }),
     &.column tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
     &.column.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }),
-    &.area tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i })::before {
+    &.area tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i })::before,
+    &.line tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i })::before {
       background: var(--color, var(--color-#{ $i }));
     }
   }

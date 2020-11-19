@@ -1,15 +1,9 @@
+/*
+ * Radar Chart
+ */
 .charts-css {
 
   &.radar {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    colgroup,
-    thead,
-    tfoot {
-      display: none;
-    }
 
     // Layout
     tbody {
