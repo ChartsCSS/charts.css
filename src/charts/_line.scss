@@ -34,6 +34,7 @@
           right: 0;
           left: 0;
           justify-content: var(--labels-align, center);
+          flex-direction: column;
         }
 
         td {
