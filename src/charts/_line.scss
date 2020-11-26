@@ -33,8 +33,6 @@
           position: absolute;
           right: 0;
           left: 0;
-          justify-content: var(--labels-align, center);
-          flex-direction: column;
         }
 
         td {
@@ -83,7 +81,9 @@
 
       tbody tr th {
         display: flex;
+        justify-content: var(--labels-align, center);
         align-items: center;
+        flex-direction: column;
       }
     }
     &.labels-align-start {
