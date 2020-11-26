@@ -31,7 +31,6 @@
           position: absolute;
           top: 0;
           bottom: 0;
-          flex-direction: column;
         }
 
         td {
@@ -61,6 +60,7 @@
       tbody tr th {
         display: flex;
         align-items: center;
+        flex-direction: column;
       }
     }
     &.labels-align-start {
