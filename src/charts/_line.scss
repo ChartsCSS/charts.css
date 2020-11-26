@@ -68,40 +68,6 @@
       }
     }
 
-    // Labels
-    &:not(.show-labels) {
-      --labels-size: 0;
-
-      tbody tr th {
-        display: none;
-      }
-    }
-    &.show-labels {
-      --labels-size: 1.5rem;
-
-      tbody tr th {
-        display: flex;
-        justify-content: var(--labels-align, center);
-        align-items: center;
-        flex-direction: column;
-      }
-    }
-    &.labels-align-start {
-      tbody tr th {
-        justify-content: var(--labels-align, flex-start);
-      }
-    }
-    &.labels-align-end {
-      tbody tr th {
-        justify-content: var(--labels-align, flex-end);
-      }
-    }
-    &.labels-align-center {
-      tbody tr th {
-        justify-content: var(--labels-align, center);
-      }
-    }
-
     // Orientation
     &:not(.reverse) {
       tbody {
