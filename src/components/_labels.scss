@@ -21,6 +21,11 @@
         align-items: center;
         flex-direction: column;
       }
+
+      tr.hide-label th,
+      th.hide-label {
+        display: none;
+      }
     }
     &.labels-align-start {
       tbody tr th {
@@ -59,6 +64,11 @@
         justify-content: var(--labels-align, center);
         align-items: center;
         flex-direction: column;
+      }
+
+      tr.hide-label th,
+      th.hide-label {
+        display: none;
       }
     }
     &.labels-align-start {
