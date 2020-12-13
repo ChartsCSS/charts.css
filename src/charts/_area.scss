@@ -132,7 +132,12 @@
           align-items: flex-end;
 
           &::before {
-            clip-path: polygon(0% calc(100% * (1 - var(--start, var(--size)))), 100% calc(100% * (1 - var(--size))), 100% 100%, 0% 100%);
+            clip-path: polygon(
+              0% calc(100% * (1 - var(--start, var(--size)))),
+              100% calc(100% * (1 - var(--size))),
+              100% 100%,
+              0% 100%
+            );
           }
 
           .data {
@@ -150,7 +155,12 @@
           align-items: flex-start;
 
           &::before {
-            clip-path: polygon(0% calc(100% * (1 - var(--size))), 100% calc(100% * (1 - var(--start, var(--size)))), 100% 100%, 0% 100%);
+            clip-path: polygon(
+              0% calc(100% * (1 - var(--size))),
+              100% calc(100% * (1 - var(--start, var(--size)))),
+              100% 100%,
+              0% 100%
+            );
           }
 
           .data {
@@ -170,7 +180,12 @@
           align-items: flex-end;
 
           &::before {
-            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--size)), 0% calc(100% * var(--start, var(--size))));
+            clip-path: polygon(
+              0% 0%,
+              100% 0%,
+              100% calc(100% * var(--size)),
+              0% calc(100% * var(--start, var(--size)))
+            );
           }
 
           .data {
@@ -188,7 +203,12 @@
           align-items: flex-start;
 
           &::before {
-            clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% * var(--start, var(--size))), 0% calc(100% * var(--size)));
+            clip-path: polygon(
+              0% 0%,
+              100% 0%,
+              100% calc(100% * var(--start, var(--size))),
+              0% calc(100% * var(--size))
+            );
           }
 
           .data {
