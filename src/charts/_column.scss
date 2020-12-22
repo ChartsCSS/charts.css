@@ -31,7 +31,6 @@
           position: absolute;
           right: 0;
           left: 0;
-          justify-content: var(--labels-align, center);
         }
 
         td {
@@ -44,38 +43,6 @@
           position: relative; // For tooltips
         }
 
-      }
-    }
-
-    // Labels
-    &:not(.show-labels) {
-      --labels-size: 0;
-
-      tbody tr th {
-        display: none;
-      }
-    }
-    &.show-labels {
-      --labels-size: 1.5rem;
-
-      tbody tr th {
-        display: flex;
-        align-items: center;
-      }
-    }
-    &.labels-align-start {
-      tbody tr th {
-        justify-content: var(--labels-align, flex-start);
-      }
-    }
-    &.labels-align-end {
-      tbody tr th {
-        justify-content: var(--labels-align, flex-end);
-      }
-    }
-    &.labels-align-center {
-      tbody tr th {
-        justify-content: var(--labels-align, center);
       }
     }
 
