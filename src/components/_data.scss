@@ -3,10 +3,23 @@
  */
 .charts-css {
 
+  // Hide data visually while keeping it accessible to assistive technologies
+  //
+  // See: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
+  // See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
   &.hide-data {
 
-    .data {
-      opacity: 0;
+    .data,
+    .data:not(:focus):not(:focus-within) {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      border: 0 !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      clip: rect(0, 0, 0, 0) !important;
     }
 
   }
