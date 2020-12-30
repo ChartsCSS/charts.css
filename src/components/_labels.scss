@@ -17,8 +17,8 @@
 
       tbody tr th {
         display: flex;
-        justify-content: var(--labels-align, center);
-        align-items: center;
+        justify-content: center;
+        align-items: var(--labels-align, center);
         flex-direction: column;
       }
 
@@ -61,8 +61,8 @@
 
       tbody tr th {
         display: flex;
-        justify-content: var(--labels-align, center);
-        align-items: center;
+        justify-content: center;
+        align-items: var(--labels-align, center);
         flex-direction: column;
       }
 
@@ -73,17 +73,17 @@
     }
     &.labels-align-start {
       tbody tr th {
-        justify-content: var(--labels-align, flex-start);
+        align-items: var(--labels-align, flex-start);
       }
     }
     &.labels-align-end {
       tbody tr th {
-        justify-content: var(--labels-align, flex-end);
+        align-items: var(--labels-align, flex-end);
       }
     }
     &.labels-align-center {
       tbody tr th {
-        justify-content: var(--labels-align, center);
+        align-items: var(--labels-align, center);
       }
     }
 
