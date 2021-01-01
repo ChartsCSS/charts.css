@@ -27,21 +27,6 @@
         display: none;
       }
     }
-    &.labels-align-start {
-      tbody tr th {
-        align-items: var(--labels-align, flex-start);
-      }
-    }
-    &.labels-align-end {
-      tbody tr th {
-        align-items: var(--labels-align, flex-end);
-      }
-    }
-    &.labels-align-center {
-      tbody tr th {
-        align-items: var(--labels-align, center);
-      }
-    }
 
   }
 
@@ -71,6 +56,15 @@
         display: none;
       }
     }
+
+  }
+
+  // Align Labels
+  &.bar,
+  &.column,
+  &.area,
+  &.line {
+
     &.labels-align-start {
       tbody tr th {
         align-items: var(--labels-align, flex-start);
