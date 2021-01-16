@@ -133,8 +133,8 @@
 
           &::before {
             clip-path: polygon(
-              0% calc(100% * (1 - var(--start, var(--size)))),
-              100% calc(100% * (1 - var(--size))),
+              0% calc(100% * (1 - var(--start, var(--end, var(--size))))),
+              100% calc(100% * (1 - var(--end, var(--size)))),
               100% 100%,
               0% 100%
             );
@@ -145,7 +145,7 @@
           }
 
           &::after {
-            height: calc(100% * var(--size));
+            height: calc(100% * var(--end, var(--size)));
           }
         }
       }
@@ -156,8 +156,8 @@
 
           &::before {
             clip-path: polygon(
-              0% calc(100% * (1 - var(--size))),
-              100% calc(100% * (1 - var(--start, var(--size)))),
+              0% calc(100% * (1 - var(--end, var(--size)))),
+              100% calc(100% * (1 - var(--start, var(--end, var(--size))))),
               100% 100%,
               0% 100%
             );
@@ -168,7 +168,7 @@
           }
 
           &::after {
-            height: calc(100% * var(--size));
+            height: calc(100% * var(--end, var(--size)));
           }
         }
       }
@@ -183,8 +183,8 @@
             clip-path: polygon(
               0% 0%,
               100% 0%,
-              100% calc(100% * var(--size)),
-              0% calc(100% * var(--start, var(--size)))
+              100% calc(100% * var(--end, var(--size))),
+              0% calc(100% * var(--start, var(--end, var(--size))))
             );
           }
 
@@ -193,7 +193,7 @@
           }
 
           &::after {
-            height: calc(100% * (1 -var(--size)));
+            height: calc(100% * (1 -var(--end, var(--size))));
           }
         }
       }
@@ -206,8 +206,8 @@
             clip-path: polygon(
               0% 0%,
               100% 0%,
-              100% calc(100% * var(--start, var(--size))),
-              0% calc(100% * var(--size))
+              100% calc(100% * var(--start, var(--end, var(--size)))),
+              0% calc(100% * var(--end, var(--size)))
             );
           }
 
@@ -216,7 +216,7 @@
           }
 
           &::after {
-            height: calc(100% * (1 - var(--size)));
+            height: calc(100% * (1 - var(--end, var(--size))));
           }
         }
       }
