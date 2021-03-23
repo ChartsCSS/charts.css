@@ -2,9 +2,7 @@
  * Donut Chart
  */
 .charts-css {
-
   &.donut {
-
     // Layout
     tbody {
       @include circle();
@@ -12,7 +10,7 @@
       background-color: var(--chart-bg-color);
 
       tr {
-        display: none;
+        @include visually-hidden();
       }
 
       &::after {
@@ -37,5 +35,4 @@
       }
     }
   }
-
 }

@@ -2,14 +2,12 @@
  * Chart labels
  */
 .charts-css {
-
   &.bar {
-
     &:not(.show-labels) {
       --labels-size: 0;
 
       tbody tr th {
-        display: none;
+        @include visually-hidden();
       }
     }
     &.show-labels {
@@ -24,7 +22,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        display: none;
+        @include visually-hidden();
       }
     }
     &.labels-align-start {
@@ -42,18 +40,16 @@
         align-items: var(--labels-align, center);
       }
     }
-
   }
 
   &.column,
   &.area,
   &.line {
-
     &:not(.show-labels) {
       --labels-size: 0;
 
       tbody tr th {
-        display: none;
+        @include visually-hidden();
       }
     }
     &.show-labels {
@@ -68,7 +64,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        display: none;
+        @include visually-hidden();
       }
     }
     &.labels-align-start {
@@ -86,7 +82,5 @@
         justify-content: var(--labels-align, center);
       }
     }
-
   }
-
 }
