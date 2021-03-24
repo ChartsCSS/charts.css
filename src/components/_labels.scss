@@ -9,7 +9,7 @@
       --labels-size: 0;
 
       tbody tr th {
-        display: none;
+        @include visually-hidden();
       }
     }
     &.show-labels {
@@ -24,7 +24,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        display: none;
+        @include visually-hidden();
       }
     }
 
@@ -38,7 +38,7 @@
       --labels-size: 0;
 
       tbody tr th {
-        display: none;
+        @include visually-hidden();
       }
     }
     &.show-labels {
@@ -53,7 +53,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        display: none;
+        @include visually-hidden();
       }
     }
 
