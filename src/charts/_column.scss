@@ -1,186 +1,177 @@
 /*
  * Column Chart
  */
-.charts-css {
+@mixin column {
 
-  &.column {
+  // Layout
+  tbody {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
 
-    // Layout
-    tbody {
+    width: 100%;
+    height: calc(100% - var(--heading-size));
+
+    tr {
+      position: relative;
+
+      // Even row size
+      flex: 1 1 0;
+      overflow-wrap: anywhere;
+
+      // Display cells in a row
       display: flex;
-      justify-content: space-between;
-      align-items: stretch;
+      justify-content: flex-start;
 
-      width: 100%;
-      height: calc(100% - var(--heading-size));
+      th {
+        position: absolute;
+        right: 0;
+        left: 0;
+      }
 
-      tr {
-        position: relative;
-
-        // Even row size
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 0;
-        overflow-wrap: anywhere;
-
-        // Display cells in a row
+      td {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
+
+        width: 100%;
+        height: calc(100% * var(--size, 1));
+
+        position: relative; // For tooltips
+      }
+
+    }
+  }
+
+  // Orientation
+  &:not(.reverse) {
+    tbody {
+      tr {
+        align-items: flex-end;
+        margin-block-end: var(--labels-size);
 
         th {
-          position: absolute;
-          right: 0;
-          left: 0;
+          bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+          height: var(--labels-size);
         }
 
         td {
-          display: flex;
-          justify-content: center;
-
-          width: 100%;
-          height: calc(100% * var(--size, 1));
-
-          position: relative; // For tooltips
-        }
-
-      }
-    }
-
-    // Orientation
-    &:not(.reverse) {
-      tbody {
-        tr {
-          align-items: flex-end;
-          margin-block-end: var(--labels-size);
-
-          th {
-            bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            height: var(--labels-size);
-          }
-
-          td {
-            align-items: flex-start;
-          }
-        }
-      }
-    }
-    &.reverse {
-      tbody {
-        tr {
           align-items: flex-start;
-          margin-block-start: var(--labels-size);
-
-          th {
-            top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            height: var(--labels-size);
-          }
-
-          td {
-            align-items: flex-end;
-          }
         }
       }
     }
+  }
+  &.reverse {
+    tbody {
+      tr {
+        align-items: flex-start;
+        margin-block-start: var(--labels-size);
 
-    // Stacked
+        th {
+          top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
+          height: var(--labels-size);
+        }
+
+        td {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+
+  // Stacked
+  &:not(.stacked) {
+    tbody tr {
+      td {
+        flex: 1 1 0; // Even cell size
+      }
+    }
+  }
+  &.stacked {
+    tbody tr {
+      td {
+        flex: unset;
+      }
+    }
+
+    &.reverse-datasets {
+      tbody tr {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  // Reverse Order
+  &:not(.reverse-data) {
+    tbody {
+      flex-direction: row;
+    }
+  }
+  &.reverse-data {
+    tbody {
+      flex-direction: row-reverse;
+    }
+  }
+  &:not(.reverse-datasets) {
     &:not(.stacked) {
       tbody tr {
-        td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
-        }
-      }
-    }
-    &.stacked {
-      tbody tr {
-        td {
-          flex-grow: unset;
-          flex-shrink: unset;
-          flex-basis: unset;
-        }
-      }
-
-      &.reverse-datasets {
-        tbody tr {
-          justify-content: flex-end;
-        }
-      }
-    }
-
-    // Reverse Order
-    &:not(.reverse-data) {
-      tbody {
         flex-direction: row;
       }
     }
-    &.reverse-data {
-      tbody {
+
+    &.stacked {
+      &:not(.reverse) {
+        tbody tr {
+          flex-direction: column-reverse;
+        }
+      }
+
+      &.reverse {
+        tbody tr {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  &.reverse-datasets {
+    &:not(.stacked) {
+      tbody tr {
         flex-direction: row-reverse;
       }
     }
-    &:not(.reverse-datasets) {
-      &:not(.stacked) {
+
+    &.stacked {
+      &:not(.reverse) {
         tbody tr {
-          flex-direction: row;
+          flex-direction: column;
         }
       }
 
-      &.stacked {
-        &:not(.reverse) {
-          tbody tr {
-            flex-direction: column-reverse;
-          }
-        }
-
-        &.reverse {
-          tbody tr {
-            flex-direction: column;
-          }
-        }
-      }
-    }
-    &.reverse-datasets {
-      &:not(.stacked) {
+      &.reverse {
         tbody tr {
-          flex-direction: row-reverse;
-        }
-      }
-
-      &.stacked {
-        &:not(.reverse) {
-          tbody tr {
-            flex-direction: column;
-          }
-        }
-
-        &.reverse {
-          tbody tr {
-            flex-direction: column-reverse;
-          }
+          flex-direction: column-reverse;
         }
       }
     }
-
-    // Spacing
-    @for $i from 1 through 20 {
-      &.data-spacing-#{$i} {
-        tbody tr {
-          padding-inline-start: $i * 1px;
-          padding-inline-end: $i * 1px;
-        }
-      }
-    }
-    @for $i from 1 through 20 {
-      &.datasets-spacing-#{$i} {
-        tbody tr td {
-          margin-inline-start: $i * 1px;
-          margin-inline-end: $i * 1px;
-        }
-      }
-    }
-
   }
 
+  // Spacing
+  @for $i from 1 through 20 {
+    &.data-spacing-#{$i} {
+      tbody tr {
+        padding-inline-start: $i * 1px;
+        padding-inline-end: $i * 1px;
+      }
+    }
+
+    &.datasets-spacing-#{$i} {
+      tbody tr td {
+        margin-inline-start: $i * 1px;
+        margin-inline-end: $i * 1px;
+      }
+    }
+  }
+}
+
+.charts-css.column {
+  @include column();
 }

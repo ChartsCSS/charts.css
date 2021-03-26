@@ -1,20 +1,13 @@
 /*
  * Pie Chart
  */
-.charts-css {
+.charts-css.pie {
+  tbody {
+    @include circle();
+    background-color: var(--chart-bg-color);
 
-  &.pie {
-
-    // Layout
-    tbody {
-      @include circle();
-
-      background-color: var(--chart-bg-color);
-
-      tr {
-        display: none;
-      }
+    tr {
+      display: none;
     }
   }
-
 }

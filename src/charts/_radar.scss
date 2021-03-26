@@ -5,7 +5,6 @@
 
   &.radar {
 
-    // Layout
     tbody {
       @include circle();
 
@@ -16,5 +15,4 @@
       }
     }
   }
-
 }

@@ -1,0 +1,29 @@
+/*
+ * Dot Chart
+ */
+.charts-css.dot {
+  @include column();
+}
+
+.charts-css.dot {
+  --dot-size: 6px;
+
+  @include showDataOnHover();
+
+  tbody {
+    tr {
+      &:not(:hover) td {
+        background: transparent;
+      }
+
+      td::after {
+        background: currentColor;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        height: var(--dot-size);
+        width: var(--dot-size);
+      }
+    }
+  }
+}

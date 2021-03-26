@@ -1,20 +1,13 @@
 /*
  * Radial Chart
  */
-.charts-css {
+ .charts-css.radial {
+  tbody {
+    @include circle();
+    background-color: var(--chart-bg-color);
 
-  &.radial {
-
-    // Layout
-    tbody {
-      @include circle();
-
-      background-color: var(--chart-bg-color);
-
-      tr {
-        display: none;
-      }
+    tr {
+      display: none;
     }
   }
-
 }
