@@ -18,9 +18,7 @@
         position: relative;
 
         // Even column size
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 0;
+        flex: 1 1 0;
         overflow-wrap: anywhere;
 
         // Display cells in a column
@@ -86,19 +84,14 @@
     &:not(.stacked) {
       tbody tr {
         td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
+          flex: 1 1 0; // Even cell size
         }
       }
     }
     &.stacked {
       tbody tr {
         td {
-          flex-grow: unset;
-          flex-shrink: unset;
-          flex-basis: unset;
+          flex: unset;
         }
       }
 
@@ -180,7 +173,5 @@
         }
       }
     }
-
   }
-
 }

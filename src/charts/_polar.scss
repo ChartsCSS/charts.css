@@ -1,20 +1,13 @@
 /*
  * Polar Chart
  */
-.charts-css {
+.charts-css.polar {
+  tbody {
+    @include circle();
+    background-color: var(--chart-bg-color);
 
-  &.polar {
-
-    // Layout
-    tbody {
-      @include circle();
-
-      background-color: var(--chart-bg-color);
-
-      tr {
-        display: none;
-      }
+    tr {
+      display: none;
     }
   }
-
 }

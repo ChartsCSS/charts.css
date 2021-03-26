@@ -45,8 +45,9 @@
 
   }
 
-  &.column,
   &.area,
+  &.column,
+  &.dot,
   &.line {
 
     &:not(.show-labels) {
@@ -86,7 +87,5 @@
         justify-content: var(--labels-align, center);
       }
     }
-
   }
-
 }

@@ -3,8 +3,9 @@
  */
 .charts-css {
 
-  &.column,
   &.area,
+  &.column,
+  &.dot,
   &.line {
 
     &.show-primary-axis {
@@ -65,7 +66,6 @@
         }
       }
     }
-
   }
 
   &.bar {
@@ -128,7 +128,5 @@
         }
       }
     }
-
   }
-
 }
