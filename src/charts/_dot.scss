@@ -8,7 +8,22 @@
 .charts-css.dot {
   --dot-size: 6px;
 
-  @include showDataOnHover();
+  .data {
+    opacity: 0;
+  }
+  &.hover-data {
+    @include showDataOnHover();
+  }
+
+  &:not(.hover-fill) {
+    tbody {
+      tr {
+        &:hover td {
+          background: transparent;
+        }
+      }
+    }
+  }
 
   tbody {
     tr {
