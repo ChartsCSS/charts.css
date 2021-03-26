@@ -11,11 +11,11 @@
   .data {
     opacity: 0;
   }
-  &.hover-data {
+  &.show-data-on-hover {
     @include showDataOnHover();
   }
 
-  &:not(.hover-fill) {
+  &:not(.show-bar-on-hover) {
     tbody {
       tr {
         &:hover td {

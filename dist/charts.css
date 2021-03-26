@@ -2601,17 +2601,17 @@ ol.charts-css li {
   opacity: 0;
 }
 
-.charts-css.dot.hover-data .data {
+.charts-css.dot.show-data-on-hover .data {
   opacity: 0;
   -webkit-transition: opacity 300ms ease;
   transition: opacity 300ms ease;
 }
 
-.charts-css.dot.hover-data tr:hover .data {
+.charts-css.dot.show-data-on-hover tr:hover .data {
   opacity: 1;
 }
 
-.charts-css.dot:not(.hover-fill) tbody tr:hover td {
+.charts-css.dot:not(.show-bar-on-hover) tbody tr:hover td {
   background: transparent;
 }
 
