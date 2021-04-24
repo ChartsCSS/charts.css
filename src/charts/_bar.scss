@@ -37,7 +37,7 @@
           display: flex;
           align-items: center;
 
-          width: calc(100% * var(--size, 1));
+          width: calc(100% * var(--end, var(--size, 1)));
           height: 100%;
 
           position: relative; // For tooltips

@@ -9,10 +9,8 @@
     tbody {
       @include circle();
 
-      background-color: var(--chart-bg-color);
-
       tr {
-        display: none;
+        @include visually-hidden();
       }
     }
   }

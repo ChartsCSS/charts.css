@@ -5,8 +5,9 @@
 
   &.hide-data {
 
-    .data {
-      opacity: 0;
+    .data,
+    .data:not(:focus):not(:focus-within) {
+      @include visually-hidden();
     }
 
   }

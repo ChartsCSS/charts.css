@@ -1,4 +1,8 @@
-@mixin hide {
+// Hide element visually while keeping it accessible to assistive technologies
+//
+// See: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
+// See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+@mixin visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -7,6 +11,8 @@
   border: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 @mixin circle {
@@ -15,4 +21,5 @@
   height: 0;               // old hack for "aspect-ratio"
   padding-block-end: 100%; // makes height 100% of the width
   border-radius: 50%;
+  background-color: var(--chart-bg-color);
 }

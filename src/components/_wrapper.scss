@@ -62,7 +62,7 @@ table.charts-css {
   colgroup,
   thead,
   tfoot {
-    display: none;
+    @include visually-hidden();
   }
 }
 
