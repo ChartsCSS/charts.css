@@ -9,8 +9,6 @@
     tbody {
       @include circle();
 
-      background-color: var(--chart-bg-color);
-
       tr {
         @include visually-hidden();
       }
