@@ -6,6 +6,8 @@
 
 Visualization help end-users understand data. **Charts.css** help frontend developers turn data into beautiful charts and graphs using simple **CSS classes**.
 
+No dependencies. 72kb file size. Less than 6kb gzipped file size!
+
 ## Documentation
 
 Check the full documentation on [ChartsCSS.org](https://ChartsCSS.org/).
