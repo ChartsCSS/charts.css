@@ -95,6 +95,14 @@ The framework offers developers flexibility. You choose what components to displ
 
 The key feature is the ability to customize everything using basic CSS. Frontend developers can target any HTML element and customize it. This philosophical guideline is what makes the framework so flexible, easy and fun to use.
 
+## Questions
+
+For questions and support please use the [official forum](https://github.com/ChartsCSS/charts.css/discussions) on GitHub.
+
+## Liked Charts.css?
+
+If you like the project, **please consider to star the repo on GitHub**.
+
 ## License
 
 Charts.css is licensed under the [MIT license](https://opensource.org/licenses/MIT).
