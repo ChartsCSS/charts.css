@@ -17,7 +17,7 @@ $max-axes: 10;
 .charts-css {
 
   // Colors
-  @for $i from 1 through length($colors) {
+  @for $i from 1 through $total-colors {
     --color-#{$i}: #{ nth($colors, $i) };
   }
 
