@@ -1,6 +1,7 @@
 # Charts.css
 
 ![GitHub Version](https://img.shields.io/github/v/release/ChartsCSS/charts.css?style=for-the-badge) ![Minified Size](https://img.shields.io/bundlephobia/min/charts.css?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/ChartsCSS/charts.css?label=GitHub%20Stars&style=for-the-badge) ![License](https://img.shields.io/github/license/ChartsCSS/charts.css?style=for-the-badge)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FChartsCSS%2Fcharts.css.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FChartsCSS%2Fcharts.css?ref=badge_shield)
 
 **Charts.css is an open source CSS framework for data visualization.**
 
@@ -106,3 +107,6 @@ If you like the project, **please consider to star the repo on GitHub**.
 ## License
 
 Charts.css is licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FChartsCSS%2Fcharts.css.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FChartsCSS%2Fcharts.css?ref=badge_large)
