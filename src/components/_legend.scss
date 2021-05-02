@@ -5,7 +5,7 @@
 
   &.legend {
     padding: 1rem;
-    border: 1px solid var(--legend-border-color);
+    border: var(--legend-border-width) var(--legend-border-style) var(--legend-border-color);
     list-style: none;
 
     font-size: 1rem;
