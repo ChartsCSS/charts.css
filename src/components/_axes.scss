@@ -131,4 +131,37 @@
 
   }
 
+  &.radial,
+  &.pie,
+  &.polar,
+  &.radar {
+    &.show-primary-axis {
+      tbody {
+        border: var( --primary-axis-width ) var( --primary-axis-style ) var( --primary-axis-color );
+      }
+    }
+    @for $i from 1 through $max-axes {
+      &.show-#{$i}-secondary-axes {
+        tbody::after {
+          content: "";
+
+          @include position-fullwidth();
+          border-radius: 50%;
+
+          background: repeating-radial-gradient(
+            closest-side,
+            transparent 0,
+            transparent calc( 100% / #{$i + 1} - var( --secondary-axes-width ) ),
+            var( --secondary-axes-color ) calc( 100% / #{$i + 1} - var( --secondary-axes-width ) ),
+            var( --secondary-axes-color ) calc( 100% / #{$i + 1} ),
+            transparent calc( 100% / #{$i + 1} + var( --secondary-axes-width ) ),
+            transparent calc( 100% / #{$i + 1} + var( --secondary-axes-width ) )
+          );
+
+          z-index: 999;
+
+        }
+      }
+    }
+  }
 }
