@@ -10,7 +10,44 @@
       @include circle();
 
       tr {
-        @include visually-hidden();
+        th {
+          @include visually-hidden();
+        }
+
+        td {
+          display: flex;
+          justify-content: center;
+          border-radius: 50%;
+
+          @include position-fullwidth();
+
+          background: conic-gradient(
+            transparent 0 calc( 1turn * var( --start ) ),
+            var( --c, transparent ) calc( 1turn * var( --start, 0 ) ) calc( 1turn * var( --end ) ),
+            transparent calc( 1turn * var( --end ) ) 1turn
+          );
+
+          &::before{
+            content: "";
+            @include position-fullwidth();
+          }
+
+          &::after {
+            content: "";
+            width: 100%;
+          }
+
+          .data {
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+
+            @include position-fullwidth();
+
+            transform: rotate( calc( 0.5turn * var( --start, 0 ) + 0.5turn * var( --end, 0 ) ) );
+          }
+        }
+
       }
     }
   }
