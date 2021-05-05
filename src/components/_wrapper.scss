@@ -64,6 +64,11 @@ table.charts-css {
   tfoot {
     @include visually-hidden();
   }
+
+  tbody {
+    position: relative;
+  }
+
 }
 
 
