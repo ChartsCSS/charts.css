@@ -12,7 +12,7 @@
       align-items: stretch;
 
       width: 100%;
-      height: calc(100% - var(--heading-size));
+      height: calc(100% - var(--#{$variable-prefix}heading-size));
 
       tr {
         position: relative;
@@ -38,7 +38,7 @@
           justify-content: center;
 
           width: 100%;
-          height: calc(100% * var(--end, var(--size, 1)));
+          height: calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size, 1)));
 
           position: relative; // For tooltips
         }
@@ -51,11 +51,11 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var(--labels-size);
+          margin-block-end: var(--#{$variable-prefix}labels-size);
 
           th {
-            bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            height: var(--labels-size);
+            bottom: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
+            height: var(--#{$variable-prefix}labels-size);
           }
 
           td {
@@ -68,11 +68,11 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var(--labels-size);
+          margin-block-start: var(--#{$variable-prefix}labels-size);
 
           th {
-            top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            height: var(--labels-size);
+            top: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
+            height: var(--#{$variable-prefix}labels-size);
           }
 
           td {

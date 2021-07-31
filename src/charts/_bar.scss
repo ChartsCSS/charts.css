@@ -12,7 +12,7 @@
       align-items: stretch;
 
       width: 100%;
-      height: calc(100% - var(--heading-size));
+      height: calc(100% - var(--#{$variable-prefix}heading-size));
 
       tr {
         position: relative;
@@ -37,7 +37,7 @@
           display: flex;
           align-items: center;
 
-          width: calc(100% * var(--end, var(--size, 1)));
+          width: calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size, 1)));
           height: 100%;
 
           position: relative; // For tooltips
@@ -51,11 +51,11 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-inline-start: var(--labels-size);
+          margin-inline-start: var(--#{$variable-prefix}labels-size);
 
           th {
-            left: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            width: var(--labels-size);
+            left: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
+            width: var(--#{$variable-prefix}labels-size);
           }
 
           td {
@@ -68,11 +68,11 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-inline-end: var(--labels-size);
+          margin-inline-end: var(--#{$variable-prefix}labels-size);
 
           th {
-            right: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            width: var(--labels-size);
+            right: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
+            width: var(--#{$variable-prefix}labels-size);
           }
 
           td {

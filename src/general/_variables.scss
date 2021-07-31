@@ -1,3 +1,6 @@
+// Prefixes
+$variable-prefix: null;
+
 // Colors List (source: https://www.schemecolor.com/rainbow-on-sale.php)
 $colors: rgba(240, 50, 50, .75),
   rgba(255, 180, 50, .75),
@@ -18,29 +21,29 @@ $max-axes: 10;
 
   // Colors
   @for $i from 1 through $total-colors {
-    --color-#{$i}: #{ nth($colors, $i) };
+    --#{$variable-prefix}color-#{$i}: #{ nth($colors, $i) };
   }
 
   // General Colors
-  --chart-bg-color: #f5f5f5;
+  --#{$variable-prefix}chart-bg-color: #f5f5f5;
 
   // Heading
-  --heading-size: 0px; // Unit required
+  --#{$variable-prefix}heading-size: 0px; // Unit required
 
   // Axes
-  --primary-axis-color: rgba(0, 0, 0, 1);
-  --primary-axis-style: solid;
-  --primary-axis-width: 1px;
-  --secondary-axes-color: rgba(0, 0, 0, .15);
-  --secondary-axes-style: solid;
-  --secondary-axes-width: 1px;
-  --data-axes-color: rgba(0, 0, 0, .15);
-  --data-axes-style: solid;
-  --data-axes-width: 1px;
+  --#{$variable-prefix}primary-axis-color: rgba(0, 0, 0, 1);
+  --#{$variable-prefix}primary-axis-style: solid;
+  --#{$variable-prefix}primary-axis-width: 1px;
+  --#{$variable-prefix}secondary-axes-color: rgba(0, 0, 0, .15);
+  --#{$variable-prefix}secondary-axes-style: solid;
+  --#{$variable-prefix}secondary-axes-width: 1px;
+  --#{$variable-prefix}data-axes-color: rgba(0, 0, 0, .15);
+  --#{$variable-prefix}data-axes-style: solid;
+  --#{$variable-prefix}data-axes-width: 1px;
 
   // Legend
-  --legend-border-color: rgb(200, 200, 200);
-  --legend-border-style: solid;
-  --legend-border-width: 1px;
+  --#{$variable-prefix}legend-border-color: rgb(200, 200, 200);
+  --#{$variable-prefix}legend-border-style: solid;
+  --#{$variable-prefix}legend-border-width: 1px;
 
 }

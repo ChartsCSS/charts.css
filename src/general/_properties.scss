@@ -3,73 +3,73 @@
  */
 
 // Colors
-@property --color,
-@property --color-1,
-@property --color-2,
-@property --color-3,
-@property --color-4,
-@property --color-5,
-@property --color-6,
-@property --color-7,
-@property --color-8,
-@property --color-9,
-@property --color-10,
-@property --chart-bg-color {
+@property --#{$variable-prefix}color,
+@property --#{$variable-prefix}color-1,
+@property --#{$variable-prefix}color-2,
+@property --#{$variable-prefix}color-3,
+@property --#{$variable-prefix}color-4,
+@property --#{$variable-prefix}color-5,
+@property --#{$variable-prefix}color-6,
+@property --#{$variable-prefix}color-7,
+@property --#{$variable-prefix}color-8,
+@property --#{$variable-prefix}color-9,
+@property --#{$variable-prefix}color-10,
+@property --#{$variable-prefix}chart-bg-color {
   syntax: '<color>';
   initial-value: transparent;
   inherits: true;
 }
 
 // Heading
-@property --heading-size {
+@property --#{$variable-prefix}heading-size {
   syntax: '<length>';
   initial-value: 0;
   inherits: true;
 }
 
 // Labels
-@property --labels-size {
+@property --#{$variable-prefix}labels-size {
   syntax: '<length>';
   initial-value: 0;
   inherits: true;
 }
-@property --labels-align {
+@property --#{$variable-prefix}labels-align {
   syntax: '<string>';
   initial-value: center;
   inherits: true;
 }
 
 // Axes + Legends
-@property --primary-axis-width,
-@property --secondary-axes-width,
-@property --data-axes-width,
-@property --legend-border-width {
+@property --#{$variable-prefix}primary-axis-width,
+@property --#{$variable-prefix}secondary-axes-width,
+@property --#{$variable-prefix}data-axes-width,
+@property --#{$variable-prefix}legend-border-width {
   syntax: '<length>';
   initial-value: 1px;
   inherits: true;
 }
-@property --primary-axis-style,
-@property --secondary-axes-style,
-@property --data-axes-style,
-@property --legend-border-style {
+@property --#{$variable-prefix}primary-axis-style,
+@property --#{$variable-prefix}secondary-axes-style,
+@property --#{$variable-prefix}data-axes-style,
+@property --#{$variable-prefix}legend-border-style {
   syntax: '<line-style>';
   initial-value: solid;
   inherits: true;
 }
-@property --primary-axis-color,
-@property --secondary-axes-color,
-@property --data-axes-color,
-@property --legend-border-color {
+@property --#{$variable-prefix}primary-axis-color,
+@property --#{$variable-prefix}secondary-axes-color,
+@property --#{$variable-prefix}data-axes-color,
+@property --#{$variable-prefix}legend-border-color {
   syntax: '<color>';
   initial-value: transparent;
   inherits: true;
 }
 
 // Sizes
-@property --start,
-@property --end,
-@property --size,
-@property --line-size {
+@property --#{$variable-prefix}start,
+@property --#{$variable-prefix}end,
+@property --#{$variable-prefix}size,
+@property --#{$variable-prefix}line-size {
   syntax: '<number>';
   initial-value: 0;
   inherits: true;

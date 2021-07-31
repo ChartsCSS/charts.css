@@ -5,7 +5,7 @@
 
   &.legend {
     padding: 1rem;
-    border: var(--legend-border-width) var(--legend-border-style) var(--legend-border-color);
+    border: var(--#{$variable-prefix}legend-border-width) var(--#{$variable-prefix}legend-border-style) var(--#{$variable-prefix}legend-border-color);
     list-style: none;
 
     font-size: 1rem;
@@ -27,8 +27,8 @@
       @for $i from 1 through $total-colors {
 
         &:nth-child(#{ $i })::before {
-          background-color: var(--color-#{ $i }, transparent);
-          border-color: var(--border-color-#{ $i }, var(--border-color, #000));
+          background-color: var(--#{$variable-prefix}color-#{ $i }, transparent);
+          border-color: var(--#{$variable-prefix}border-color-#{ $i }, var(--#{$variable-prefix}border-color, #000));
         }
 
       }

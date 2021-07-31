@@ -21,7 +21,7 @@
   height: 0;               // old hack for "aspect-ratio"
   padding-block-end: 100%; // makes height 100% of the width
   border-radius: 50%;
-  background-color: var(--chart-bg-color);
+  background-color: var(--#{$variable-prefix}chart-bg-color);
 }
 
 @mixin position-fullwidth {
