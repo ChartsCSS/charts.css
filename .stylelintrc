@@ -7,7 +7,9 @@
     "at-rule-no-unknown": null,
     "at-rule-empty-line-before": null,
     "block-closing-brace-empty-line-before": null,
+    "length-zero-no-unit": null,
     "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
     "rule-empty-line-before": null,
     "scss/at-rule-no-unknown": true
   }
