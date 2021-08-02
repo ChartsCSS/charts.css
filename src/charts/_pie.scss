@@ -21,13 +21,14 @@
 
           @include position-fullwidth();
 
-          background: conic-gradient(
-            transparent 0 calc( 1turn * var( --#{$variable-prefix}start ) ),
-            var( --#{$variable-prefix}c, transparent ) calc( 1turn * var( --#{$variable-prefix}start, 0 ) ) calc( 1turn * var( --#{$variable-prefix}end ) ),
-            transparent calc( 1turn * var( --#{$variable-prefix}end ) ) 1turn
-          );
+          background:
+            conic-gradient(
+              transparent 0 calc(1turn * var(--#{$variable-prefix}start)),
+              var(--#{$variable-prefix}c, transparent) calc(1turn * var(--#{$variable-prefix}start, 0)) calc(1turn * var(--#{$variable-prefix}end)),
+              transparent calc(1turn * var(--#{$variable-prefix}end)) 1turn
+            );
 
-          &::before{
+          &::before {
             content: "";
             @include position-fullwidth();
           }
@@ -44,7 +45,7 @@
 
             @include position-fullwidth();
 
-            transform: rotate( calc( 0.5turn * var( --#{$variable-prefix}start, 0 ) + 0.5turn * var( --#{$variable-prefix}end, 0 ) ) );
+            transform: rotate(calc(0.5turn * var(--#{$variable-prefix}start, 0) + 0.5turn * var(--#{$variable-prefix}end, 0)));
           }
         }
 

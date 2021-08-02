@@ -10,7 +10,6 @@
       display: flex;
       justify-content: space-between;
       align-items: stretch;
-
       width: 100%;
       height: calc(100% - var(--#{$variable-prefix}heading-size));
 
@@ -36,10 +35,8 @@
         td {
           display: flex;
           justify-content: center;
-
           width: 100%;
           height: calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size, 1)));
-
           position: relative; // For tooltips
         }
 

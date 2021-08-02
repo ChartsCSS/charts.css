@@ -3,21 +3,19 @@
  */
 
 // Colors
-@property --#{$variable-prefix}color,
-@property --#{$variable-prefix}color-1,
-@property --#{$variable-prefix}color-2,
-@property --#{$variable-prefix}color-3,
-@property --#{$variable-prefix}color-4,
-@property --#{$variable-prefix}color-5,
-@property --#{$variable-prefix}color-6,
-@property --#{$variable-prefix}color-7,
-@property --#{$variable-prefix}color-8,
-@property --#{$variable-prefix}color-9,
-@property --#{$variable-prefix}color-10,
-@property --#{$variable-prefix}chart-bg-color {
-  syntax: '<color>';
-  initial-value: transparent;
-  inherits: true;
+@each $index, $color in $colors {
+  @property --#{$variable-prefix}color-#{$index} {
+    syntax: '<color>';
+    initial-value: transparent;
+    inherits: true;
+  }
+}
+$color-vars: color, chart-bg-color;
+@each $i in $color-vars {
+  @property --#{$variable-prefix}#{$i} {
+    syntax: '<color>';
+    inherits: true;
+  }
 }
 
 // Heading
@@ -40,37 +38,38 @@
 }
 
 // Axes + Legends
-@property --#{$variable-prefix}primary-axis-width,
-@property --#{$variable-prefix}secondary-axes-width,
-@property --#{$variable-prefix}data-axes-width,
-@property --#{$variable-prefix}legend-border-width {
-  syntax: '<length>';
-  initial-value: 1px;
-  inherits: true;
+$items-width: primary-axis-width, secondary-axes-width, data-axes-width, legend-border-width;
+@each $w in $items-width {
+  @property --#{$variable-prefix}#{$w} {
+    syntax: '<length>';
+    initial-value: 1px;
+    inherits: true;
+  }
 }
-@property --#{$variable-prefix}primary-axis-style,
-@property --#{$variable-prefix}secondary-axes-style,
-@property --#{$variable-prefix}data-axes-style,
-@property --#{$variable-prefix}legend-border-style {
-  syntax: '<line-style>';
-  initial-value: solid;
-  inherits: true;
+
+$items-style: primary-axis-style, secondary-axes-style, data-axes-style, legend-border-style;
+@each $s in $items-style {
+  @property --#{$variable-prefix}#{$s} {
+    syntax: '<line-style>';
+    initial-value: solid;
+    inherits: true;
+  }
 }
-@property --#{$variable-prefix}primary-axis-color,
-@property --#{$variable-prefix}secondary-axes-color,
-@property --#{$variable-prefix}data-axes-color,
-@property --#{$variable-prefix}legend-border-color {
-  syntax: '<color>';
-  initial-value: transparent;
-  inherits: true;
+
+$items-color: primary-axis-color, secondary-axes-color, data-axes-color, legend-border-color;
+@each $c in $items-color {
+  @property --#{$variable-prefix}#{$c} {
+    syntax: '<color>';
+    initial-value: transparent;
+    inherits: true;
+  }
 }
 
 // Sizes
-@property --#{$variable-prefix}start,
-@property --#{$variable-prefix}end,
-@property --#{$variable-prefix}size,
-@property --#{$variable-prefix}line-size {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: true;
+$sizes: start, end, size, line-size;
+@each $size in $sizes {
+  @property --#{$variable-prefix}#{$size} {
+    syntax: '<number>';
+    inherits: true;
+  }
 }

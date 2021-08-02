@@ -15,7 +15,7 @@
 
     &.pie tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
     &.pie.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }) {
-      --#{$variable-prefix}c: var(--#{$variable-prefix}color, var(--#{$variable-prefix}color-#{ $i }, transparent) );
+      --#{$variable-prefix}c: var(--#{$variable-prefix}color, var(--#{$variable-prefix}color-#{ $i }, transparent));
     }
   }
 

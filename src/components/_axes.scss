@@ -137,7 +137,7 @@
   &.radar {
     &.show-primary-axis {
       tbody {
-        border: var( --#{$variable-prefix}primary-axis-width ) var( --#{$variable-prefix}primary-axis-style ) var( --#{$variable-prefix}primary-axis-color );
+        border: var(--#{$variable-prefix}primary-axis-width) var(--#{$variable-prefix}primary-axis-style) var(--#{$variable-prefix}primary-axis-color);
       }
     }
     @for $i from 1 through $max-axes {
@@ -146,20 +146,19 @@
           content: "";
 
           @include position-fullwidth();
+
           border-radius: 50%;
-
-          background: repeating-radial-gradient(
-            closest-side,
-            transparent 0,
-            transparent calc( 100% / #{$i + 1} - var( --#{$variable-prefix}secondary-axes-width ) ),
-            var( --#{$variable-prefix}secondary-axes-color ) calc( 100% / #{$i + 1} - var( --#{$variable-prefix}secondary-axes-width ) ),
-            var( --#{$variable-prefix}secondary-axes-color ) calc( 100% / #{$i + 1} ),
-            transparent calc( 100% / #{$i + 1} + var( --#{$variable-prefix}secondary-axes-width ) ),
-            transparent calc( 100% / #{$i + 1} + var( --#{$variable-prefix}secondary-axes-width ) )
-          );
-
+          background:
+            repeating-radial-gradient(
+              closest-side,
+              transparent 0,
+              transparent calc(100% / #{$i + 1} - var(--#{$variable-prefix}secondary-axes-width)),
+              var(--#{$variable-prefix}secondary-axes-color) calc(100% / #{$i + 1} - var(--#{$variable-prefix}secondary-axes-width)),
+              var(--#{$variable-prefix}secondary-axes-color) calc(100% / #{$i + 1}),
+              transparent calc(100% / #{$i + 1} + var(--#{$variable-prefix}secondary-axes-width)),
+              transparent calc(100% / #{$i + 1} + var(--#{$variable-prefix}secondary-axes-width))
+            );
           z-index: 2;
-
         }
       }
     }
