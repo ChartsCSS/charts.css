@@ -17,11 +17,11 @@
     // Visibility
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity .3s;
     background-color: #555;
     color: #fff;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: .9rem;
   }
 
   .tooltip::after {
