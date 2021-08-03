@@ -2,6 +2,33 @@
  * Chart wrapper element
  */
 .charts-css {
+  // Colors
+  @each $index, $color in $colors {
+    --#{$variable-prefix}color-#{$index}: #{$color};
+  }
+
+  // General Colors
+  --#{$variable-prefix}chart-bg-color: #f5f5f5;
+
+  // Heading
+  --#{$variable-prefix}heading-size: 0px; // Unit required
+
+  // Axes
+  --#{$variable-prefix}primary-axis-color: rgba(0, 0, 0, 1);
+  --#{$variable-prefix}primary-axis-style: solid;
+  --#{$variable-prefix}primary-axis-width: 1px;
+  --#{$variable-prefix}secondary-axes-color: rgba(0, 0, 0, .15);
+  --#{$variable-prefix}secondary-axes-style: solid;
+  --#{$variable-prefix}secondary-axes-width: 1px;
+  --#{$variable-prefix}data-axes-color: rgba(0, 0, 0, .15);
+  --#{$variable-prefix}data-axes-style: solid;
+  --#{$variable-prefix}data-axes-width: 1px;
+
+  // Legend
+  --#{$variable-prefix}legend-border-color: rgb(200, 200, 200);
+  --#{$variable-prefix}legend-border-style: solid;
+  --#{$variable-prefix}legend-border-width: 1px;
+
   // Position child elements relative to main chart element
   position: relative;
 
