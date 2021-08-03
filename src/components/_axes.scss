@@ -10,58 +10,58 @@
     &.show-primary-axis {
       &:not(.reverse) {
         tbody tr {
-          border-block-end: var(--#{$variable-prefix}primary-axis-width) var(--#{$variable-prefix}primary-axis-style) var(--#{$variable-prefix}primary-axis-color);
+          border-block-end: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
         }
       }
       &.reverse {
         tbody tr {
-          border-block-start: var(--#{$variable-prefix}primary-axis-width) var(--#{$variable-prefix}primary-axis-style) var(--#{$variable-prefix}primary-axis-color);
+          border-block-start: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
         }
       }
     }
     @for $i from 1 through $max-axes {
-      &.show-#{$i}-secondary-axes {
+      &.show-#{ $i }-secondary-axes {
         &:not(.reverse) {
           tbody tr {
             background-size: 100% (100% / $i);
-            background-image: linear-gradient(var(--#{$variable-prefix}secondary-axes-color) var(--#{$variable-prefix}secondary-axes-width), transparent var(--#{$variable-prefix}secondary-axes-width));
+            background-image: linear-gradient(var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
           }
         }
         &.reverse {
           tbody tr {
             background-size: 100% (100% / $i);
-            background-image: linear-gradient(0deg, var(--#{$variable-prefix}secondary-axes-color) var(--#{$variable-prefix}secondary-axes-width), transparent var(--#{$variable-prefix}secondary-axes-width));
+            background-image: linear-gradient(0deg, var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
           }
         }
       }
     }
     &.show-data-axes {
       tbody tr {
-        border-inline-end: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+        border-inline-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type {
-          border-inline-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type {
-          border-inline-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
     }
     &.show-dataset-axes {
       tbody tr td {
-        border-inline-end: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+        border-inline-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type td {
-          border-inline-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type td {
-          border-inline-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
     }
@@ -73,58 +73,58 @@
     &.show-primary-axis {
       &:not(.reverse) {
         tbody tr {
-          border-inline-start: var(--#{$variable-prefix}primary-axis-width) var(--#{$variable-prefix}primary-axis-style) var(--#{$variable-prefix}primary-axis-color);
+          border-inline-start: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
         }
       }
       &.reverse {
         tbody tr {
-          border-inline-end: var(--#{$variable-prefix}primary-axis-width) var(--#{$variable-prefix}primary-axis-style) var(--#{$variable-prefix}primary-axis-color);
+          border-inline-end: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
         }
       }
     }
     @for $i from 1 through $max-axes {
-      &.show-#{$i}-secondary-axes {
+      &.show-#{ $i }-secondary-axes {
         &:not(.reverse) {
           tbody tr {
             background-size: (100% / $i) 100%;
-            background-image: linear-gradient(-90deg, var(--#{$variable-prefix}secondary-axes-color) var(--#{$variable-prefix}secondary-axes-width), transparent var(--#{$variable-prefix}secondary-axes-width));
+            background-image: linear-gradient(-90deg, var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
           }
         }
         &.reverse {
           tbody tr {
             background-size: (100% / $i) 100%;
-            background-image: linear-gradient(90deg, var(--#{$variable-prefix}secondary-axes-color) var(--#{$variable-prefix}secondary-axes-width), transparent var(--#{$variable-prefix}secondary-axes-width));
+            background-image: linear-gradient(90deg, var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
           }
         }
       }
     }
     &.show-data-axes {
       tbody tr {
-        border-block-end: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+        border-block-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type {
-          border-block-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type {
-          border-block-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
     }
     &.show-dataset-axes {
       tbody tr td {
-        border-block-end: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+        border-block-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
       }
       &:not(.reverse-data) {
         tbody tr:first-of-type td {
-          border-block-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
       &.reverse-data {
         tbody tr:last-of-type td {
-          border-block-start: var(--#{$variable-prefix}data-axes-width) var(--#{$variable-prefix}data-axes-style) var(--#{$variable-prefix}data-axes-color);
+          border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
         }
       }
     }
@@ -137,11 +137,11 @@
   &.radar {
     &.show-primary-axis {
       tbody {
-        border: var(--#{$variable-prefix}primary-axis-width) var(--#{$variable-prefix}primary-axis-style) var(--#{$variable-prefix}primary-axis-color);
+        border: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
       }
     }
     @for $i from 1 through $max-axes {
-      &.show-#{$i}-secondary-axes {
+      &.show-#{ $i }-secondary-axes {
         tbody::after {
           content: "";
 
@@ -152,11 +152,11 @@
             repeating-radial-gradient(
               closest-side,
               transparent 0,
-              transparent calc(100% / #{$i + 1} - var(--#{$variable-prefix}secondary-axes-width)),
-              var(--#{$variable-prefix}secondary-axes-color) calc(100% / #{$i + 1} - var(--#{$variable-prefix}secondary-axes-width)),
-              var(--#{$variable-prefix}secondary-axes-color) calc(100% / #{$i + 1}),
-              transparent calc(100% / #{$i + 1} + var(--#{$variable-prefix}secondary-axes-width)),
-              transparent calc(100% / #{$i + 1} + var(--#{$variable-prefix}secondary-axes-width))
+              transparent calc(100% / #{ $i + 1 } - var(--#{ $variable-prefix }secondary-axes-width)),
+              var(--#{ $variable-prefix }secondary-axes-color) calc(100% / #{ $i + 1 } - var(--#{ $variable-prefix }secondary-axes-width)),
+              var(--#{ $variable-prefix }secondary-axes-color) calc(100% / #{ $i + 1 }),
+              transparent calc(100% / #{ $i + 1 } + var(--#{ $variable-prefix }secondary-axes-width)),
+              transparent calc(100% / #{ $i + 1 } + var(--#{ $variable-prefix }secondary-axes-width))
             );
           z-index: 2;
         }

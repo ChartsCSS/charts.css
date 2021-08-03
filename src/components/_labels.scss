@@ -6,19 +6,19 @@
   &.bar {
 
     &:not(.show-labels) {
-      --#{$variable-prefix}labels-size: 0;
+      --#{ $variable-prefix }labels-size: 0;
 
       tbody tr th {
         @include visually-hidden();
       }
     }
     &.show-labels {
-      --#{$variable-prefix}labels-size: 80px;
+      --#{ $variable-prefix }labels-size: 80px;
 
       tbody tr th {
         display: flex;
         justify-content: center;
-        align-items: var(--#{$variable-prefix}labels-align, center);
+        align-items: var(--#{ $variable-prefix }labels-align, center);
         flex-direction: column;
       }
 
@@ -35,19 +35,19 @@
   &.line {
 
     &:not(.show-labels) {
-      --#{$variable-prefix}labels-size: 0;
+      --#{ $variable-prefix }labels-size: 0;
 
       tbody tr th {
         @include visually-hidden();
       }
     }
     &.show-labels {
-      --#{$variable-prefix}labels-size: 1.5rem;
+      --#{ $variable-prefix }labels-size: 1.5rem;
 
       tbody tr th {
         display: flex;
         justify-content: center;
-        align-items: var(--#{$variable-prefix}labels-align, center);
+        align-items: var(--#{ $variable-prefix }labels-align, center);
         flex-direction: column;
       }
 
@@ -67,17 +67,17 @@
 
     &.labels-align-start {
       tbody tr th {
-        align-items: var(--#{$variable-prefix}labels-align, flex-start);
+        align-items: var(--#{ $variable-prefix }labels-align, flex-start);
       }
     }
     &.labels-align-end {
       tbody tr th {
-        align-items: var(--#{$variable-prefix}labels-align, flex-end);
+        align-items: var(--#{ $variable-prefix }labels-align, flex-end);
       }
     }
     &.labels-align-center {
       tbody tr th {
-        align-items: var(--#{$variable-prefix}labels-align, center);
+        align-items: var(--#{ $variable-prefix }labels-align, center);
       }
     }
 

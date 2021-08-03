@@ -11,7 +11,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      height: calc(100% - var(--#{$variable-prefix}heading-size));
+      height: calc(100% - var(--#{ $variable-prefix }heading-size));
 
       tr {
         position: relative;
@@ -35,7 +35,7 @@
         td {
           display: flex;
           align-items: center;
-          width: calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size, 1)));
+          width: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size, 1)));
           height: 100%;
           position: relative; // For tooltips
         }
@@ -48,11 +48,11 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-inline-start: var(--#{$variable-prefix}labels-size);
+          margin-inline-start: var(--#{ $variable-prefix }labels-size);
 
           th {
-            left: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
-            width: var(--#{$variable-prefix}labels-size);
+            left: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            width: var(--#{ $variable-prefix }labels-size);
           }
 
           td {
@@ -65,11 +65,11 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-inline-end: var(--#{$variable-prefix}labels-size);
+          margin-inline-end: var(--#{ $variable-prefix }labels-size);
 
           th {
-            right: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
-            width: var(--#{$variable-prefix}labels-size);
+            right: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            width: var(--#{ $variable-prefix }labels-size);
           }
 
           td {
@@ -162,7 +162,7 @@
 
     // Spacing
     @for $i from 1 through 20 {
-      &.data-spacing-#{$i} {
+      &.data-spacing-#{ $i } {
         tbody tr {
           padding-block-start: $i * 1px;
           padding-block-end: $i * 1px;
@@ -170,7 +170,7 @@
       }
     }
     @for $i from 1 through 20 {
-      &.datasets-spacing-#{$i} {
+      &.datasets-spacing-#{ $i } {
         tbody tr td {
           margin-block-start: $i * 1px;
           margin-block-end: $i * 1px;

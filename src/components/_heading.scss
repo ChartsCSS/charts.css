@@ -11,12 +11,12 @@
   }
 
   &.show-heading {
-    --#{$variable-prefix}heading-size: 1.5rem;
+    --#{ $variable-prefix }heading-size: 1.5rem;
 
     caption {
       display: block;
       width: 100%;
-      height: var(--#{$variable-prefix}heading-size);
+      height: var(--#{ $variable-prefix }heading-size);
     }
 
   }

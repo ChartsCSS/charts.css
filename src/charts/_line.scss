@@ -4,7 +4,7 @@
 .charts-css {
 
   &.line {
-    --#{$variable-prefix}line-size: 3px;
+    --#{ $variable-prefix }line-size: 3px;
 
     // Layout
     tbody {
@@ -12,7 +12,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      height: calc(100% - var(--#{$variable-prefix}heading-size));
+      height: calc(100% - var(--#{ $variable-prefix }heading-size));
 
       tr {
         position: relative;
@@ -69,11 +69,11 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var(--#{$variable-prefix}labels-size);
+          margin-block-end: var(--#{ $variable-prefix }labels-size);
 
           th {
-            bottom: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
-            height: var(--#{$variable-prefix}labels-size);
+            bottom: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            height: var(--#{ $variable-prefix }labels-size);
           }
 
           td {
@@ -86,11 +86,11 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var(--#{$variable-prefix}labels-size);
+          margin-block-start: var(--#{ $variable-prefix }labels-size);
 
           th {
-            top: calc(-1 * var(--#{$variable-prefix}labels-size) - var(--#{$variable-prefix}primary-axis-width));
-            height: var(--#{$variable-prefix}labels-size);
+            top: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            height: var(--#{ $variable-prefix }labels-size);
           }
 
           td {
@@ -132,10 +132,10 @@
           &::before {
             clip-path:
               polygon(
-                0% calc(100% * (1 - var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))))),
-                100% calc(100% * (1 - var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)))),
-                100% calc(100% * (1 - var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))) - var(--#{$variable-prefix}line-size)),
-                0% calc(100% * (1 - var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)))) - var(--#{$variable-prefix}line-size))
+                0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
+                100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
+                0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size))
               );
           }
 
@@ -144,7 +144,7 @@
           }
 
           &::after {
-            height: calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)));
+            height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
           }
         }
       }
@@ -156,10 +156,10 @@
           &::before {
             clip-path:
               polygon(
-                0% calc(100% * (1 - var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)))),
-                100% calc(100% * (1 - var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))))),
-                100% calc(100% * (1 - var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)))) - var(--#{$variable-prefix}line-size)),
-                0% calc(100% * (1 - var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))) - var(--#{$variable-prefix}line-size))
+                0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
+                100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size)),
+                0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size))
               );
           }
 
@@ -168,7 +168,7 @@
           }
 
           &::after {
-            height: calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)));
+            height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
           }
         }
       }
@@ -182,10 +182,10 @@
           &::before {
             clip-path:
               polygon(
-                0% calc(100% * var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))) - var(--#{$variable-prefix}line-size)),
-                100% calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)) - var(--#{$variable-prefix}line-size)),
-                100% calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))),
-                0% calc(100% * var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))))
+                0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
+                100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
+                100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))),
+                0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))
               );
           }
 
@@ -194,7 +194,7 @@
           }
 
           &::after {
-            height: calc(100% * (1 - var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))));
+            height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
           }
         }
       }
@@ -206,10 +206,10 @@
           &::before {
             clip-path:
               polygon(
-                0% calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)) - var(--#{$variable-prefix}line-size)),
-                100% calc(100% * var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))) - var(--#{$variable-prefix}line-size)),
-                100% calc(100% * var(--#{$variable-prefix}start, var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)))),
-                0% calc(100% * var(--#{$variable-prefix}end, var(--#{$variable-prefix}size)))
+                0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
+                100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
+                100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))
               );
           }
 
@@ -218,7 +218,7 @@
           }
 
           &::after {
-            height: calc(100% * (1 - var(--#{$variable-prefix}end, var(--#{$variable-prefix}size))));
+            height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
           }
         }
       }
@@ -226,8 +226,8 @@
 
     // Spacing
     @for $i from 1 through 20 {
-      &.data-spacing-#{$i},
-      &.datasets-spacing-#{$i} {
+      &.data-spacing-#{ $i },
+      &.datasets-spacing-#{ $i } {
         tbody tr td::before {
           margin-inline-start: $i * 1px;
           margin-inline-end: $i * 1px;
