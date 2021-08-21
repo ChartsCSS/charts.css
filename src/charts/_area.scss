@@ -10,9 +10,8 @@
       display: flex;
       justify-content: space-between;
       align-items: stretch;
-
       width: 100%;
-      height: calc(100% - var(--heading-size));
+      height: calc(100% - var(--#{ $variable-prefix }heading-size));
 
       tr {
         position: relative;
@@ -36,10 +35,8 @@
         td {
           display: flex;
           flex-flow: column;
-
           width: 100%;
           height: 100%;
-
           position: absolute;
           top: 0;
           right: 0;
@@ -47,7 +44,7 @@
           left: 0;
           z-index: 0;
 
-          &::before{
+          &::before {
             content: "";
             position: absolute;
             top: 0;
@@ -71,11 +68,11 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var(--labels-size);
+          margin-block-end: var(--#{ $variable-prefix }labels-size);
 
           th {
-            bottom: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            height: var(--labels-size);
+            bottom: calc(-1 * var(--labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            height: var(--#{ $variable-prefix }labels-size);
           }
 
           td {
@@ -88,11 +85,11 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var(--labels-size);
+          margin-block-start: var(--#{ $variable-prefix }labels-size);
 
           th {
-            top: calc(-1 * var(--labels-size) - var(--primary-axis-width));
-            height: var(--labels-size);
+            top: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            height: var(--#{ $variable-prefix }labels-size);
           }
 
           td {
@@ -132,12 +129,13 @@
           align-items: flex-end;
 
           &::before {
-            clip-path: polygon(
-              0% calc(100% * (1 - var(--start, var(--end, var(--size))))),
-              100% calc(100% * (1 - var(--end, var(--size)))),
-              100% 100%,
-              0% 100%
-            );
+            clip-path:
+              polygon(
+                0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
+                100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                100% 100%,
+                0% 100%
+              );
           }
 
           .data {
@@ -145,7 +143,7 @@
           }
 
           &::after {
-            height: calc(100% * var(--end, var(--size)));
+            height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
           }
         }
       }
@@ -155,12 +153,13 @@
           align-items: flex-start;
 
           &::before {
-            clip-path: polygon(
-              0% calc(100% * (1 - var(--end, var(--size)))),
-              100% calc(100% * (1 - var(--start, var(--end, var(--size))))),
-              100% 100%,
-              0% 100%
-            );
+            clip-path:
+              polygon(
+                0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
+                100% 100%,
+                0% 100%
+              );
           }
 
           .data {
@@ -168,7 +167,7 @@
           }
 
           &::after {
-            height: calc(100% * var(--end, var(--size)));
+            height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
           }
         }
       }
@@ -180,12 +179,13 @@
           align-items: flex-end;
 
           &::before {
-            clip-path: polygon(
-              0% 0%,
-              100% 0%,
-              100% calc(100% * var(--end, var(--size))),
-              0% calc(100% * var(--start, var(--end, var(--size))))
-            );
+            clip-path:
+              polygon(
+                0% 0%,
+                100% 0%,
+                100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))),
+                0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))
+              );
           }
 
           .data {
@@ -193,7 +193,7 @@
           }
 
           &::after {
-            height: calc(100% * (1 -var(--end, var(--size))));
+            height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
           }
         }
       }
@@ -203,12 +203,13 @@
           align-items: flex-start;
 
           &::before {
-            clip-path: polygon(
-              0% 0%,
-              100% 0%,
-              100% calc(100% * var(--start, var(--end, var(--size)))),
-              0% calc(100% * var(--end, var(--size)))
-            );
+            clip-path:
+              polygon(
+                0% 0%,
+                100% 0%,
+                100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))
+              );
           }
 
           .data {
@@ -216,7 +217,7 @@
           }
 
           &::after {
-            height: calc(100% * (1 - var(--end, var(--size))));
+            height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
           }
         }
       }
@@ -224,9 +225,9 @@
 
     // Spacing
     @for $i from 1 through 20 {
-      &.data-spacing-#{$i},
-      &.datasets-spacing-#{$i} {
-          tbody tr td::before {
+      &.data-spacing-#{ $i },
+      &.datasets-spacing-#{ $i } {
+        tbody tr td::before {
           margin-inline-start: $i * 1px;
           margin-inline-end: $i * 1px;
         }

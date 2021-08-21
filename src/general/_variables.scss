@@ -1,46 +1,20 @@
+// Prefixes
+$variable-prefix: null;
+
 // Colors List (source: https://www.schemecolor.com/rainbow-on-sale.php)
-$colors: rgba(240, 50, 50, .75),
-  rgba(255, 180, 50, .75),
-  rgba(255, 220, 90, .75),
-  rgba(100, 210, 80, .75),
-  rgba(90, 165, 255, .75),
-  rgba(170, 90, 240, .75),
-  rgba(180, 180, 180, .75),
-  rgba(110, 110, 110, .75),
-  rgba(170, 150, 110, .75),
-  rgba(130, 50, 20, .75);
+$colors: (
+  1: rgba(240, 50, 50, .75),
+  2: rgba(255, 180, 50, .75),
+  3: rgba(255, 220, 90, .75),
+  4: rgba(100, 210, 80, .75),
+  5: rgba(90, 165, 255, .75),
+  6: rgba(170, 90, 240, .75),
+  7: rgba(180, 180, 180, .75),
+  8: rgba(110, 110, 110, .75),
+  9: rgba(170, 150, 110, .75),
+  10: rgba(130, 50, 20, .75)
+);
 
 $total-colors: length($colors);
 
 $max-axes: 10;
-
-.charts-css {
-
-  // Colors
-  @for $i from 1 through $total-colors {
-    --color-#{$i}: #{ nth($colors, $i) };
-  }
-
-  // General Colors
-  --chart-bg-color: #f5f5f5;
-
-  // Heading
-  --heading-size: 0px; // Unit required
-
-  // Axes
-  --primary-axis-color: rgba(0, 0, 0, 1);
-  --primary-axis-style: solid;
-  --primary-axis-width: 1px;
-  --secondary-axes-color: rgba(0, 0, 0, .15);
-  --secondary-axes-style: solid;
-  --secondary-axes-width: 1px;
-  --data-axes-color: rgba(0, 0, 0, .15);
-  --data-axes-style: solid;
-  --data-axes-width: 1px;
-
-  // Legend
-  --legend-border-color: rgb(200, 200, 200);
-  --legend-border-style: solid;
-  --legend-border-width: 1px;
-
-}
