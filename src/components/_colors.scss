@@ -5,6 +5,7 @@
 
   @for $i from 1 through $total-colors {
     &.bar tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
+
     &.bar.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }),
     &.column tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
     &.column.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }),
@@ -19,4 +20,7 @@
     }
   }
 
+  td.nesting {
+    background: transparent !important;
+  }
 }
