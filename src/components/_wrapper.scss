@@ -45,8 +45,7 @@
   border: 0;
 
   // Keep colors in print view
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
+  print-color-adjust: exact;
 
   &,
   &::after,
