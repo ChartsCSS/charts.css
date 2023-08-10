@@ -71,7 +71,7 @@
           margin-block-end: var(--#{ $variable-prefix }labels-size);
 
           th {
-            bottom: calc(-1 * var(--labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            bottom: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
             height: var(--#{ $variable-prefix }labels-size);
           }
 
