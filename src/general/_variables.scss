@@ -5,16 +5,16 @@ $variable-prefix: null;
 
 // Colors List (source: https://www.schemecolor.com/rainbow-on-sale.php)
 $colors: (
-  1: rgba(240, 50, 50, .75),
-  2: rgba(255, 180, 50, .75),
-  3: rgba(255, 220, 90, .75),
-  4: rgba(100, 210, 80, .75),
-  5: rgba(90, 165, 255, .75),
-  6: rgba(170, 90, 240, .75),
-  7: rgba(180, 180, 180, .75),
-  8: rgba(110, 110, 110, .75),
-  9: rgba(170, 150, 110, .75),
-  10: rgba(130, 50, 20, .75)
+  1: rgba(240 50 50 / 75%),
+  2: rgba(255 180 50 / 75%),
+  3: rgba(255 220 90 / 75%),
+  4: rgba(100 210 80 / 75%),
+  5: rgba(90 165 255 / 75%),
+  6: rgba(170 90 240 / 75%),
+  7: rgba(180 180 180 / 75%),
+  8: rgba(110 110 110 / 75%),
+  9: rgba(170 150 110 / 75%),
+  10: rgba(130 50 20 / 75%)
 );
 
 $total-colors: list.length($colors);
