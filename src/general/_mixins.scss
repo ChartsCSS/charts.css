@@ -32,3 +32,9 @@
   width: 100%;
   height: 100%;
 }
+
+@mixin at-property( $syntax, $value, $inherits ) {
+  syntax: $syntax;
+  initial-value: $value;
+  inherits: $inherits;
+}
