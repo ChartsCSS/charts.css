@@ -1,3 +1,5 @@
+@use "sass:list";
+
 // Prefixes
 $variable-prefix: null;
 
@@ -15,6 +17,6 @@ $colors: (
   10: rgba(130, 50, 20, .75)
 );
 
-$total-colors: length($colors);
+$total-colors: list.length($colors);
 
 $max-axes: 10;
