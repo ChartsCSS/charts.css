@@ -1,17 +1,14 @@
 {
-  "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-scss"
-  ],
+  "extends": "stylelint-config-standard-scss",
   "rules": {
-    "at-rule-no-unknown": null,
     "at-rule-empty-line-before": null,
-    "block-closing-brace-empty-line-before": null,
-    "length-zero-no-unit": null,
+    "custom-property-pattern": "#{",
+    "declaration-block-no-redundant-longhand-properties": null,
     "no-descending-specificity": null,
     "no-duplicate-selectors": null,
-    "number-leading-zero": "never",
     "rule-empty-line-before": null,
-    "scss/at-rule-no-unknown": true
+    "scss/at-mixin-argumentless-call-parentheses": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/double-slash-comment-empty-line-before": null
   }
 }
