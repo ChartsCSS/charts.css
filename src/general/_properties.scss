@@ -17,11 +17,6 @@ $color-vars: color, chart-bg-color;
   }
 }
 
-// Heading
-@property --#{ $variable-prefix }heading-size {
-  @include at-property( "<length>", 0, true );
-}
-
 // Labels
 @property --#{ $variable-prefix }labels-size {
   @include at-property( "<length>", 0, true );
