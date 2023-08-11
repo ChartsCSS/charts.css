@@ -11,7 +11,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      height: calc(100% - var(--#{ $variable-prefix }heading-size));
+      aspect-ratio: 21/9;
 
       tr {
         position: relative;

@@ -17,8 +17,7 @@
 @mixin circle {
   display: block;
   width: 100%;
-  height: 0;               // old hack for "aspect-ratio"
-  padding-block-end: 100%; // makes height 100% of the width
+  aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--#{ $variable-prefix }chart-bg-color);
 }
