@@ -8,6 +8,7 @@
     @include at-property( "<color>", transparent, true );
   }
 }
+
 $color-vars: color, chart-bg-color;
 @each $i in $color-vars {
   @property --#{ $variable-prefix }#{ $i } {

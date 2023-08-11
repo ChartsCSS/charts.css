@@ -9,7 +9,7 @@
       --#{ $variable-prefix }labels-size: 0;
 
       tbody tr th {
-        @include visually-hidden();
+        @include visually-hidden;
       }
     }
     &.show-labels {
@@ -24,7 +24,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        @include visually-hidden();
+        @include visually-hidden;
       }
     }
 
@@ -38,7 +38,7 @@
       --#{ $variable-prefix }labels-size: 0;
 
       tbody tr th {
-        @include visually-hidden();
+        @include visually-hidden;
       }
     }
     &.show-labels {
@@ -53,7 +53,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        @include visually-hidden();
+        @include visually-hidden;
       }
     }
 

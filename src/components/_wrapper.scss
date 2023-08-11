@@ -86,7 +86,7 @@ table.charts-css {
   colgroup,
   thead,
   tfoot {
-    @include visually-hidden();
+    @include visually-hidden;
   }
 
   tbody {

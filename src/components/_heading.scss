@@ -6,7 +6,7 @@
   &:not(.show-heading) {
 
     caption {
-      @include visually-hidden();
+      @include visually-hidden;
     }
   }
 
