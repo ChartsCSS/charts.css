@@ -1,9 +1,9 @@
 @use "sass:list";
 
-// Prefixes
+// Prefix for CSS variables
 $variable-prefix: null;
 
-// Colors List (source: https://www.schemecolor.com/rainbow-on-sale.php)
+// Colors list (source: https://www.schemecolor.com/rainbow-on-sale.php)
 $colors: (
   1: rgba(240 50 50 / 75%),
   2: rgba(255 180 50 / 75%),
@@ -17,6 +17,8 @@ $colors: (
   10: rgba(130 50 20 / 75%)
 );
 
+// Count SASS colors
 $total-colors: list.length($colors);
 
+// Max amount of axes
 $max-axes: 10;
