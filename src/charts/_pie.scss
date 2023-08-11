@@ -7,11 +7,11 @@
 
     // Layout
     tbody {
-      @include circle();
+      @include circle;
 
       tr {
         th {
-          @include visually-hidden();
+          @include visually-hidden;
         }
 
         td {
@@ -19,7 +19,7 @@
           justify-content: center;
           border-radius: 50%;
 
-          @include position-fullwidth();
+          @include position-fullwidth;
 
           background:
             conic-gradient(
@@ -30,7 +30,7 @@
 
           &::before {
             content: "";
-            @include position-fullwidth();
+            @include position-fullwidth;
           }
 
           &::after {
@@ -43,7 +43,7 @@
             justify-content: center;
             border-radius: 50%;
 
-            @include position-fullwidth();
+            @include position-fullwidth;
 
             transform: rotate(calc(.5turn * var(--#{ $variable-prefix }start, 0) + .5turn * var(--#{ $variable-prefix }end, 0)));
           }

@@ -145,7 +145,7 @@
         tbody::after {
           content: "";
 
-          @include position-fullwidth();
+          @include position-fullwidth;
 
           border-radius: 50%;
           background:
