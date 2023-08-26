@@ -106,113 +106,133 @@
       }
     }
     &:not(.reverse-datasets) {
-      tbody tr {
-        flex-direction: row;
+      tbody {
+        tr {
+          flex-direction: row;
+        }
       }
     }
     &.reverse-datasets {
-      tbody tr {
-        flex-direction: row-reverse;
+      tbody {
+        tr {
+          flex-direction: row-reverse;
+        }
       }
     }
 
     // Area
     &:not(.reverse) {
       &:not(.reverse-data) {
-        tbody tr td {
-          justify-content: flex-end;
-          align-items: flex-end;
+        tbody {
+          tr {
+            td {
+              justify-content: flex-end;
+              align-items: flex-end;
 
-          &::before {
-            clip-path:
-              polygon(
-                0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
-                100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
-                100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
-                0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size))
-              );
-          }
+              &::before {
+                clip-path:
+                  polygon(
+                    0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
+                    100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                    100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
+                    0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size))
+                  );
+              }
 
-          .data {
-            transform: translateX(50%);
-          }
+              .data {
+                transform: translateX(50%);
+              }
 
-          &::after {
-            height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
+              &::after {
+                height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
+              }
+            }
           }
         }
       }
       &.reverse-data {
-        tbody tr td {
-          justify-content: flex-end;
-          align-items: flex-start;
+        tbody {
+          tr {
+            td {
+              justify-content: flex-end;
+              align-items: flex-start;
 
-          &::before {
-            clip-path:
-              polygon(
-                0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
-                100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
-                100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size)),
-                0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size))
-              );
-          }
+              &::before {
+                clip-path:
+                  polygon(
+                    0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                    100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
+                    100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size)),
+                    0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size))
+                  );
+              }
 
-          .data {
-            transform: translateX(-50%);
-          }
+              .data {
+                transform: translateX(-50%);
+              }
 
-          &::after {
-            height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
+              &::after {
+                height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
+              }
+            }
           }
         }
       }
     }
     &.reverse {
       &:not(.reverse-data) {
-        tbody tr td {
-          justify-content: flex-end;
-          align-items: flex-end;
+        tbody {
+          tr {
+            td {
+              justify-content: flex-end;
+              align-items: flex-end;
 
-          &::before {
-            clip-path:
-              polygon(
-                0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
-                100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
-                100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))),
-                0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))
-              );
-          }
+              &::before {
+                clip-path:
+                  polygon(
+                    0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
+                    100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
+                    100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))),
+                    0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))
+                  );
+              }
 
-          .data {
-            transform: translateX(50%);
-          }
+              .data {
+                transform: translateX(50%);
+              }
 
-          &::after {
-            height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
+              &::after {
+                height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
+              }
+            }
           }
         }
       }
       &.reverse-data {
-        tbody tr td {
-          justify-content: flex-end;
-          align-items: flex-start;
+        tbody {
+          tr {
+            td {
+              justify-content: flex-end;
+              align-items: flex-start;
 
-          &::before {
-            clip-path:
-              polygon(
-                0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
-                100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
-                100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
-                0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))
-              );
-          }
+              &::before {
+                clip-path:
+                  polygon(
+                    0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
+                    100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
+                    100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
+                    0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))
+                  );
+              }
 
-          .data {
-            transform: translateX(-50%);
-          }
+              .data {
+                transform: translateX(-50%);
+              }
 
-          &::after {
-            height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
+              &::after {
+                height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
+              }
+            }
           }
         }
       }
@@ -222,9 +242,15 @@
     @for $i from 1 through 20 {
       &.data-spacing-#{ $i },
       &.datasets-spacing-#{ $i } {
-        tbody tr td::before {
-          margin-inline-start: $i * 1px;
-          margin-inline-end: $i * 1px;
+        tbody {
+          tr {
+            td {
+              &::before {
+                margin-inline-start: $i * 1px;
+                margin-inline-end: $i * 1px;
+              }
+            }
+          }
         }
       }
     }

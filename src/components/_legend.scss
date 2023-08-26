@@ -25,9 +25,11 @@
 
       @for $i from 1 through $total-colors {
 
-        &:nth-child(#{ $total-colors }n + #{ $i })::before {
-          background-color: var(--#{ $variable-prefix }color-#{ $i }, transparent);
-          border-color: var(--#{ $variable-prefix }border-color-#{ $i }, var(--#{ $variable-prefix }border-color, #000));
+        &:nth-child(#{ $total-colors }n + #{ $i }) {
+          &::before {
+            background-color: var(--#{ $variable-prefix }color-#{ $i }, transparent);
+            border-color: var(--#{ $variable-prefix }border-color-#{ $i }, var(--#{ $variable-prefix }border-color, #000));
+          }
         }
       }
     }

@@ -81,27 +81,33 @@
 
     // Stacked
     &:not(.stacked) {
-      tbody tr {
-        td {
-          // Even cell size
-          flex-grow: 1;
-          flex-shrink: 1;
-          flex-basis: 0;
+      tbody {
+        tr {
+          td {
+            // Even cell size
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+          }
         }
       }
     }
     &.stacked {
-      tbody tr {
-        td {
-          flex-grow: unset;
-          flex-shrink: unset;
-          flex-basis: unset;
+      tbody {
+        tr {
+          td {
+            flex-grow: unset;
+            flex-shrink: unset;
+            flex-basis: unset;
+          }
         }
       }
 
       &.reverse-datasets {
-        tbody tr {
-          justify-content: flex-end;
+        tbody {
+          tr {
+            justify-content: flex-end;
+          }
         }
       }
     }
@@ -119,42 +125,54 @@
     }
     &:not(.reverse-datasets) {
       &:not(.stacked) {
-        tbody tr {
-          flex-direction: row;
+        tbody {
+          tr {
+            flex-direction: row;
+          }
         }
       }
 
       &.stacked {
         &:not(.reverse) {
-          tbody tr {
-            flex-direction: column-reverse;
+          tbody {
+            tr {
+              flex-direction: column-reverse;
+            }
           }
         }
 
         &.reverse {
-          tbody tr {
-            flex-direction: column;
+          tbody {
+            tr {
+              flex-direction: column;
+            }
           }
         }
       }
     }
     &.reverse-datasets {
       &:not(.stacked) {
-        tbody tr {
-          flex-direction: row-reverse;
+        tbody {
+          tr {
+            flex-direction: row-reverse;
+          }
         }
       }
 
       &.stacked {
         &:not(.reverse) {
-          tbody tr {
-            flex-direction: column;
+          tbody {
+            tr {
+              flex-direction: column;
+            }
           }
         }
 
         &.reverse {
-          tbody tr {
-            flex-direction: column-reverse;
+          tbody {
+            tr {
+              flex-direction: column-reverse;
+            }
           }
         }
       }
@@ -163,17 +181,23 @@
     // Spacing
     @for $i from 1 through 20 {
       &.data-spacing-#{ $i } {
-        tbody tr {
-          padding-inline-start: $i * 1px;
-          padding-inline-end: $i * 1px;
+        tbody {
+          tr {
+            padding-inline-start: $i * 1px;
+            padding-inline-end: $i * 1px;
+          }
         }
       }
     }
     @for $i from 1 through 20 {
       &.datasets-spacing-#{ $i } {
-        tbody tr td {
-          margin-inline-start: $i * 1px;
-          margin-inline-end: $i * 1px;
+        tbody {
+          tr {
+            td {
+              margin-inline-start: $i * 1px;
+              margin-inline-end: $i * 1px;
+            }
+          }
         }
       }
     }
