@@ -19,9 +19,11 @@
       opacity: 0;
     }
 
-    tr:hover .data {
-      transition-duration: .3s;
-      opacity: 1;
+    tr:hover {
+      .data {
+        transition-duration: .3s;
+        opacity: 1;
+      }
     }
 
   }
@@ -33,9 +35,11 @@
 
     &.show-data-on-hover {
 
-      tbody:hover .data {
-        transition-duration: .3s;
-        opacity: 1;
+      tbody:hover {
+        .data {
+          transition-duration: .3s;
+          opacity: 1;
+        }
       }
 
     }

@@ -8,18 +8,26 @@
     &:not(.show-labels) {
       --#{ $variable-prefix }labels-size: 0;
 
-      tbody tr th {
-        @include visually-hidden;
+      tbody {
+        tr {
+          th {
+            @include visually-hidden;
+          }
+        }
       }
     }
     &.show-labels {
       --#{ $variable-prefix }labels-size: 80px;
 
-      tbody tr th {
-        display: flex;
-        justify-content: center;
-        align-items: var(--#{ $variable-prefix }labels-align, center);
-        flex-direction: column;
+      tbody {
+        tr {
+          th {
+            display: flex;
+            justify-content: center;
+            align-items: var(--#{ $variable-prefix }labels-align, center);
+            flex-direction: column;
+          }
+        }
       }
 
       tr.hide-label th,
@@ -37,18 +45,26 @@
     &:not(.show-labels) {
       --#{ $variable-prefix }labels-size: 0;
 
-      tbody tr th {
-        @include visually-hidden;
+      tbody {
+        tr {
+          th {
+            @include visually-hidden;
+          }
+        }
       }
     }
     &.show-labels {
       --#{ $variable-prefix }labels-size: 1.5rem;
 
-      tbody tr th {
-        display: flex;
-        justify-content: center;
-        align-items: var(--#{ $variable-prefix }labels-align, center);
-        flex-direction: column;
+      tbody {
+        tr {
+          th {
+            display: flex;
+            justify-content: center;
+            align-items: var(--#{ $variable-prefix }labels-align, center);
+            flex-direction: column;
+          }
+        }
       }
 
       tr.hide-label th,
@@ -66,18 +82,30 @@
   &.line {
 
     &.labels-align-start {
-      tbody tr th {
-        align-items: var(--#{ $variable-prefix }labels-align, flex-start);
+      tbody {
+        tr {
+          th {
+            align-items: var(--#{ $variable-prefix }labels-align, flex-start);
+          }
+        }
       }
     }
     &.labels-align-end {
-      tbody tr th {
-        align-items: var(--#{ $variable-prefix }labels-align, flex-end);
+      tbody {
+        tr {
+          th {
+            align-items: var(--#{ $variable-prefix }labels-align, flex-end);
+          }
+        }
       }
     }
     &.labels-align-center {
-      tbody tr th {
-        align-items: var(--#{ $variable-prefix }labels-align, center);
+      tbody {
+        tr {
+          th {
+            align-items: var(--#{ $variable-prefix }labels-align, center);
+          }
+        }
       }
     }
 
