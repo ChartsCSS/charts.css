@@ -88,16 +88,6 @@ table.charts-css {
 
   tbody {
     position: relative;
-
-    tr:nth-child(odd),
-    tr:nth-child(even) {
-
-      &,
-      th,
-      td {
-        background-color: transparent;
-      }
-    }
   }
 
 }
