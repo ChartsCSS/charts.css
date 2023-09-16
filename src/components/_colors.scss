@@ -18,5 +18,4 @@
       --#{ $variable-prefix }c: var(--#{ $variable-prefix }color, var(--#{ $variable-prefix }color-#{ $i }, transparent));
     }
   }
-
 }

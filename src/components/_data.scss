@@ -3,13 +3,16 @@
  */
 .charts-css {
 
+  .data {
+    display: flex;
+  }
+
   &.hide-data {
 
     .data,
     .data:not(:focus):not(:focus-within) {
       @include visually-hidden;
     }
-
   }
 
   &.show-data-on-hover {
@@ -25,7 +28,6 @@
         opacity: 1;
       }
     }
-
   }
 
   &.radial,
@@ -41,9 +43,6 @@
           opacity: 1;
         }
       }
-
     }
-
   }
-
 }

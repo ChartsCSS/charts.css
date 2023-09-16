@@ -23,6 +23,7 @@
         }
       }
     }
+
     @for $i from 1 through $max-axes {
       &.show-#{ $i }-secondary-axes {
         &:not(.reverse) {
@@ -43,6 +44,7 @@
         }
       }
     }
+
     &.show-data-axes {
       tbody {
         tr {
@@ -64,6 +66,7 @@
         }
       }
     }
+
     &.show-dataset-axes {
       tbody {
         tr {
@@ -91,7 +94,6 @@
         }
       }
     }
-
   }
 
   &.bar {
@@ -112,6 +114,7 @@
         }
       }
     }
+
     @for $i from 1 through $max-axes {
       &.show-#{ $i }-secondary-axes {
         &:not(.reverse) {
@@ -132,6 +135,7 @@
         }
       }
     }
+
     &.show-data-axes {
       tbody {
         tr {
@@ -153,6 +157,7 @@
         }
       }
     }
+
     &.show-dataset-axes {
       tbody {
         tr {
@@ -180,18 +185,19 @@
         }
       }
     }
-
   }
 
   &.radial,
   &.pie,
   &.polar,
   &.radar {
+
     &.show-primary-axis {
       tbody {
         border: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
       }
     }
+
     @for $i from 1 through $max-axes {
       &.show-#{ $i }-secondary-axes {
         tbody {
@@ -200,6 +206,7 @@
 
             @include position-fullwidth;
 
+            z-index: 2;
             border-radius: 50%;
             background:
               repeating-radial-gradient(
@@ -211,7 +218,6 @@
                 transparent calc(100% / #{ $i + 1 } + var(--#{ $variable-prefix }secondary-axes-width)),
                 transparent calc(100% / #{ $i + 1 } + var(--#{ $variable-prefix }secondary-axes-width))
               );
-            z-index: 2;
           }
         }
       }
