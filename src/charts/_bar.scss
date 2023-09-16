@@ -11,9 +11,13 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
+      aspect-ratio: none;
 
       tr {
         position: relative;
+
+        display: flex;
+        justify-content: flex-start;
 
         // Even column size
         flex-grow: 1;
@@ -21,14 +25,10 @@
         flex-basis: 0;
         overflow-wrap: anywhere;
 
-        // Display cells in a column
-        display: flex;
-        justify-content: flex-start;
-
         th {
           position: absolute;
-          top: 0;
-          bottom: 0;
+          @include inset-zero;
+          width: var(--#{ $variable-prefix }labels-size);
         }
 
         td {
@@ -41,21 +41,14 @@
           padding-block-end: 10px; // BC for pre 1.0.0 versions
           position: relative; // For tooltips
         }
-
       }
     }
 
-    // Orientation
+    // Orientation - reverse
     &:not(.reverse) {
       tbody {
         tr {
           align-items: flex-start;
-          margin-inline-start: var(--#{ $variable-prefix }labels-size);
-
-          th {
-            left: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
-            width: var(--#{ $variable-prefix }labels-size);
-          }
 
           td {
             justify-content: flex-end;
@@ -67,15 +60,63 @@
       tbody {
         tr {
           align-items: flex-end;
-          margin-inline-end: var(--#{ $variable-prefix }labels-size);
-
-          th {
-            right: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
-            width: var(--#{ $variable-prefix }labels-size);
-          }
 
           td {
             justify-content: flex-start;
+          }
+        }
+      }
+    }
+
+    // Orientation - reverse labels
+    &:not(.reverse-labels) {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            margin-inline-start: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-inline-end: auto;
+              margin-inline-start: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            margin-inline-end: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-inline-start: auto;
+              margin-inline-end: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            }
+          }
+        }
+      }
+    }
+    &.reverse-labels {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            margin-inline-end: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-inline-start: auto;
+              margin-inline-end: calc(-1 * var(--#{ $variable-prefix }labels-size));
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            margin-inline-start: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-inline-end: auto;
+              margin-inline-start: calc(-1 * var(--#{ $variable-prefix }labels-size));
+            }
           }
         }
       }
@@ -114,7 +155,7 @@
       }
     }
 
-    // Reverse Order
+    // Orientation - reverse data
     &:not(.reverse-data) {
       tbody {
         flex-direction: column;
@@ -125,6 +166,8 @@
         flex-direction: column-reverse;
       }
     }
+
+    // Orientation - reverse datasets
     &:not(.reverse-datasets) {
       &:not(.stacked) {
         tbody {
@@ -133,7 +176,6 @@
           }
         }
       }
-
       &.stacked {
         &:not(.reverse) {
           tbody {
@@ -142,7 +184,6 @@
             }
           }
         }
-
         &.reverse {
           tbody {
             tr {
@@ -160,7 +201,6 @@
           }
         }
       }
-
       &.stacked {
         &:not(.reverse) {
           tbody {
@@ -169,7 +209,6 @@
             }
           }
         }
-
         &.reverse {
           tbody {
             tr {
@@ -203,7 +242,5 @@
         }
       }
     }
-
   }
-
 }

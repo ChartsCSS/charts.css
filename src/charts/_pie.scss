@@ -42,15 +42,11 @@
             display: flex;
             justify-content: center;
             border-radius: 50%;
-
             @include position-fullwidth;
-
             transform: rotate(calc(.5turn * var(--#{ $variable-prefix }start, 0) + .5turn * var(--#{ $variable-prefix }end, 0)));
           }
         }
-
       }
     }
   }
-
 }

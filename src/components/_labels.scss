@@ -4,6 +4,7 @@
 .charts-css {
 
   &.bar {
+    --#{ $variable-prefix }labels-size: 80px;
 
     &:not(.show-labels) {
       --#{ $variable-prefix }labels-size: 0;
@@ -17,15 +18,54 @@
       }
     }
     &.show-labels {
-      --#{ $variable-prefix }labels-size: 80px;
-
       tbody {
         tr {
           th {
             display: flex;
-            justify-content: center;
-            align-items: var(--#{ $variable-prefix }labels-align, center);
-            flex-direction: column;
+            flex-direction: row;
+            gap: 5px;
+            align-items: var(--#{ $variable-prefix }labels-align-block, center);
+          }
+        }
+      }
+
+      &:not(.reverse) {
+        &:not(.reverse-labels) {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-start);
+              }
+            }
+          }
+        }
+        &.reverse-labels {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-end);
+              }
+            }
+          }
+        }
+      }
+      &.reverse {
+        &:not(.reverse-labels) {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-end);
+              }
+            }
+          }
+        }
+        &.reverse-labels {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-start);
+              }
+            }
           }
         }
       }
@@ -35,12 +75,12 @@
         @include visually-hidden;
       }
     }
-
   }
 
   &.column,
   &.area,
   &.line {
+    --#{ $variable-prefix }labels-size: 1.5rem;
 
     &:not(.show-labels) {
       --#{ $variable-prefix }labels-size: 0;
@@ -54,15 +94,53 @@
       }
     }
     &.show-labels {
-      --#{ $variable-prefix }labels-size: 1.5rem;
-
       tbody {
         tr {
           th {
             display: flex;
-            justify-content: center;
-            align-items: var(--#{ $variable-prefix }labels-align, center);
             flex-direction: column;
+            align-items: var(--#{ $variable-prefix }labels-align-inline, center);
+          }
+        }
+      }
+
+      &:not(.reverse) {
+        &:not(.reverse-labels) {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-end);
+              }
+            }
+          }
+        }
+        &.reverse-labels {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-start);
+              }
+            }
+          }
+        }
+      }
+      &.reverse {
+        &:not(.reverse-labels) {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-start);
+              }
+            }
+          }
+        }
+        &.reverse-labels {
+          tbody {
+            tr {
+              th {
+                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-end);
+              }
+            }
           }
         }
       }
@@ -72,7 +150,6 @@
         @include visually-hidden;
       }
     }
-
   }
 
   // Align Labels
@@ -81,34 +158,62 @@
   &.area,
   &.line {
 
-    &.labels-align-start {
+    // Align Inline
+    &.labels-align-inline-start {
       tbody {
         tr {
           th {
-            align-items: var(--#{ $variable-prefix }labels-align, flex-start);
+            --#{ $variable-prefix }labels-align-inline: flex-start;
           }
         }
       }
     }
-    &.labels-align-end {
+    &.labels-align-inline-end {
       tbody {
         tr {
           th {
-            align-items: var(--#{ $variable-prefix }labels-align, flex-end);
+            --#{ $variable-prefix }labels-align-inline: flex-end;
           }
         }
       }
     }
-    &.labels-align-center {
+    &.labels-align-inline-center {
       tbody {
         tr {
           th {
-            align-items: var(--#{ $variable-prefix }labels-align, center);
+            --#{ $variable-prefix }labels-align-inline: center;
           }
         }
       }
     }
 
+    // Align Block
+    &.labels-align-block-start {
+      tbody {
+        tr {
+          th {
+            --#{ $variable-prefix }labels-align-block: flex-start;
+          }
+        }
+      }
+    }
+    &.labels-align-block-end {
+      tbody {
+        tr {
+          th {
+            --#{ $variable-prefix }labels-align-block: flex-end;
+          }
+        }
+      }
+    }
+    &.labels-align-block-center {
+      tbody {
+        tr {
+          th {
+            --#{ $variable-prefix }labels-align-block: center;
+          }
+        }
+      }
+    }
   }
-
 }

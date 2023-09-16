@@ -8,6 +8,7 @@ const variations: string[] = [
   'show-labels',
   'hide-data',
   'reverse',
+  'reverse-labels',
   'reverse-data',
 ];
 

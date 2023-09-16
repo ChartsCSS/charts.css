@@ -16,20 +16,19 @@
       tr {
         position: relative;
 
+        display: flex;
+        justify-content: flex-start;
+
         // Even row size
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
         overflow-wrap: anywhere;
 
-        // Display cells in a row
-        display: flex;
-        justify-content: flex-start;
-
         th {
           position: absolute;
-          right: 0;
-          left: 0;
+          @include inset-zero;
+          height: var(--#{ $variable-prefix }labels-size);
         }
 
         td {
@@ -39,24 +38,25 @@
           height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size, 1)));
           position: relative; // For tooltips
         }
-
       }
     }
 
-    // Orientation
+    // Orientation - reverse
     &:not(.reverse) {
       tbody {
         tr {
           align-items: flex-end;
-          margin-block-end: var(--#{ $variable-prefix }labels-size);
 
           th {
-            bottom: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
-            height: var(--#{ $variable-prefix }labels-size);
+            justify-content: flex-end;
           }
 
           td {
-            align-items: flex-start;
+            justify-content: center;
+
+            .data {
+              align-items: flex-start;
+            }
           }
         }
       }
@@ -65,15 +65,71 @@
       tbody {
         tr {
           align-items: flex-start;
-          margin-block-start: var(--#{ $variable-prefix }labels-size);
 
           th {
-            top: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
-            height: var(--#{ $variable-prefix }labels-size);
+            justify-content: flex-start;
           }
 
           td {
-            align-items: flex-end;
+            justify-content: center;
+
+            .data {
+              align-items: flex-end;
+            }
+          }
+        }
+      }
+    }
+
+    // Orientation - reverse labels
+    &:not(.reverse-labels) {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            margin-block-end: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-block-start: auto;
+              margin-block-end: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            margin-block-start: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-block-end: auto;
+              margin-block-start: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+            }
+          }
+        }
+      }
+    }
+    &.reverse-labels {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            margin-block-start: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-block-end: auto;
+              margin-block-start: calc(-1 * var(--#{ $variable-prefix }labels-size));
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            margin-block-end: var(--#{ $variable-prefix }labels-size);
+
+            th {
+              margin-block-start: auto;
+              margin-block-end: calc(-1 * var(--#{ $variable-prefix }labels-size));
+            }
           }
         }
       }
@@ -102,7 +158,6 @@
           }
         }
       }
-
       &.reverse-datasets {
         tbody {
           tr {
@@ -112,17 +167,33 @@
       }
     }
 
-    // Reverse Order
-    &:not(.reverse-data) {
-      tbody {
-        flex-direction: row;
+    // Orientation - reverse data
+    &:not(.reverse-labels) {
+      &:not(.reverse-data) {
+        tbody {
+          flex-direction: row;
+        }
+      }
+      &.reverse-data {
+        tbody {
+          flex-direction: row-reverse;
+        }
       }
     }
-    &.reverse-data {
-      tbody {
-        flex-direction: row-reverse;
+    &.reverse-labels {
+      &:not(.reverse-data) {
+        tbody {
+          flex-direction: row-reverse;
+        }
+      }
+      &.reverse-data {
+        tbody {
+          flex-direction: row;
+        }
       }
     }
+
+    // Orientation - reverse datasets
     &:not(.reverse-datasets) {
       &:not(.stacked) {
         tbody {
@@ -131,7 +202,6 @@
           }
         }
       }
-
       &.stacked {
         &:not(.reverse) {
           tbody {
@@ -140,7 +210,6 @@
             }
           }
         }
-
         &.reverse {
           tbody {
             tr {
@@ -158,7 +227,6 @@
           }
         }
       }
-
       &.stacked {
         &:not(.reverse) {
           tbody {
@@ -167,7 +235,6 @@
             }
           }
         }
-
         &.reverse {
           tbody {
             tr {
@@ -201,7 +268,5 @@
         }
       }
     }
-
   }
-
 }
