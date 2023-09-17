@@ -12,8 +12,7 @@
 $color-vars: color, chart-bg-color;
 @each $i in $color-vars {
   @property --#{ $variable-prefix }#{ $i } {
-    syntax: "<color>";
-    inherits: true;
+    @include at-property( "<color>", null, true );
   }
 }
 
@@ -21,8 +20,12 @@ $color-vars: color, chart-bg-color;
 @property --#{ $variable-prefix }labels-size {
   @include at-property( "<length>", 0, true );
 }
-@property --#{ $variable-prefix }labels-align {
-  @include at-property( "<string>", center, true );
+
+$labels-align: labels-align-block, labels-align-inline;
+@each $align in $labels-align {
+  @property --#{ $variable-prefix }#{ $align } {
+    @include at-property( "<string>", null, true );
+  }
 }
 
 // Axes + Legends
@@ -51,7 +54,6 @@ $items-color: primary-axis-color, secondary-axes-color, data-axes-color, legend-
 $sizes: start, end, size, line-size;
 @each $size in $sizes {
   @property --#{ $variable-prefix }#{ $size } {
-    syntax: "<number>";
-    inherits: true;
+    @include at-property( "<number>", null, true );
   }
 }
