@@ -7,6 +7,7 @@
     display: flex;
   }
 
+  // Hide data
   &.hide-data {
 
     .data,
@@ -15,6 +16,7 @@
     }
   }
 
+  // Show on hover
   &.show-data-on-hover {
 
     .data {
@@ -41,6 +43,188 @@
         .data {
           transition-duration: .3s;
           opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Data position
+  &.bar {
+
+    &.data-center {
+      tbody {
+        tr {
+          td {
+            --#{ $variable-prefix }data-position: center;
+          }
+        }
+      }
+    }
+    &.data-start {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+    }
+    &.data-end {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+    }
+    &.data-outside {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+
+              .data {
+                transform: translateX(100%);
+              }
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+
+              .data {
+                transform: translateX(-100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.column {
+
+    &.data-center {
+      tbody {
+        tr {
+          td {
+            --#{ $variable-prefix }data-position: center;
+          }
+        }
+      }
+    }
+    &.data-start {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+    }
+    &.data-end {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+    }
+    &.data-outside {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+
+              .data {
+                transform: translateY(-100%);
+              }
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+
+              .data {
+                transform: translateY(100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Data position fix
+  &.bar,
+  &.column,
+  &.area,
+  &.line {
+
+    &.reverse,
+    &:not(.reverse) {
+      tbody {
+        tr {
+          td.inside .data,
+          td .data.inside {
+            transform: unset;
+          }
         }
       }
     }

@@ -41,6 +41,34 @@
       }
     }
 
+    // Data position
+    &:not(.reverse) {
+      tbody {
+        tr {
+          td {
+            align-items: var(--#{ $variable-prefix }data-position, flex-start);
+
+            .data.outside {
+              transform: translateY(-100%);
+            }
+          }
+        }
+      }
+    }
+    &.reverse {
+      tbody {
+        tr {
+          td {
+            align-items: var(--#{ $variable-prefix }data-position, flex-end);
+
+            .data.outside {
+              transform: translateY(100%);
+            }
+          }
+        }
+      }
+    }
+
     // Orientation - reverse
     &:not(.reverse) {
       tbody {
@@ -53,10 +81,6 @@
 
           td {
             justify-content: center;
-
-            .data {
-              align-items: flex-start;
-            }
           }
         }
       }
@@ -72,10 +96,6 @@
 
           td {
             justify-content: center;
-
-            .data {
-              align-items: flex-end;
-            }
           }
         }
       }
