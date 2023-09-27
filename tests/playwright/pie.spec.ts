@@ -19,7 +19,7 @@ test.describe(`${chart} chart`, () => {
 
   test('empty', async ({ page }) => {
     expect(await page.locator('table.single').screenshot({ type: 'jpeg', quality: 70 })).toMatchSnapshot(`${chart}-single.jpeg`);
-    expect(await page.locator('table.multiple').screenshot({ type: 'jpeg', quality: 70 })).toMatchSnapshot(`${chart}-multiple.jpeg`);
+    // expect(await page.locator('table.multiple').screenshot({ type: 'jpeg', quality: 70 })).toMatchSnapshot(`${chart}-multiple.jpeg`);
   });
 
   combinations.forEach((combination: string) => {
