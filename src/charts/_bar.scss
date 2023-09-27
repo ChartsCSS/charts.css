@@ -44,14 +44,17 @@
       }
     }
 
-    // Orientation - reverse
+    // Data position
     &:not(.reverse) {
       tbody {
         tr {
-          align-items: flex-start;
-
           td {
-            justify-content: flex-end;
+            justify-content: var(--#{ $variable-prefix }data-position, flex-end);
+
+            .data.outside {
+              transform: translateX(100%);
+              white-space: nowrap;
+            }
           }
         }
       }
@@ -59,11 +62,30 @@
     &.reverse {
       tbody {
         tr {
-          align-items: flex-end;
-
           td {
-            justify-content: flex-start;
+            justify-content: var(--#{ $variable-prefix }data-position, flex-start);
+
+            .data.outside {
+              transform: translateX(-100%);
+              white-space: nowrap;
+            }
           }
+        }
+      }
+    }
+
+    // Orientation - reverse
+    &:not(.reverse) {
+      tbody {
+        tr {
+          align-items: flex-start;
+        }
+      }
+    }
+    &.reverse {
+      tbody {
+        tr {
+          align-items: flex-end;
         }
       }
     }
