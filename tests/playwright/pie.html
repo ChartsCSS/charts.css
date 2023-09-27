@@ -225,14 +225,14 @@
   <script>
     const buttons = document.querySelectorAll("button");
     const singleDatasetChart = document.querySelector(".charts-css.single");
-    const multiDatasetsChart = document.querySelector(".charts-css.multiple");
+    // const multiDatasetsChart = document.querySelector(".charts-css.multiple");
 
     buttons.forEach((button) => {
       button.addEventListener('click', (event) => {
         event.currentTarget.toggleAttribute('data-clicked');
         const className = button.getAttribute("class");
         singleDatasetChart.classList.toggle(className);
-        multiDatasetsChart.classList.toggle(className);
+        // multiDatasetsChart.classList.toggle(className);
       });
     });
   </script>

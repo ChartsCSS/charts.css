@@ -10,7 +10,7 @@ const variations: string[] = [
 
 const combinations: string[] = generateCombinations(variations);
 
-test.describe.only(`${chart} chart`, () => {
+test.describe(`${chart} chart`, () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto('./pie.html');
