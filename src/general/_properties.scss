@@ -3,74 +3,57 @@
  */
 
 // Colors
-@property --color,
-@property --color-1,
-@property --color-2,
-@property --color-3,
-@property --color-4,
-@property --color-5,
-@property --color-6,
-@property --color-7,
-@property --color-8,
-@property --color-9,
-@property --color-10,
-@property --chart-bg-color {
-  syntax: '<color>';
-  initial-value: transparent;
-  inherits: true;
+@each $index, $color in $colors {
+  @property --#{ $variable-prefix }color-#{ $index } {
+    @include at-property( "<color>", transparent, true );
+  }
 }
 
-// Heading
-@property --heading-size {
-  syntax: '<length>';
-  initial-value: 0;
-  inherits: true;
+$color-vars: color, chart-bg-color;
+@each $i in $color-vars {
+  @property --#{ $variable-prefix }#{ $i } {
+    @include at-property( "<color>", null, true );
+  }
 }
 
 // Labels
-@property --labels-size {
-  syntax: '<length>';
-  initial-value: 0;
-  inherits: true;
+@property --#{ $variable-prefix }labels-size {
+  @include at-property( "<length>", 0, true );
 }
-@property --labels-align {
-  syntax: '<string>';
-  initial-value: center;
-  inherits: true;
+
+$labels-align: labels-align-block, labels-align-inline;
+@each $align in $labels-align {
+  @property --#{ $variable-prefix }#{ $align } {
+    @include at-property( "<string>", null, true );
+  }
 }
 
 // Axes + Legends
-@property --primary-axis-width,
-@property --secondary-axes-width,
-@property --data-axes-width,
-@property --legend-border-width {
-  syntax: '<length>';
-  initial-value: 1px;
-  inherits: true;
+$items-width: primary-axis-width, secondary-axes-width, data-axes-width, legend-border-width;
+@each $width in $items-width {
+  @property --#{ $variable-prefix }#{ $width } {
+    @include at-property( "<length>", 1px, true );
+  }
 }
-@property --primary-axis-style,
-@property --secondary-axes-style,
-@property --data-axes-style,
-@property --legend-border-style {
-  syntax: '<line-style>';
-  initial-value: solid;
-  inherits: true;
+
+$items-style: primary-axis-style, secondary-axes-style, data-axes-style, legend-border-style;
+@each $style in $items-style {
+  @property --#{ $variable-prefix }#{ $style } {
+    @include at-property( "<line-style>", solid, true );
+  }
 }
-@property --primary-axis-color,
-@property --secondary-axes-color,
-@property --data-axes-color,
-@property --legend-border-color {
-  syntax: '<color>';
-  initial-value: transparent;
-  inherits: true;
+
+$items-color: primary-axis-color, secondary-axes-color, data-axes-color, legend-border-color;
+@each $color in $items-color {
+  @property --#{ $variable-prefix }#{ $color } {
+    @include at-property( "<color>", transparent, true );
+  }
 }
 
 // Sizes
-@property --start,
-@property --end,
-@property --size,
-@property --line-size {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: true;
+$sizes: start, end, size, line-size;
+@each $size in $sizes {
+  @property --#{ $variable-prefix }#{ $size } {
+    @include at-property( "<number>", null, true );
+  }
 }

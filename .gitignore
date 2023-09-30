@@ -1,3 +1,8 @@
 .data
+.env
 .vscode
 node_modules
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/tests/playwright/charts.min.css

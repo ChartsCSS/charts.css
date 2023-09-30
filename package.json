@@ -1,6 +1,6 @@
 {
   "name": "charts.css",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Open source CSS framework for data visualization.",
   "author": "Rami Yushuvaev",
   "homepage": "https://ChartsCSS.org/",
@@ -21,13 +21,18 @@
     "dist/charts.min.css"
   ],
   "scripts": {
-    "build": "npm-run-all css-compile css-combine css-prefixes css-minify css-minify-fix",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents false --source-map-embed false --precision 6 src/ -o dist/",
-    "css-combine": "postcss dist/charts.css --use postcss-combine-duplicated-selectors --output dist/charts.css",
+    "build": "npm-run-all css-compile css-prefixes css-selectors-merge css-minify css-minify-fix test:copy-css",
+    "css-compile": "sass --style=expanded src/charts.scss:dist/charts.css",
     "css-prefixes": "postcss dist/charts.css --use autoprefixer --output dist/charts.css",
+    "css-selectors-merge": "postcss dist/charts.css --use postcss-merge-selectors --output dist/charts.css",
     "css-minify": "postcss dist/charts.css --use cssnano --no-map --output dist/charts.min.css",
     "css-minify-fix": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output dist/charts.min.css",
-    "watch": "nodemon -e scss,html --watch src --exec \"npm run build\""
+    "watch": "nodemon -e scss,html --watch src --exec \"npm run build\"",
+    "scss-lint": "stylelint \"**/*.scss\"",
+    "test": "npm-run-all build test:copy-css test:run",
+    "test:copy-css": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output tests/playwright/charts.min.css",
+    "test:snapshots": "playwright test --update-snapshots --trace off",
+    "test:run": "playwright test -c tests/playwright.config.ts"
   },
   "repository": {
     "type": "git",
@@ -37,15 +42,19 @@
     "url": "https://github.com/ChartsCSS/charts.css/issues"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "cssnano": "^5.0.1",
-    "node-sass": "^5.0.0",
-    "nodemon": "^2.0.7",
+    "@playwright/test": "^1.37.1",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.13",
-    "postcss-cli": "^8.3.1",
-    "postcss-combine-duplicated-selectors": "^10.0.2",
-    "postcss-pseudo-element-colons": "^1.0.2"
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "postcss-merge-selectors": "^0.0.6",
+    "postcss-pseudo-element-colons": "^1.0.2",
+    "sass": "^1.65.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard-scss": "^10.0.0"
   },
   "cssnano": {
     "preset": [

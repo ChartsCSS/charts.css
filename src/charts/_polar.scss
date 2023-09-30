@@ -7,12 +7,11 @@
 
     // Layout
     tbody {
-      @include circle();
+      @include circle;
 
       tr {
-        @include visually-hidden();
+        @include visually-hidden;
       }
     }
   }
-
 }

@@ -6,19 +6,15 @@
   &:not(.show-heading) {
 
     caption {
-      @include visually-hidden();
+      @include visually-hidden;
     }
   }
 
   &.show-heading {
-    --heading-size: 1.5rem;
 
     caption {
       display: block;
       width: 100%;
-      height: var(--heading-size);
     }
-
   }
-
 }

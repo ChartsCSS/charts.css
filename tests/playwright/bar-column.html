@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charts.CSS tests page</title>
+  <link rel="stylesheet" href="./charts.min.css">
+
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      min-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    button {
+      all: unset;
+      padding: 2px 5px;
+      margin: 1px 0;
+      border-radius: 2px;
+      border: 1px solid black;
+      color: black;
+      background-color: lightyellow;
+      line-height: 1;
+    }
+    button:disabled {
+      color: grey;
+      background-color: lightgrey;
+      cursor: not-allowed;
+    }
+    button[data-clicked] {
+      color: white;
+      background-color: tomato;
+    }
+    aside {
+      text-align: center;
+    }
+    aside>section {
+      padding-block-start: 15px;
+    }
+    main {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <aside>
+
+      <section class="types">
+        <button class="bar">bar</button>
+        <button class="column">column</button>
+      </section>
+
+      <section class="elements">
+        <button class="show-heading">show-heading</button>
+        <button class="show-labels">show-labels</button>
+        <button class="hide-data">hide-data</button>
+        <button class="show-data-on-hover">show-data-on-hover</button>
+      </section>
+
+      <section class="orientation">
+        <button class="reverse">reverse</button>
+        <button class="reverse-labels">reverse-labels</button>
+        <button class="reverse-data">reverse-data</button>
+        <button class="reverse-datasets">reverse-datasets</button>
+      </section>
+
+      <section class="axes">
+        <button class="show-primary-axis">show-primary-axis</button>
+        <button class="show-1-secondary-axes">show-1-secondary-axes</button>
+        <button class="show-2-secondary-axes">show-2-secondary-axes</button>
+        <button class="show-3-secondary-axes">show-3-secondary-axes</button>
+        <button class="show-4-secondary-axes">show-4-secondary-axes</button>
+        <button class="show-5-secondary-axes">show-5-secondary-axes</button>
+        <button class="show-6-secondary-axes">show-6-secondary-axes</button>
+        <button class="show-7-secondary-axes">show-7-secondary-axes</button>
+        <button class="show-8-secondary-axes">show-8-secondary-axes</button>
+        <button class="show-9-secondary-axes">show-9-secondary-axes</button>
+        <button class="show-10-secondary-axes">show-10-secondary-axes</button>
+        <button class="show-data-axes">show-data-axes</button>
+      </section>
+
+      <section class="spacing">
+        <button class="data-spacing-1">data-spacing-1</button>
+        <button class="data-spacing-2">data-spacing-2</button>
+        <button class="data-spacing-3">data-spacing-3</button>
+        <button class="data-spacing-4">data-spacing-4</button>
+        <button class="data-spacing-5">data-spacing-5</button>
+        <button class="data-spacing-6">data-spacing-6</button>
+        <button class="data-spacing-7">data-spacing-7</button>
+        <button class="data-spacing-8">data-spacing-8</button>
+        <button class="data-spacing-9">data-spacing-9</button>
+        <button class="data-spacing-10">data-spacing-10</button>
+        <button class="data-spacing-11">data-spacing-11</button>
+        <button class="data-spacing-12">data-spacing-12</button>
+        <button class="data-spacing-13">data-spacing-13</button>
+        <button class="data-spacing-14">data-spacing-14</button>
+        <button class="data-spacing-15">data-spacing-15</button>
+        <button class="data-spacing-16">data-spacing-16</button>
+        <button class="data-spacing-17">data-spacing-17</button>
+        <button class="data-spacing-18">data-spacing-18</button>
+        <button class="data-spacing-19">data-spacing-19</button>
+        <button class="data-spacing-20">data-spacing-20</button>
+      </section>
+
+      <section class="spacing">
+        <button class="datasets-spacing-1">datasets-spacing-1</button>
+        <button class="datasets-spacing-2">datasets-spacing-2</button>
+        <button class="datasets-spacing-3">datasets-spacing-3</button>
+        <button class="datasets-spacing-4">datasets-spacing-4</button>
+        <button class="datasets-spacing-5">datasets-spacing-5</button>
+        <button class="datasets-spacing-6">datasets-spacing-6</button>
+        <button class="datasets-spacing-7">datasets-spacing-7</button>
+        <button class="datasets-spacing-8">datasets-spacing-8</button>
+        <button class="datasets-spacing-9">datasets-spacing-9</button>
+        <button class="datasets-spacing-10">datasets-spacing-10</button>
+        <button class="datasets-spacing-11">datasets-spacing-11</button>
+        <button class="datasets-spacing-12">datasets-spacing-12</button>
+        <button class="datasets-spacing-13">datasets-spacing-13</button>
+        <button class="datasets-spacing-14">datasets-spacing-14</button>
+        <button class="datasets-spacing-15">datasets-spacing-15</button>
+        <button class="datasets-spacing-16">datasets-spacing-16</button>
+        <button class="datasets-spacing-17">datasets-spacing-17</button>
+        <button class="datasets-spacing-18">datasets-spacing-18</button>
+        <button class="datasets-spacing-19">datasets-spacing-19</button>
+        <button class="datasets-spacing-20">datasets-spacing-20</button>
+      </section>
+
+    </aside>
+
+    <main>
+
+      <section>
+        <table class="charts-css single">
+          <caption>Years Compared</caption>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"> 2016 </th>
+              <td style="--size: 0.2;"> <span class="data">20</span> </td>
+            </tr>
+            <tr>
+              <th scope="row"> 2017 </th>
+              <td style="--size: 0.4;"> <span class="data">40</span> </td>
+            </tr>
+            <tr>
+              <th scope="row"> 2018 </th>
+              <td style="--size: 0.6;"> <span class="data">60</span> </td>
+            </tr>
+            <tr>
+              <th scope="row"> 2019 </th>
+              <td style="--size: 0.8;"> <span class="data">80</span> </td>
+            </tr>
+            <tr>
+              <th scope="row"> 2020 </th>
+              <td style="--size: 1.0;"> <span class="data">100</span> </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <table class="charts-css multiple">
+          <caption>Years Compared</caption>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Progress 1</th>
+              <th>Progress 2</th>
+              <th>Progress 3</th>
+              <th>Progress 4</th>
+              <th>Progress 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1920</th>
+              <td style="--size: 0.2;"> <span class="data"> 20 </span> </td>
+              <td style="--size: 0.5;"> <span class="data"> 50 </span> </td>
+              <td style="--size: 1.0;"> <span class="data"> 100 </span> </td>
+              <td style="--size: 0.7;"> <span class="data"> 70 </span> </td>
+              <td style="--size: 0.4;"> <span class="data"> 40 </span> </td>
+            </tr>
+            <tr>
+              <th scope="row">2020</th>
+              <td style="--size: 0.2;"> <span class="data"> 20 </span> </td>
+              <td style="--size: 0.4;"> <span class="data"> 40 </span> </td>
+              <td style="--size: 0.6;"> <span class="data"> 60 </span> </td>
+              <td style="--size: 0.8;"> <span class="data"> 80 </span> </td>
+              <td style="--size: 1.0;"> <span class="data"> 100 </span> </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+    const singleDatasetChart = document.querySelector(".charts-css.single");
+    const multiDatasetsChart = document.querySelector(".charts-css.multiple");
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.currentTarget.toggleAttribute('data-clicked');
+        const className = button.getAttribute("class");
+        singleDatasetChart.classList.toggle(className);
+        multiDatasetsChart.classList.toggle(className);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

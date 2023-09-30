@@ -1,5 +1,4 @@
 // Hide element visually while keeping it accessible to assistive technologies
-//
 // See: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
 // See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
 @mixin visually-hidden {
@@ -18,18 +17,27 @@
 @mixin circle {
   display: block;
   width: 100%;
-  height: 0;               // old hack for "aspect-ratio"
-  padding-block-end: 100%; // makes height 100% of the width
+  aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--chart-bg-color);
+  background-color: var(--#{ $variable-prefix }chart-bg-color);
 }
 
-@mixin position-fullwidth {
-  position: absolute;
+@mixin inset-zero {
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+@mixin position-fullwidth {
+  position: absolute;
   width: 100%;
   height: 100%;
+  @include inset-zero;
+}
+
+@mixin at-property( $syntax, $value, $inherits ) {
+  syntax: $syntax;
+  initial-value: $value;
+  inherits: $inherits;
 }

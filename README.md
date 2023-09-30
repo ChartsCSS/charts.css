@@ -1,3 +1,7 @@
+<div align="center">
+    <img width="300" src="https://chartscss.org/assets/img/logo-animation.svg" alt="Charts.css Logo">
+</div>
+
 # Charts.css
 
 ![GitHub Version](https://img.shields.io/github/v/release/ChartsCSS/charts.css?style=for-the-badge) ![Minified Size](https://img.shields.io/bundlephobia/min/charts.css?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/ChartsCSS/charts.css?label=GitHub%20Stars&style=for-the-badge) ![License](https://img.shields.io/github/license/ChartsCSS/charts.css?style=for-the-badge)

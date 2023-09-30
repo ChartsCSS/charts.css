@@ -3,15 +3,20 @@
  */
 .charts-css {
 
+  .data {
+    display: flex;
+  }
+
+  // Hide data
   &.hide-data {
 
     .data,
     .data:not(:focus):not(:focus-within) {
-      @include visually-hidden();
+      @include visually-hidden;
     }
-
   }
 
+  // Show on hover
   &.show-data-on-hover {
 
     .data {
@@ -19,11 +24,12 @@
       opacity: 0;
     }
 
-    tr:hover .data {
-      transition-duration: .3s;
-      opacity: 1;
+    tr:hover {
+      .data {
+        transition-duration: .3s;
+        opacity: 1;
+      }
     }
-
   }
 
   &.radial,
@@ -33,13 +39,194 @@
 
     &.show-data-on-hover {
 
-      tbody:hover .data {
-        transition-duration: .3s;
-        opacity: 1;
+      tbody:hover {
+        .data {
+          transition-duration: .3s;
+          opacity: 1;
+        }
       }
-
     }
-
   }
 
+  // Data position
+  &.bar {
+
+    &.data-center {
+      tbody {
+        tr {
+          td {
+            --#{ $variable-prefix }data-position: center;
+          }
+        }
+      }
+    }
+    &.data-start {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+    }
+    &.data-end {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+    }
+    &.data-outside {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+
+              .data {
+                transform: translateX(100%);
+              }
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+
+              .data {
+                transform: translateX(-100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.column {
+
+    &.data-center {
+      tbody {
+        tr {
+          td {
+            --#{ $variable-prefix }data-position: center;
+          }
+        }
+      }
+    }
+    &.data-start {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+    }
+    &.data-end {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+            }
+          }
+        }
+      }
+    }
+    &.data-outside {
+      &:not(.reverse) {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-start;
+
+              .data {
+                transform: translateY(-100%);
+              }
+            }
+          }
+        }
+      }
+      &.reverse {
+        tbody {
+          tr {
+            td {
+              --#{ $variable-prefix }data-position: flex-end;
+
+              .data {
+                transform: translateY(100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Data position fix
+  &.bar,
+  &.column,
+  &.area,
+  &.line {
+
+    &.reverse,
+    &:not(.reverse) {
+      tbody {
+        tr {
+          td.inside .data,
+          td .data.inside {
+            transform: unset;
+          }
+        }
+      }
+    }
+  }
 }
