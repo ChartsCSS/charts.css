@@ -11,7 +11,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      aspect-ratio: 21/9;
+      aspect-ratio: var(--#{ $variable-prefix }aspect-ratio, 21 / 9);
 
       tr {
         position: relative;

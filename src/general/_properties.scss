@@ -16,6 +16,11 @@ $color-vars: color, chart-bg-color;
   }
 }
 
+// Chart Aspect Ratio
+@property --#{ $variable-prefix }aspect-ratio {
+  @include at-property( "<ratio>", auto, true );
+}
+
 // Labels
 @property --#{ $variable-prefix }labels-size {
   @include at-property( "<length>", 0, true );
