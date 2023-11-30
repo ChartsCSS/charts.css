@@ -33,77 +33,77 @@
         }
       }
     }
-  }
 
-  // Legend Alignment
-  &:not(.legend-inline) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-  &.legend-inline {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    li {
-      margin-inline-end: 1rem;
+    // Legend Alignment
+    &:not(.legend-inline) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
     }
-  }
+    &.legend-inline {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
 
-  // Circle Label
-  &.legend-circle {
-    li::before {
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
+      li {
+        margin-inline-end: 1rem;
+      }
     }
-  }
 
-  // Ellipse Label
-  &.legend-ellipse {
-    li::before {
-      width: 2rem;
-      height: 1rem;
-      border-radius: 50%;
+    // Circle Label
+    &.legend-circle {
+      li::before {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+      }
     }
-  }
 
-  // Square Label
-  &.legend-square {
-    li::before {
-      width: 1rem;
-      height: 1rem;
-      border-radius: 3px;
+    // Ellipse Label
+    &.legend-ellipse {
+      li::before {
+        width: 2rem;
+        height: 1rem;
+        border-radius: 50%;
+      }
     }
-  }
 
-  // Rhombus Label
-  &.legend-rhombus {
-    li::before {
-      width: 1rem;
-      height: 1rem;
-      border-radius: 3px;
-      transform: rotate(45deg) scale(.85);
+    // Square Label
+    &.legend-square {
+      li::before {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 3px;
+      }
     }
-  }
 
-  // Rectangle Label
-  &.legend-rectangle {
-    li::before {
-      width: 2rem;
-      height: 1rem;
-      border-radius: 3px;
+    // Rhombus Label
+    &.legend-rhombus {
+      li::before {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 3px;
+        transform: rotate(45deg) scale(.85);
+      }
     }
-  }
 
-  // Line Label
-  &.legend-line {
-    li::before {
-      width: 2rem;
-      height: 3px;
-      border-radius: 2px;
-      box-sizing: content-box;
+    // Rectangle Label
+    &.legend-rectangle {
+      li::before {
+        width: 2rem;
+        height: 1rem;
+        border-radius: 3px;
+      }
+    }
+
+    // Line Label
+    &.legend-line {
+      li::before {
+        width: 2rem;
+        height: 3px;
+        border-radius: 2px;
+        box-sizing: content-box;
+      }
     }
   }
 }
