@@ -21,7 +21,7 @@
     "dist/charts.min.css"
   ],
   "scripts": {
-    "build": "npm-run-all css-compile css-prefixes css-selectors-merge css-minify css-minify-fix test:copy-css",
+    "build": "npm-run-all update-browserslist css-compile css-prefixes css-selectors-merge css-minify css-minify-fix test:copy-css",
     "css-compile": "sass --style=expanded src/charts.scss:dist/charts.css",
     "css-prefixes": "postcss dist/charts.css --use autoprefixer --output dist/charts.css",
     "css-selectors-merge": "postcss dist/charts.css --use postcss-merge-selectors --output dist/charts.css",
@@ -29,6 +29,7 @@
     "css-minify-fix": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output dist/charts.min.css",
     "watch": "nodemon -e scss,html --watch src --exec \"npm run build\"",
     "scss-lint": "stylelint \"**/*.scss\"",
+    "update-browserslist": "npx update-browserslist-db@latest",
     "test": "npm-run-all build test:copy-css test:run",
     "test:copy-css": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output tests/playwright/charts.min.css",
     "test:snapshots": "playwright test --update-snapshots --trace off",
