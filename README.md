@@ -30,13 +30,13 @@ Check the full documentation on [ChartsCSS.org](https://ChartsCSS.org/).
 Use [jsdelivr](https://www.jsdelivr.com/package/npm/charts.css) CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css@1/dist/charts.min.css">
 ```
 
 Or [unpkg](https://unpkg.com/browse/charts.css/) CDN:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/charts.css/dist/charts.min.css">
+<link rel="stylesheet" href="https://unpkg.com/charts.css@^1/dist/charts.min.css">
 ```
 
 ### Package Manager
