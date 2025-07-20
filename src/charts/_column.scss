@@ -27,7 +27,7 @@
 
         th {
           position: absolute;
-          @include inset-zero;
+          inset: 0;
           height: var(--#{ $variable-prefix }labels-size);
         }
 
