@@ -45,6 +45,7 @@
   "devDependencies": {
     "@playwright/test": "^1.37.1",
     "autoprefixer": "^10.4.14",
+    "browserslist-config-baseline": "^0.4.0",
     "cssnano": "^6.0.1",
     "dotenv": "^16.3.1",
     "nodemon": "^3.0.1",
@@ -69,10 +70,6 @@
     ]
   },
   "browserslist": [
-    ">1%",
-    "not dead",
-    "not ie >= 0",
-    "not op_mini all",
-    "last 2 versions"
+    "extends browserslist-config-baseline"
   ]
 }
