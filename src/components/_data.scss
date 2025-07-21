@@ -108,7 +108,12 @@
               --#{ $variable-prefix }data-position: flex-end;
 
               .data {
-                transform: translateX(100%);
+                &:dir(ltr) {
+                  transform: translateX(100%);
+                }
+                &:dir(rtl) {
+                  transform: translateX(-100%);
+                }
               }
             }
           }
@@ -121,7 +126,12 @@
               --#{ $variable-prefix }data-position: flex-start;
 
               .data {
-                transform: translateX(-100%);
+                &:dir(ltr) {
+                  transform: translateX(-100%);
+                }
+                &:dir(rtl) {
+                  transform: translateX(100%);
+                }
               }
             }
           }
