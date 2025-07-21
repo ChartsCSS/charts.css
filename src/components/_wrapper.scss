@@ -14,13 +14,13 @@
   --#{ variables.$prefix }chart-bg-color: rgb(245 245 245);
 
   // Axes
-  --#{ variables.$prefix }primary-axis-color: rgba(0 0 0 / 100%);
+  --#{ variables.$prefix }primary-axis-color: rgb(0 0 0 / 100%);
   --#{ variables.$prefix }primary-axis-style: solid;
   --#{ variables.$prefix }primary-axis-width: 1px;
-  --#{ variables.$prefix }secondary-axes-color: rgba(0 0 0 / 15%);
+  --#{ variables.$prefix }secondary-axes-color: rgb(0 0 0 / 15%);
   --#{ variables.$prefix }secondary-axes-style: solid;
   --#{ variables.$prefix }secondary-axes-width: 1px;
-  --#{ variables.$prefix }data-axes-color: rgba(0 0 0 / 15%);
+  --#{ variables.$prefix }data-axes-color: rgb(0 0 0 / 15%);
   --#{ variables.$prefix }data-axes-style: solid;
   --#{ variables.$prefix }data-axes-width: 1px;
 
