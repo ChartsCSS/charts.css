@@ -52,8 +52,14 @@
             justify-content: var(--#{ $variable-prefix }data-position, flex-end);
 
             .data.outside {
-              transform: translateX(100%);
               white-space: nowrap;
+
+              &:dir(ltr) {
+                transform: translateX(100%);
+              }
+              &:dir(rtl) {
+                transform: translateX(-100%);
+              }
             }
           }
         }
@@ -66,8 +72,14 @@
             justify-content: var(--#{ $variable-prefix }data-position, flex-start);
 
             .data.outside {
-              transform: translateX(-100%);
               white-space: nowrap;
+
+              &:dir(ltr) {
+                transform: translateX(-100%);
+              }
+              &:dir(rtl) {
+                transform: translateX(100%);
+              }
             }
           }
         }

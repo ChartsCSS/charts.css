@@ -199,7 +199,12 @@
               }
 
               .data {
-                transform: translateX(50%);
+                &:dir(ltr) {
+                  transform: translateX(50%);
+                }
+                &:dir(rtl) {
+                  transform: translateX(-50%);
+                }
               }
 
               &::after {
@@ -227,7 +232,12 @@
               }
 
               .data {
-                transform: translateX(-50%);
+                &:dir(ltr) {
+                  transform: translateX(-50%);
+                }
+                &:dir(rtl) {
+                  transform: translateX(50%);
+                }
               }
 
               &::after {
@@ -257,7 +267,12 @@
               }
 
               .data {
-                transform: translateX(50%);
+                &:dir(ltr) {
+                  transform: translateX(50%);
+                }
+                &:dir(rtl) {
+                  transform: translateX(-50%);
+                }
               }
 
               &::after {
@@ -285,7 +300,12 @@
               }
 
               .data {
-                transform: translateX(-50%);
+                &:dir(ltr) {
+                  transform: translateX(-50%);
+                }
+                &:dir(rtl) {
+                  transform: translateX(50%);
+                }
               }
 
               &::after {
