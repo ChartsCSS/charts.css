@@ -21,6 +21,11 @@ $color-vars: color, chart-bg-color;
   @include at-property( "<ratio>", auto, true );
 }
 
+// Data Position
+@property --#{ $variable-prefix }data-position {
+  @include at-property( "<content-position>", null, true );
+}
+
 // Labels
 @property --#{ $variable-prefix }labels-size {
   @include at-property( "<length>", 0, true );
