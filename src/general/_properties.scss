@@ -1,69 +1,72 @@
+@use "mixins";
+@use "variables";
+
 /*
  * Chart custom properties
  */
 
 // Colors
-@each $index, $color in $colors {
-  @property --#{ $variable-prefix }color-#{ $index } {
-    @include at-property( "<color>", transparent, true );
+@each $index, $color in variables.$colors {
+  @property --#{ variables.$prefix }color-#{ $index } {
+    @include mixins.at-property( "<color>", transparent, true );
   }
 }
 
 $color-vars: color, chart-bg-color;
 @each $i in $color-vars {
-  @property --#{ $variable-prefix }#{ $i } {
-    @include at-property( "<color>", null, true );
+  @property --#{ variables.$prefix }#{ $i } {
+    @include mixins.at-property( "<color>", null, true );
   }
 }
 
 // Chart Aspect Ratio
-@property --#{ $variable-prefix }aspect-ratio {
-  @include at-property( "<ratio>", auto, true );
+@property --#{ variables.$prefix }aspect-ratio {
+  @include mixins.at-property( "<ratio>", auto, true );
 }
 
 // Data Position
-@property --#{ $variable-prefix }data-position {
-  @include at-property( "<content-position>", null, true );
+@property --#{ variables.$prefix }data-position {
+  @include mixins.at-property( "<content-position>", null, true );
 }
 
 // Labels
-@property --#{ $variable-prefix }labels-size {
-  @include at-property( "<length>", 0, true );
+@property --#{ variables.$prefix }labels-size {
+  @include mixins.at-property( "<length>", 0, true );
 }
 
 $labels-align: labels-align-block, labels-align-inline;
 @each $align in $labels-align {
-  @property --#{ $variable-prefix }#{ $align } {
-    @include at-property( "<string>", null, true );
+  @property --#{ variables.$prefix }#{ $align } {
+    @include mixins.at-property( "<string>", null, true );
   }
 }
 
 // Axes + Legends
 $items-width: primary-axis-width, secondary-axes-width, data-axes-width, legend-border-width;
 @each $width in $items-width {
-  @property --#{ $variable-prefix }#{ $width } {
-    @include at-property( "<length>", 1px, true );
+  @property --#{ variables.$prefix }#{ $width } {
+    @include mixins.at-property( "<length>", 1px, true );
   }
 }
 
 $items-style: primary-axis-style, secondary-axes-style, data-axes-style, legend-border-style;
 @each $style in $items-style {
-  @property --#{ $variable-prefix }#{ $style } {
-    @include at-property( "<line-style>", solid, true );
+  @property --#{ variables.$prefix }#{ $style } {
+    @include mixins.at-property( "<line-style>", solid, true );
   }
 }
 
 $items-color: primary-axis-color, secondary-axes-color, data-axes-color, legend-border-color;
 @each $color in $items-color {
-  @property --#{ $variable-prefix }#{ $color } {
-    @include at-property( "<color>", transparent, true );
+  @property --#{ variables.$prefix }#{ $color } {
+    @include mixins.at-property( "<color>", transparent, true );
   }
 }
 
 // Sizes
 $sizes: start, end, size, line-size;
 @each $size in $sizes {
-  @property --#{ $variable-prefix }#{ $size } {
-    @include at-property( "<number>", null, true );
+  @property --#{ variables.$prefix }#{ $size } {
+    @include mixins.at-property( "<number>", null, true );
   }
 }

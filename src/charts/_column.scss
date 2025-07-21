@@ -1,3 +1,5 @@
+@use "../general/variables";
+
 /*
  * Column Chart
  */
@@ -11,7 +13,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      aspect-ratio: var(--#{ $variable-prefix }aspect-ratio, 21 / 9);
+      aspect-ratio: var(--#{ variables.$prefix }aspect-ratio, 21 / 9);
 
       tr {
         position: relative;
@@ -28,14 +30,14 @@
         th {
           position: absolute;
           inset: 0;
-          height: var(--#{ $variable-prefix }labels-size);
+          height: var(--#{ variables.$prefix }labels-size);
         }
 
         td {
           display: flex;
           justify-content: center;
           width: 100%;
-          height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size, 1)));
+          height: calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size, 1)));
           position: relative; // For tooltips
         }
       }
@@ -46,7 +48,7 @@
       tbody {
         tr {
           td {
-            align-items: var(--#{ $variable-prefix }data-position, flex-start);
+            align-items: var(--#{ variables.$prefix }data-position, flex-start);
 
             .data.outside {
               transform: translateY(-100%);
@@ -59,7 +61,7 @@
       tbody {
         tr {
           td {
-            align-items: var(--#{ $variable-prefix }data-position, flex-end);
+            align-items: var(--#{ variables.$prefix }data-position, flex-end);
 
             .data.outside {
               transform: translateY(100%);
@@ -106,11 +108,11 @@
       &:not(.reverse) {
         tbody {
           tr {
-            margin-block-end: var(--#{ $variable-prefix }labels-size);
+            margin-block-end: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-start: auto;
-              margin-block-end: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+              margin-block-end: calc(-1 * var(--#{ variables.$prefix }labels-size) - var(--#{ variables.$prefix }primary-axis-width));
             }
           }
         }
@@ -118,11 +120,11 @@
       &.reverse {
         tbody {
           tr {
-            margin-block-start: var(--#{ $variable-prefix }labels-size);
+            margin-block-start: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-end: auto;
-              margin-block-start: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+              margin-block-start: calc(-1 * var(--#{ variables.$prefix }labels-size) - var(--#{ variables.$prefix }primary-axis-width));
             }
           }
         }
@@ -132,11 +134,11 @@
       &:not(.reverse) {
         tbody {
           tr {
-            margin-block-start: var(--#{ $variable-prefix }labels-size);
+            margin-block-start: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-end: auto;
-              margin-block-start: calc(-1 * var(--#{ $variable-prefix }labels-size));
+              margin-block-start: calc(-1 * var(--#{ variables.$prefix }labels-size));
             }
           }
         }
@@ -144,11 +146,11 @@
       &.reverse {
         tbody {
           tr {
-            margin-block-end: var(--#{ $variable-prefix }labels-size);
+            margin-block-end: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-start: auto;
-              margin-block-end: calc(-1 * var(--#{ $variable-prefix }labels-size));
+              margin-block-end: calc(-1 * var(--#{ variables.$prefix }labels-size));
             }
           }
         }

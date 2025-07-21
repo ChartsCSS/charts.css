@@ -1,3 +1,5 @@
+@use "../general/variables";
+
 /*
  * Bar Chart
  */
@@ -11,7 +13,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      aspect-ratio: var(--#{ $variable-prefix }aspect-ratio, auto);
+      aspect-ratio: var(--#{ variables.$prefix }aspect-ratio, auto);
 
       tr {
         position: relative;
@@ -28,13 +30,13 @@
         th {
           position: absolute;
           inset: 0;
-          width: var(--#{ $variable-prefix }labels-size);
+          width: var(--#{ variables.$prefix }labels-size);
         }
 
         td {
           display: flex;
           align-items: center;
-          width: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size, 1)));
+          width: calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size, 1)));
           height: 100%;
           min-height: 1rem;
           padding-block-start: 10px; // BC for pre 1.0.0 versions
@@ -49,7 +51,7 @@
       tbody {
         tr {
           td {
-            justify-content: var(--#{ $variable-prefix }data-position, flex-end);
+            justify-content: var(--#{ variables.$prefix }data-position, flex-end);
 
             .data.outside {
               white-space: nowrap;
@@ -69,7 +71,7 @@
       tbody {
         tr {
           td {
-            justify-content: var(--#{ $variable-prefix }data-position, flex-start);
+            justify-content: var(--#{ variables.$prefix }data-position, flex-start);
 
             .data.outside {
               white-space: nowrap;
@@ -107,11 +109,11 @@
       &:not(.reverse) {
         tbody {
           tr {
-            margin-inline-start: var(--#{ $variable-prefix }labels-size);
+            margin-inline-start: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-inline-end: auto;
-              margin-inline-start: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+              margin-inline-start: calc(-1 * var(--#{ variables.$prefix }labels-size) - var(--#{ variables.$prefix }primary-axis-width));
             }
           }
         }
@@ -119,11 +121,11 @@
       &.reverse {
         tbody {
           tr {
-            margin-inline-end: var(--#{ $variable-prefix }labels-size);
+            margin-inline-end: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-inline-start: auto;
-              margin-inline-end: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+              margin-inline-end: calc(-1 * var(--#{ variables.$prefix }labels-size) - var(--#{ variables.$prefix }primary-axis-width));
             }
           }
         }
@@ -133,11 +135,11 @@
       &:not(.reverse) {
         tbody {
           tr {
-            margin-inline-end: var(--#{ $variable-prefix }labels-size);
+            margin-inline-end: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-inline-start: auto;
-              margin-inline-end: calc(-1 * var(--#{ $variable-prefix }labels-size));
+              margin-inline-end: calc(-1 * var(--#{ variables.$prefix }labels-size));
             }
           }
         }
@@ -145,11 +147,11 @@
       &.reverse {
         tbody {
           tr {
-            margin-inline-start: var(--#{ $variable-prefix }labels-size);
+            margin-inline-start: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-inline-end: auto;
-              margin-inline-start: calc(-1 * var(--#{ $variable-prefix }labels-size));
+              margin-inline-start: calc(-1 * var(--#{ variables.$prefix }labels-size));
             }
           }
         }

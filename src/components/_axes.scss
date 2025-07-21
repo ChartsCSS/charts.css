@@ -1,3 +1,6 @@
+@use "../general/mixins";
+@use "../general/variables";
+
 /*
  * Chart axes
  */
@@ -11,26 +14,26 @@
       &:not(.reverse) {
         tbody {
           tr {
-            border-block-end: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
+            border-block-end: var(--#{ variables.$prefix }primary-axis-width) var(--#{ variables.$prefix }primary-axis-style) var(--#{ variables.$prefix }primary-axis-color);
           }
         }
       }
       &.reverse {
         tbody {
           tr {
-            border-block-start: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
+            border-block-start: var(--#{ variables.$prefix }primary-axis-width) var(--#{ variables.$prefix }primary-axis-style) var(--#{ variables.$prefix }primary-axis-color);
           }
         }
       }
     }
 
-    @for $i from 1 through $max-axes {
+    @for $i from 1 through variables.$max-axes {
       &.show-#{ $i }-secondary-axes {
         &:not(.reverse) {
           tbody {
             tr {
               background-size: 100% calc(100% / #{ $i });
-              background-image: linear-gradient(var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
+              background-image: linear-gradient(var(--#{ variables.$prefix }secondary-axes-color) var(--#{ variables.$prefix }secondary-axes-width), transparent var(--#{ variables.$prefix }secondary-axes-width));
             }
           }
         }
@@ -38,7 +41,7 @@
           tbody {
             tr {
               background-size: 100% calc(100% / #{ $i });
-              background-image: linear-gradient(0deg, var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
+              background-image: linear-gradient(0deg, var(--#{ variables.$prefix }secondary-axes-color) var(--#{ variables.$prefix }secondary-axes-width), transparent var(--#{ variables.$prefix }secondary-axes-width));
             }
           }
         }
@@ -48,20 +51,20 @@
     &.show-data-axes {
       tbody {
         tr {
-          border-inline-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+          border-inline-end: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
         }
       }
       &:not(.reverse-data) {
         tbody {
           tr:first-of-type {
-            border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+            border-inline-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
           }
         }
       }
       &.reverse-data {
         tbody {
           tr:last-of-type {
-            border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+            border-inline-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
           }
         }
       }
@@ -71,7 +74,7 @@
       tbody {
         tr {
           td {
-            border-inline-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+            border-inline-end: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
           }
         }
       }
@@ -79,7 +82,7 @@
         tbody {
           tr:first-of-type {
             td {
-              border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+              border-inline-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
             }
           }
         }
@@ -88,7 +91,7 @@
         tbody {
           tr:last-of-type {
             td {
-              border-inline-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+              border-inline-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
             }
           }
         }
@@ -102,26 +105,26 @@
       &:not(.reverse) {
         tbody {
           tr {
-            border-inline-start: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
+            border-inline-start: var(--#{ variables.$prefix }primary-axis-width) var(--#{ variables.$prefix }primary-axis-style) var(--#{ variables.$prefix }primary-axis-color);
           }
         }
       }
       &.reverse {
         tbody {
           tr {
-            border-inline-end: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
+            border-inline-end: var(--#{ variables.$prefix }primary-axis-width) var(--#{ variables.$prefix }primary-axis-style) var(--#{ variables.$prefix }primary-axis-color);
           }
         }
       }
     }
 
-    @for $i from 1 through $max-axes {
+    @for $i from 1 through variables.$max-axes {
       &.show-#{ $i }-secondary-axes {
         &:not(.reverse) {
           tbody {
             tr {
               background-size: calc(100% / #{ $i }) 100%;
-              background-image: linear-gradient(-90deg, var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
+              background-image: linear-gradient(-90deg, var(--#{ variables.$prefix }secondary-axes-color) var(--#{ variables.$prefix }secondary-axes-width), transparent var(--#{ variables.$prefix }secondary-axes-width));
             }
           }
         }
@@ -129,7 +132,7 @@
           tbody {
             tr {
               background-size: calc(100% / #{ $i }) 100%;
-              background-image: linear-gradient(90deg, var(--#{ $variable-prefix }secondary-axes-color) var(--#{ $variable-prefix }secondary-axes-width), transparent var(--#{ $variable-prefix }secondary-axes-width));
+              background-image: linear-gradient(90deg, var(--#{ variables.$prefix }secondary-axes-color) var(--#{ variables.$prefix }secondary-axes-width), transparent var(--#{ variables.$prefix }secondary-axes-width));
             }
           }
         }
@@ -139,20 +142,20 @@
     &.show-data-axes {
       tbody {
         tr {
-          border-block-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+          border-block-end: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
         }
       }
       &:not(.reverse-data) {
         tbody {
           tr:first-of-type {
-            border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+            border-block-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
           }
         }
       }
       &.reverse-data {
         tbody {
           tr:last-of-type {
-            border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+            border-block-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
           }
         }
       }
@@ -162,7 +165,7 @@
       tbody {
         tr {
           td {
-            border-block-end: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+            border-block-end: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
           }
         }
       }
@@ -170,7 +173,7 @@
         tbody {
           tr:first-of-type {
             td {
-              border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+              border-block-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
             }
           }
         }
@@ -179,7 +182,7 @@
         tbody {
           tr:last-of-type {
             td {
-              border-block-start: var(--#{ $variable-prefix }data-axes-width) var(--#{ $variable-prefix }data-axes-style) var(--#{ $variable-prefix }data-axes-color);
+              border-block-start: var(--#{ variables.$prefix }data-axes-width) var(--#{ variables.$prefix }data-axes-style) var(--#{ variables.$prefix }data-axes-color);
             }
           }
         }
@@ -194,17 +197,17 @@
 
     &.show-primary-axis {
       tbody {
-        border: var(--#{ $variable-prefix }primary-axis-width) var(--#{ $variable-prefix }primary-axis-style) var(--#{ $variable-prefix }primary-axis-color);
+        border: var(--#{ variables.$prefix }primary-axis-width) var(--#{ variables.$prefix }primary-axis-style) var(--#{ variables.$prefix }primary-axis-color);
       }
     }
 
-    @for $i from 1 through $max-axes {
+    @for $i from 1 through variables.$max-axes {
       &.show-#{ $i }-secondary-axes {
         tbody {
           &::after {
             content: "";
 
-            @include position-fullwidth;
+            @include mixins.position-fullwidth;
 
             z-index: 2;
             border-radius: 50%;
@@ -212,11 +215,11 @@
               repeating-radial-gradient(
                 closest-side,
                 transparent 0,
-                transparent calc(100% / #{ $i + 1 } - var(--#{ $variable-prefix }secondary-axes-width)),
-                var(--#{ $variable-prefix }secondary-axes-color) calc(100% / #{ $i + 1 } - var(--#{ $variable-prefix }secondary-axes-width)),
-                var(--#{ $variable-prefix }secondary-axes-color) calc(100% / #{ $i + 1 }),
-                transparent calc(100% / #{ $i + 1 } + var(--#{ $variable-prefix }secondary-axes-width)),
-                transparent calc(100% / #{ $i + 1 } + var(--#{ $variable-prefix }secondary-axes-width))
+                transparent calc(100% / #{ $i + 1 } - var(--#{ variables.$prefix }secondary-axes-width)),
+                var(--#{ variables.$prefix }secondary-axes-color) calc(100% / #{ $i + 1 } - var(--#{ variables.$prefix }secondary-axes-width)),
+                var(--#{ variables.$prefix }secondary-axes-color) calc(100% / #{ $i + 1 }),
+                transparent calc(100% / #{ $i + 1 } + var(--#{ variables.$prefix }secondary-axes-width)),
+                transparent calc(100% / #{ $i + 1 } + var(--#{ variables.$prefix }secondary-axes-width))
               );
           }
         }

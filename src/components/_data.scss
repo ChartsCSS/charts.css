@@ -1,3 +1,6 @@
+@use "../general/mixins";
+@use "../general/variables";
+
 /*
  * Chart data
  */
@@ -12,7 +15,7 @@
 
     .data,
     .data:not(:focus):not(:focus-within) {
-      @include visually-hidden;
+      @include mixins.visually-hidden;
     }
   }
 
@@ -55,7 +58,7 @@
       tbody {
         tr {
           td {
-            --#{ $variable-prefix }data-position: center;
+            --#{ variables.$prefix }data-position: center;
           }
         }
       }
@@ -65,7 +68,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-start;
+              --#{ variables.$prefix }data-position: flex-start;
             }
           }
         }
@@ -74,7 +77,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-end;
+              --#{ variables.$prefix }data-position: flex-end;
             }
           }
         }
@@ -85,7 +88,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-end;
+              --#{ variables.$prefix }data-position: flex-end;
             }
           }
         }
@@ -94,7 +97,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-start;
+              --#{ variables.$prefix }data-position: flex-start;
             }
           }
         }
@@ -105,7 +108,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-end;
+              --#{ variables.$prefix }data-position: flex-end;
 
               .data {
                 &:dir(ltr) {
@@ -123,7 +126,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-start;
+              --#{ variables.$prefix }data-position: flex-start;
 
               .data {
                 &:dir(ltr) {
@@ -146,7 +149,7 @@
       tbody {
         tr {
           td {
-            --#{ $variable-prefix }data-position: center;
+            --#{ variables.$prefix }data-position: center;
           }
         }
       }
@@ -156,7 +159,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-end;
+              --#{ variables.$prefix }data-position: flex-end;
             }
           }
         }
@@ -165,7 +168,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-start;
+              --#{ variables.$prefix }data-position: flex-start;
             }
           }
         }
@@ -176,7 +179,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-start;
+              --#{ variables.$prefix }data-position: flex-start;
             }
           }
         }
@@ -185,7 +188,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-end;
+              --#{ variables.$prefix }data-position: flex-end;
             }
           }
         }
@@ -196,7 +199,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-start;
+              --#{ variables.$prefix }data-position: flex-start;
 
               .data {
                 transform: translateY(-100%);
@@ -209,7 +212,7 @@
         tbody {
           tr {
             td {
-              --#{ $variable-prefix }data-position: flex-end;
+              --#{ variables.$prefix }data-position: flex-end;
 
               .data {
                 transform: translateY(100%);

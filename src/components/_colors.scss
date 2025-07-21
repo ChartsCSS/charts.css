@@ -1,21 +1,23 @@
+@use "../general/variables";
+
 /*
  * Chart colors
  */
 .charts-css {
 
-  @for $i from 1 through $total-colors {
-    &.bar tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
-    &.bar.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }),
-    &.column tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
-    &.column.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }),
-    &.area tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i })::before,
-    &.line tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i })::before {
-      background: var(--#{ $variable-prefix }color, var(--#{ $variable-prefix }color-#{ $i }));
+  @for $i from 1 through variables.$total-colors {
+    &.bar tbody tr:nth-of-type(#{ variables.$total-colors }n + #{ $i }) td,
+    &.bar.multiple tbody tr td:nth-of-type(#{ variables.$total-colors }n + #{ $i }),
+    &.column tbody tr:nth-of-type(#{ variables.$total-colors }n + #{ $i }) td,
+    &.column.multiple tbody tr td:nth-of-type(#{ variables.$total-colors }n + #{ $i }),
+    &.area tbody tr td:nth-of-type(#{ variables.$total-colors }n + #{ $i })::before,
+    &.line tbody tr td:nth-of-type(#{ variables.$total-colors }n + #{ $i })::before {
+      background: var(--#{ variables.$prefix }color, var(--#{ variables.$prefix }color-#{ $i }));
     }
 
-    &.pie tbody tr:nth-of-type(#{ $total-colors }n + #{ $i }) td,
-    &.pie.multiple tbody tr td:nth-of-type(#{ $total-colors }n + #{ $i }) {
-      --#{ $variable-prefix }c: var(--#{ $variable-prefix }color, var(--#{ $variable-prefix }color-#{ $i }, transparent));
+    &.pie tbody tr:nth-of-type(#{ variables.$total-colors }n + #{ $i }) td,
+    &.pie.multiple tbody tr td:nth-of-type(#{ variables.$total-colors }n + #{ $i }) {
+      --#{ variables.$prefix }c: var(--#{ variables.$prefix }color, var(--#{ variables.$prefix }color-#{ $i }, transparent));
     }
   }
 }

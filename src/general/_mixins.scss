@@ -1,3 +1,5 @@
+@use "variables";
+
 // Hide element visually while keeping it accessible to assistive technologies
 // See: https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
 // See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
@@ -19,7 +21,7 @@
   width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--#{ $variable-prefix }chart-bg-color);
+  background-color: var(--#{ variables.$prefix }chart-bg-color);
 }
 
 @mixin position-fullwidth {

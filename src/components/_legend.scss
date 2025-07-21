@@ -1,3 +1,5 @@
+@use "../general/variables";
+
 /*
  * Chart legend
  */
@@ -5,7 +7,7 @@
 
   &.legend {
     padding: 1rem;
-    border: var(--#{ $variable-prefix }legend-border-width) var(--#{ $variable-prefix }legend-border-style) var(--#{ $variable-prefix }legend-border-color);
+    border: var(--#{ variables.$prefix }legend-border-width) var(--#{ variables.$prefix }legend-border-style) var(--#{ variables.$prefix }legend-border-color);
     list-style: none;
     font-size: 1rem;
 
@@ -23,12 +25,12 @@
         border-style: solid;
       }
 
-      @for $i from 1 through $total-colors {
+      @for $i from 1 through variables.$total-colors {
 
-        &:nth-child(#{ $total-colors }n + #{ $i }) {
+        &:nth-child(#{ variables.$total-colors }n + #{ $i }) {
           &::before {
-            background-color: var(--#{ $variable-prefix }color-#{ $i }, transparent);
-            border-color: var(--#{ $variable-prefix }border-color-#{ $i }, var(--#{ $variable-prefix }border-color, #000));
+            background-color: var(--#{ variables.$prefix }color-#{ $i }, transparent);
+            border-color: var(--#{ variables.$prefix }border-color-#{ $i }, var(--#{ variables.$prefix }border-color, #000));
           }
         }
       }

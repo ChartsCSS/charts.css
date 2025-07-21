@@ -1,10 +1,12 @@
+@use "../general/variables";
+
 /*
  * Line Chart
  */
 .charts-css {
 
   &.line {
-    --#{ $variable-prefix }line-size: 3px;
+    --#{ variables.$prefix }line-size: 3px;
 
     // Layout
     tbody {
@@ -12,7 +14,7 @@
       justify-content: space-between;
       align-items: stretch;
       width: 100%;
-      aspect-ratio: var(--#{ $variable-prefix }aspect-ratio, 21 / 9);
+      aspect-ratio: var(--#{ variables.$prefix }aspect-ratio, 21 / 9);
 
       tr {
         position: relative;
@@ -29,7 +31,7 @@
         th {
           position: absolute;
           inset: 0;
-          height: var(--#{ $variable-prefix }labels-size);
+          height: var(--#{ variables.$prefix }labels-size);
         }
 
         td {
@@ -102,11 +104,11 @@
       &:not(.reverse) {
         tbody {
           tr {
-            margin-block-end: var(--#{ $variable-prefix }labels-size);
+            margin-block-end: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-start: auto;
-              margin-block-end: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+              margin-block-end: calc(-1 * var(--#{ variables.$prefix }labels-size) - var(--#{ variables.$prefix }primary-axis-width));
             }
           }
         }
@@ -114,11 +116,11 @@
       &.reverse {
         tbody {
           tr {
-            margin-block-start: var(--#{ $variable-prefix }labels-size);
+            margin-block-start: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-end: auto;
-              margin-block-start: calc(-1 * var(--#{ $variable-prefix }labels-size) - var(--#{ $variable-prefix }primary-axis-width));
+              margin-block-start: calc(-1 * var(--#{ variables.$prefix }labels-size) - var(--#{ variables.$prefix }primary-axis-width));
             }
           }
         }
@@ -128,11 +130,11 @@
       &:not(.reverse) {
         tbody {
           tr {
-            margin-block-start: var(--#{ $variable-prefix }labels-size);
+            margin-block-start: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-end: auto;
-              margin-block-start: calc(-1 * var(--#{ $variable-prefix }labels-size));
+              margin-block-start: calc(-1 * var(--#{ variables.$prefix }labels-size));
             }
           }
         }
@@ -140,11 +142,11 @@
       &.reverse {
         tbody {
           tr {
-            margin-block-end: var(--#{ $variable-prefix }labels-size);
+            margin-block-end: var(--#{ variables.$prefix }labels-size);
 
             th {
               margin-block-start: auto;
-              margin-block-end: calc(-1 * var(--#{ $variable-prefix }labels-size));
+              margin-block-end: calc(-1 * var(--#{ variables.$prefix }labels-size));
             }
           }
         }
@@ -191,10 +193,10 @@
               &::before {
                 clip-path:
                   polygon(
-                    0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
-                    100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
-                    100% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
-                    0% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size))
+                    0% calc(100% * (1 - var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))))),
+                    100% calc(100% * (1 - var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)))),
+                    100% calc(100% * (1 - var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))) - var(--#{ variables.$prefix }line-size)),
+                    0% calc(100% * (1 - var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)))) - var(--#{ variables.$prefix }line-size))
                   );
               }
 
@@ -208,7 +210,7 @@
               }
 
               &::after {
-                height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
+                height: calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)));
               }
             }
           }
@@ -224,10 +226,10 @@
               &::before {
                 clip-path:
                   polygon(
-                    0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
-                    100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))),
-                    100% calc(100% * (1 - var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))) - var(--#{ $variable-prefix }line-size)),
-                    0% calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size))
+                    0% calc(100% * (1 - var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)))),
+                    100% calc(100% * (1 - var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))))),
+                    100% calc(100% * (1 - var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)))) - var(--#{ variables.$prefix }line-size)),
+                    0% calc(100% * (1 - var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))) - var(--#{ variables.$prefix }line-size))
                   );
               }
 
@@ -241,7 +243,7 @@
               }
 
               &::after {
-                height: calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)));
+                height: calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)));
               }
             }
           }
@@ -259,10 +261,10 @@
               &::before {
                 clip-path:
                   polygon(
-                    0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
-                    100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
-                    100% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))),
-                    0% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))))
+                    0% calc(100% * var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))) - var(--#{ variables.$prefix }line-size)),
+                    100% calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)) - var(--#{ variables.$prefix }line-size)),
+                    100% calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))),
+                    0% calc(100% * var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))))
                   );
               }
 
@@ -276,7 +278,7 @@
               }
 
               &::after {
-                height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
+                height: calc(100% * (1 - var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))));
               }
             }
           }
@@ -292,10 +294,10 @@
               &::before {
                 clip-path:
                   polygon(
-                    0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)) - var(--#{ $variable-prefix }line-size)),
-                    100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))) - var(--#{ $variable-prefix }line-size)),
-                    100% calc(100% * var(--#{ $variable-prefix }start, var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))),
-                    0% calc(100% * var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size)))
+                    0% calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)) - var(--#{ variables.$prefix }line-size)),
+                    100% calc(100% * var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))) - var(--#{ variables.$prefix }line-size)),
+                    100% calc(100% * var(--#{ variables.$prefix }start, var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)))),
+                    0% calc(100% * var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size)))
                   );
               }
 
@@ -309,7 +311,7 @@
               }
 
               &::after {
-                height: calc(100% * (1 - var(--#{ $variable-prefix }end, var(--#{ $variable-prefix }size))));
+                height: calc(100% * (1 - var(--#{ variables.$prefix }end, var(--#{ variables.$prefix }size))));
               }
             }
           }

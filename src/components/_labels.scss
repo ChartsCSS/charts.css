@@ -1,18 +1,21 @@
+@use "../general/mixins";
+@use "../general/variables";
+
 /*
  * Chart labels
  */
 .charts-css {
 
   &.bar {
-    --#{ $variable-prefix }labels-size: 80px;
+    --#{ variables.$prefix }labels-size: 80px;
 
     &:not(.show-labels) {
-      --#{ $variable-prefix }labels-size: 0;
+      --#{ variables.$prefix }labels-size: 0;
 
       tbody {
         tr {
           th {
-            @include visually-hidden;
+            @include mixins.visually-hidden;
           }
         }
       }
@@ -24,7 +27,7 @@
             display: flex;
             flex-direction: row;
             gap: 5px;
-            align-items: var(--#{ $variable-prefix }labels-align-block, center);
+            align-items: var(--#{ variables.$prefix }labels-align-block, center);
           }
         }
       }
@@ -34,7 +37,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-start);
+                justify-content: var(--#{ variables.$prefix }labels-align-inline, flex-start);
               }
             }
           }
@@ -43,7 +46,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-end);
+                justify-content: var(--#{ variables.$prefix }labels-align-inline, flex-end);
               }
             }
           }
@@ -54,7 +57,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-end);
+                justify-content: var(--#{ variables.$prefix }labels-align-inline, flex-end);
               }
             }
           }
@@ -63,7 +66,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-inline, flex-start);
+                justify-content: var(--#{ variables.$prefix }labels-align-inline, flex-start);
               }
             }
           }
@@ -72,7 +75,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        @include visually-hidden;
+        @include mixins.visually-hidden;
       }
     }
   }
@@ -80,15 +83,15 @@
   &.column,
   &.area,
   &.line {
-    --#{ $variable-prefix }labels-size: 1.5rem;
+    --#{ variables.$prefix }labels-size: 1.5rem;
 
     &:not(.show-labels) {
-      --#{ $variable-prefix }labels-size: 0;
+      --#{ variables.$prefix }labels-size: 0;
 
       tbody {
         tr {
           th {
-            @include visually-hidden;
+            @include mixins.visually-hidden;
           }
         }
       }
@@ -99,7 +102,7 @@
           th {
             display: flex;
             flex-direction: column;
-            align-items: var(--#{ $variable-prefix }labels-align-inline, center);
+            align-items: var(--#{ variables.$prefix }labels-align-inline, center);
           }
         }
       }
@@ -109,7 +112,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-end);
+                justify-content: var(--#{ variables.$prefix }labels-align-block, flex-end);
               }
             }
           }
@@ -118,7 +121,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-start);
+                justify-content: var(--#{ variables.$prefix }labels-align-block, flex-start);
               }
             }
           }
@@ -129,7 +132,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-start);
+                justify-content: var(--#{ variables.$prefix }labels-align-block, flex-start);
               }
             }
           }
@@ -138,7 +141,7 @@
           tbody {
             tr {
               th {
-                justify-content: var(--#{ $variable-prefix }labels-align-block, flex-end);
+                justify-content: var(--#{ variables.$prefix }labels-align-block, flex-end);
               }
             }
           }
@@ -147,7 +150,7 @@
 
       tr.hide-label th,
       th.hide-label {
-        @include visually-hidden;
+        @include mixins.visually-hidden;
       }
     }
   }
@@ -163,7 +166,7 @@
       tbody {
         tr {
           th {
-            --#{ $variable-prefix }labels-align-inline: flex-start;
+            --#{ variables.$prefix }labels-align-inline: flex-start;
           }
         }
       }
@@ -172,7 +175,7 @@
       tbody {
         tr {
           th {
-            --#{ $variable-prefix }labels-align-inline: flex-end;
+            --#{ variables.$prefix }labels-align-inline: flex-end;
           }
         }
       }
@@ -181,7 +184,7 @@
       tbody {
         tr {
           th {
-            --#{ $variable-prefix }labels-align-inline: center;
+            --#{ variables.$prefix }labels-align-inline: center;
           }
         }
       }
@@ -192,7 +195,7 @@
       tbody {
         tr {
           th {
-            --#{ $variable-prefix }labels-align-block: flex-start;
+            --#{ variables.$prefix }labels-align-block: flex-start;
           }
         }
       }
@@ -201,7 +204,7 @@
       tbody {
         tr {
           th {
-            --#{ $variable-prefix }labels-align-block: flex-end;
+            --#{ variables.$prefix }labels-align-block: flex-end;
           }
         }
       }
@@ -210,7 +213,7 @@
       tbody {
         tr {
           th {
-            --#{ $variable-prefix }labels-align-block: center;
+            --#{ variables.$prefix }labels-align-block: center;
           }
         }
       }

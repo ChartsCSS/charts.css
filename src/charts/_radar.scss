@@ -1,3 +1,5 @@
+@use "../general/mixins";
+
 /*
  * Radar Chart
  */
@@ -7,10 +9,10 @@
 
     // Layout
     tbody {
-      @include circle;
+      @include mixins.circle;
 
       tr {
-        @include visually-hidden;
+        @include mixins.visually-hidden;
       }
     }
   }

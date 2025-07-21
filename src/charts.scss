@@ -5,27 +5,25 @@
  */
 
 // General
-@import "general/variables";
-@import "general/mixins";
-@import "general/properties";
+@use "general/properties";
 
 // Components
-@import "components/wrapper";
-@import "components/heading";
-@import "components/colors";
-@import "components/data";
-@import "components/labels";
-@import "components/axes";
-@import "components/legend";
-@import "components/tooltips";
+@use "components/wrapper";
+@use "components/heading";
+@use "components/colors";
+@use "components/data";
+@use "components/labels";
+@use "components/axes";
+@use "components/legend";
+@use "components/tooltips";
 
 // Charts
-@import "charts/bar";
-@import "charts/column";
-@import "charts/area";
-@import "charts/line";
+@use "charts/bar";
+@use "charts/column";
+@use "charts/area";
+@use "charts/line";
 
-@import "charts/radial";
-@import "charts/pie";
-@import "charts/polar";
-@import "charts/radar";
+@use "charts/radial";
+@use "charts/pie";
+@use "charts/polar";
+@use "charts/radar";
