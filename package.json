@@ -33,7 +33,8 @@
     "test": "npm-run-all build test:copy-css test:run",
     "test:copy-css": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output tests/playwright/charts.min.css",
     "test:snapshots": "playwright test --update-snapshots --trace off",
-    "test:run": "playwright test -c tests/playwright.config.ts"
+    "test:run": "playwright test -c tests/playwright.config.ts",
+    "prepublishOnly": "node prepublish"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.37.1",
+    "@types/node": "^22.18.6",
     "autoprefixer": "^10.4.14",
     "browserslist-config-baseline": "^0.4.0",
     "cssnano": "^6.0.1",
