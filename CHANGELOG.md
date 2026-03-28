@@ -23,6 +23,7 @@ All notable changes to [Charts.css](https://ChartsCSS.org/) are documented in th
 
 ### Added
 
+- Customizable tooltip colors via CSS variables
 - Add `.nvmrc` for node version pinning
 
 ### Changed

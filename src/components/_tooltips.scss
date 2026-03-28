@@ -1,3 +1,5 @@
+@use "../utils/variables";
+
 /*
  * Chart tooltips
  */
@@ -17,8 +19,8 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s;
-    background-color: #555;
-    color: #fff;
+    background-color: var(--#{ variables.$prefix }tooltip-bg-color);
+    color: var(--#{ variables.$prefix }tooltip-text-color);
     text-align: center;
     font-size: .9rem;
 
@@ -38,7 +40,7 @@
       margin-inline-start: -5px;
       border-width: 5px;
       border-style: solid;
-      border-color: #555 transparent transparent;
+      border-color: var(--#{ variables.$prefix }tooltip-bg-color) transparent transparent;
     }
   }
 
