@@ -347,8 +347,7 @@ ol.charts-css li {
   opacity: 0;
 }
 @media (prefers-reduced-motion: reduce) {
-  .charts-css.show-data-on-hover .data,
-  .charts-css.show-data-on-hover tr:hover .data, .charts-css.radial.show-data-on-hover tbody:hover .data, .charts-css.pie.show-data-on-hover tbody:hover .data, .charts-css.polar.show-data-on-hover tbody:hover .data, .charts-css.radar.show-data-on-hover tbody:hover .data, .charts-css .tooltip {
+  .charts-css.show-data-on-hover .data, .charts-css.show-data-on-hover tr:hover .data, .charts-css.radial.show-data-on-hover tbody:hover .data, .charts-css.pie.show-data-on-hover tbody:hover .data, .charts-css.polar.show-data-on-hover tbody:hover .data, .charts-css.radar.show-data-on-hover tbody:hover .data, .charts-css .tooltip {
     transition-duration: 0.01ms;
   }
 }
