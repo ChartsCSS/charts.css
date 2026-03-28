@@ -28,7 +28,7 @@
     "css-minify-fix": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output dist/charts.min.css",
     "css-sizes": "echo \"Raw: $(wc -c < dist/charts.min.css) bytes\" && echo \"Gzip: $(gzip -c dist/charts.min.css | wc -c) bytes\" && echo \"Brotli: $(brotli -c dist/charts.min.css | wc -c) bytes\"",
     "watch": "nodemon -e scss,html --watch src --exec \"npm run build\"",
-    "scss-lint": "stylelint \"**/*.scss\"",
+    "lint": "stylelint \"**/*.scss\"",
     "update-browserslist": "npx update-browserslist-db@latest",
     "test": "npm-run-all build test:copy-css test:run",
     "test:copy-css": "postcss dist/charts.min.css --use postcss-pseudo-element-colons --no-map --output tests/playwright/charts.min.css",
@@ -43,19 +43,19 @@
     "url": "https://github.com/ChartsCSS/charts.css/issues"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
+    "@playwright/test": "^1.58.2",
     "browserslist-config-baseline": "^0.5.0",
-    "cssnano": "^7.1.2",
-    "dotenv": "^17.2.3",
-    "nodemon": "^3.1.11",
+    "cssnano": "^7.1.3",
+    "dotenv": "^17.3.1",
+    "nodemon": "^3.1.14",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.8",
     "postcss-cli": "^11.0.1",
     "postcss-merge-selectors": "^0.0.6",
     "postcss-pseudo-element-colons": "^1.0.2",
-    "sass": "^1.94.2",
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard-scss": "^16.0.0"
+    "sass": "^1.98.0",
+    "stylelint": "^17.6.0",
+    "stylelint-config-standard-scss": "^17.0.0"
   },
   "cssnano": {
     "preset": [
