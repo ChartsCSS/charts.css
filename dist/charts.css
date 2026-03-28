@@ -197,7 +197,7 @@
   --legend-border-color: rgb(200 200 200);
   --legend-border-style: solid;
   --legend-border-width: 1px;
-  --tooltip-bg-color: #555;
+  --tooltip-bg-color: #333;
   --tooltip-text-color: #fff;
   position: relative;
   display: block;

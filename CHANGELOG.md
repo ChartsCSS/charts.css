@@ -33,6 +33,10 @@ All notable changes to [Charts.css](https://ChartsCSS.org/) are documented in th
 - Update package versions
 - Update browserslist database
 
+### Fixed
+
+- Accessibility: Fix tooltip color contrast (WCAG 1.4.3)
+
 ## [1.2.0] - 2025-07-21
 
 ### Added
