@@ -25,12 +25,20 @@
     .data {
       transition-duration: .3s;
       opacity: 0;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition-duration: 0.01ms;
+      }
     }
 
     tr:hover {
       .data {
         transition-duration: .3s;
         opacity: 1;
+
+        @media (prefers-reduced-motion: reduce) {
+          transition-duration: 0.01ms;
+        }
       }
     }
   }
@@ -46,6 +54,10 @@
         .data {
           transition-duration: .3s;
           opacity: 1;
+
+          @media (prefers-reduced-motion: reduce) {
+            transition-duration: 0.01ms;
+          }
         }
       }
     }
