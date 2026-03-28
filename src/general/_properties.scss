@@ -70,3 +70,11 @@ $sizes: start, end, size, line-size;
     @include mixins.at-property( "<number>", null, true );
   }
 }
+
+// Tooltips
+$tooltip-vars: tooltip-bg-color, tooltip-text-color;
+@each $color in $tooltip-vars {
+  @property --#{ variables.$prefix }#{ $color } {
+    @include mixins.at-property( "<color>", null, true );
+  }
+}
