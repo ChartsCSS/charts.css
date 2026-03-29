@@ -25,6 +25,7 @@ All notable changes to [Charts.css](https://ChartsCSS.org/) are documented in th
 
 - Customizable tooltip colors via CSS variables
 - Accessibility: Add `prefers-reduced-motion` support (WCAG 2.3.3 / AAA, best practice for AA)
+- Accessibility: Add keyboard accessibility support to tooltips (WCAG 2.1.1)
 - Add `.nvmrc` for node version pinning
 
 ### Changed
