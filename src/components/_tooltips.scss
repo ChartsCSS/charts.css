@@ -48,7 +48,8 @@
     }
   }
 
-  td:hover {
+  td:hover,
+  td:focus-within {
     .tooltip {
       visibility: visible;
       opacity: 1;
