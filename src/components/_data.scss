@@ -31,7 +31,8 @@
       }
     }
 
-    tr:hover {
+    tr:hover,
+    tr:focus-within {
       .data {
         transition-duration: .3s;
         opacity: 1;
@@ -50,7 +51,8 @@
 
     &.show-data-on-hover {
 
-      tbody:hover {
+      tbody:hover,
+      tbody:focus-within {
         .data {
           transition-duration: .3s;
           opacity: 1;
