@@ -1,13 +1,11 @@
-name: "Tests: Playwright snapshots"
+name: "Playwright: Snapshot Update"
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  test:
-    name: playwright
+  snapshots:
+    name: Generate Playwright snapshots
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
@@ -28,14 +26,17 @@ jobs:
       - name: Build CSS
         run: npm run build
 
-      - name: Run Playwright tests
+      - name: Prepare test CSS
+        run: npm run test:copy-css
+
+      - name: Update Playwright snapshots
         run: npm run test:snapshots
 
       - name: Upload test results
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-snapshot-failure
           path: |
             test-results/
             playwright-report/
