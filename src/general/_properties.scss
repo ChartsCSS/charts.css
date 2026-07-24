@@ -12,18 +12,18 @@
 $color-vars: color, chart-bg-color;
 @each $i in $color-vars {
   @property --#{ $variable-prefix }#{ $i } {
-    @include at-property( "<color>", null, true );
+    @include at-property( "*", null, true );
   }
 }
 
 // Chart Aspect Ratio
 @property --#{ $variable-prefix }aspect-ratio {
-  @include at-property( "<ratio>", auto, true );
+  @include at-property( "*", auto, true );
 }
 
 // Data Position
 @property --#{ $variable-prefix }data-position {
-  @include at-property( "<content-position>", null, true );
+  @include at-property( "center | flex-start | flex-end", center, true );
 }
 
 // Labels
@@ -34,7 +34,7 @@ $color-vars: color, chart-bg-color;
 $labels-align: labels-align-block, labels-align-inline;
 @each $align in $labels-align {
   @property --#{ $variable-prefix }#{ $align } {
-    @include at-property( "<string>", null, true );
+    @include at-property( "<string>", "", true );
   }
 }
 
@@ -49,7 +49,7 @@ $items-width: primary-axis-width, secondary-axes-width, data-axes-width, legend-
 $items-style: primary-axis-style, secondary-axes-style, data-axes-style, legend-border-style;
 @each $style in $items-style {
   @property --#{ $variable-prefix }#{ $style } {
-    @include at-property( "<line-style>", solid, true );
+    @include at-property( "none | solid | dashed | dotted | double | groove | ridge | inset | outset | hidden", solid, true );
   }
 }
 
@@ -64,6 +64,6 @@ $items-color: primary-axis-color, secondary-axes-color, data-axes-color, legend-
 $sizes: start, end, size, line-size;
 @each $size in $sizes {
   @property --#{ $variable-prefix }#{ $size } {
-    @include at-property( "<number>", null, true );
+    @include at-property( "*", null, true );
   }
 }
