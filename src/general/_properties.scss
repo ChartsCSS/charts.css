@@ -12,7 +12,7 @@
 $color-vars: color, chart-bg-color;
 @each $i in $color-vars {
   @property --#{ $variable-prefix }#{ $i } {
-    @include at-property( "<color>", transparent, true );
+    @include at-property( "<color>", auto, true );
   }
 }
 
@@ -64,6 +64,6 @@ $items-color: primary-axis-color, secondary-axes-color, data-axes-color, legend-
 $sizes: start, end, size, line-size;
 @each $size in $sizes {
   @property --#{ $variable-prefix }#{ $size } {
-    @include at-property( "<number>", 0, true );
+    @include at-property( "<number>", auto, true );
   }
 }
